@@ -1,19 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : Controller
 {
-    [SerializeField] private GameObject meleeHitbox;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float chainAttackTime = 0.1f;
+    [SerializeField] private List<GameObject> meleeHitboxes;
     private Entity player;
     private EntityStats stats;
-    private MeleeAttack meleeAttack;
     private PlayerInput playerInput;
     private Camera mainCam;
     private Rigidbody2D rb;
     private bool canMove;
     private Vector2 movementInput;
+    private int currentAttack;
+    private bool hasBufferAttack;
+    private bool canChainAttack;
     private Vector2 lastMovementInput;
     public bool canChangeDirection;
     public bool CanMove {
@@ -25,10 +31,12 @@ public class PlayerController : Controller
         canMove = true;
         canChangeDirection = true;
         playerInput = GetComponent<PlayerInput>();
-        meleeAttack = meleeHitbox.GetComponent<MeleeAttack>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         movementInput = Vector2.zero;
+        currentAttack = 0;
+        hasBufferAttack = false;
+        canChainAttack = false;
         player = GetComponent<Player>();
         stats = player.EntityStats;
     }
@@ -55,17 +63,44 @@ public class PlayerController : Controller
     }
 
     public void OnMelee(InputAction.CallbackContext ctx) {
-        if (canMove == true) {
-            canMove = false;
-            StartCoroutine(AttackDelay());
+        if (ctx.performed) {
+            if (canMove == true) {
+                canMove = false;
+                StartCoroutine(AttackDelay());
+            } else if (!hasBufferAttack) {
+                StartCoroutine(BufferAttack());
+            }
         }
     }
     IEnumerator AttackDelay() {
+        if (canChainAttack) {
+            if (currentAttack >= meleeHitboxes.Count - 1) {
+            currentAttack = 0;
+            } else {
+                currentAttack++;
+            }
+        } else {
+            currentAttack = 0;
+        }
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        MeleeAttack meleeAttack = meleeHitboxes[currentAttack].GetComponent<MeleeAttack>();
         meleeAttack.SetActive();
         meleeAttack.Attack(mousePos);
         yield return new WaitForSeconds(0.3f);
         meleeAttack.SetInactive();
         canMove = true;
+        StartCoroutine(AttackChainTimeWindow());
+    }
+    IEnumerator BufferAttack() {
+        hasBufferAttack = true;
+        yield return new WaitUntil(() => canMove == true);
+        canMove = false;
+        StartCoroutine(AttackDelay());
+        hasBufferAttack = false;
+    }
+    IEnumerator AttackChainTimeWindow() {
+        canChainAttack = true;
+        yield return new WaitForSeconds(chainAttackTime);
+        canChainAttack = false;
     }
 }
