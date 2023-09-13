@@ -20,7 +20,7 @@ public class AugmentManager : MonoBehaviour
     public void updateDamageTaken(float damage)
     {
         this.damageTaken = damage;
-        Debug.Log(current.name + ": " + current.HealthVal); // just for testing
+        // Debug.Log(current.name + ": " + current.HealthVal); // just for testing
         takeAugmentedDamage();
     }
 

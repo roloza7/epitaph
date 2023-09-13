@@ -19,7 +19,6 @@ public class EnemyController : Controller
         isColliding = false;
         enemy = GetComponent<Enemy>();
         stats = enemy.EntityStats;
-        Debug.Log(stats.GetStatValue(StatEnum.ATTACK));
     }
 
     // Update is called once per frame

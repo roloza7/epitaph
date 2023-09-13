@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 1866140760894025706}
   - component: {fileID: 7846273954015342038}
   - component: {fileID: 6870733073187240334}
+  - component: {fileID: 85941256721382627}
   m_Layer: 7
   m_Name: Goon
   m_TagString: Enemy
@@ -463,6 +464,7 @@ MonoBehaviour:
   intialHealth: 10
   knockbackDelay: 0.75
   knockbackForce: 40
+  _augmentManager: {fileID: 0}
 --- !u!114 &1866140760894025706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,3 +504,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageInterval: 1
+--- !u!114 &85941256721382627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869210425373712410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current: {fileID: 0}
