@@ -18,5 +18,5 @@ MonoBehaviour:
   cooldownTime: 2
   activeTime: 0.5
   fillAmount: 1
-  projectile: {fileID: 821187670631513303, guid: 6cbe0861144cecc4d858d630512c1e93, type: 3}
+  projectile: {fileID: -770213555285463045, guid: 6cbe0861144cecc4d858d630512c1e93, type: 3}
   fireRate: 0.2

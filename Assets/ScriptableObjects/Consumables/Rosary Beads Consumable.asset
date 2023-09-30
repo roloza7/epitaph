@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adbffb16a6f8524da059c10d8dd124b, type: 3}
+  m_Name: Rosary Beads Consumable
+  m_EditorClassIdentifier: 
+  cName: Rosary Beads
+  cSprite: {fileID: 0}
+  cSound: {fileID: 0}
+  startingCharges: 3
+  baseEffectDuration: 5
+  baseCooldownTime: 1
+  startingModifiers:
+  - {fileID: 11400000, guid: fa7fb92ac0b1837459006b3cde8c097a, type: 2}

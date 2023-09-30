@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
 public class BlinkDaggerAbility : ProjectileAbility
 {
     //private Camera mainCam;

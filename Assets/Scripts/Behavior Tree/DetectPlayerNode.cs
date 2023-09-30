@@ -7,14 +7,16 @@ public class DetectPlayerNode : Node
 {
     // detects if the enemy is colliding with the player
 
-    private EnemyController _enemy;
+    private EnemyController _enemyController;
     
-    public DetectPlayerNode(GameObject enemy) {
-        _enemy = enemy.GetComponent<EnemyController>();
+    public DetectPlayerNode() {
     }
 
     public override NodeState Evaluate() {
-        if (_enemy.IsColliding) {
+        if (_enemyController == null) {
+            _enemyController = (EnemyController)this.GetData("controller");
+        }
+        if (_enemyController.IsColliding) {
             return NodeState.SUCCESS;
         }
         return NodeState.FAILURE;

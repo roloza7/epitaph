@@ -4,31 +4,23 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Vector3 mousePos;
-    private Camera mainCam;
+
     protected Rigidbody2D rb;
     protected Vector3 direction;
     public float force;
-    [SerializeField] List<StatusEffect> _statusEffects;
-    [SerializeField] private float projectileTimer;
+    [SerializeField] protected float damage;
+    [SerializeField] protected List<StatusEffect> _statusEffects;
+    [SerializeField] protected float projectileTimer;
     public GameObject parent;
 
     // increase sprite size
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        rb = GetComponent<Rigidbody2D>();
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
-        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (projectileTimer > 0)
         {
@@ -38,11 +30,17 @@ public class Projectile : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    
+
+    protected virtual void OnTriggerEnter2D(Collider2D other) {
+        var entity = other.GetComponent<Entity>();
+        if (entity != null) {
+            parent.GetComponent<Entity>().DealDamage(entity, damage);
+        }
         var statusEffectManager = other.GetComponent<StatusEffectManager>();
             statusEffectManager?.ApplyEffects(_statusEffects);
         
-        //Debug.Log($"Hit {other.gameObject.name}");
+        Debug.Log($"Hit {other.gameObject.name}");
 
         Destroy(this.gameObject);
     }

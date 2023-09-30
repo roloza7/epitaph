@@ -13,25 +13,20 @@ public class Augment : ScriptableObject
     [SerializeField]
     private float activeTime = 1f; // not sure if they will all be timed or not
     [SerializeField]
-    private bool augmentEnabled = false; // prevent stacking or have some sort of mechanism for stacking
-
-    // entity to which augment is being applied
-    private Entity current;
-
-    // entity which current is interacting with
-    private Entity target;
+    private bool augmentEnabled = true; 
 
     public void enableAugment()
     {
-        if (augmentEnabled)
-        {
-            stackAugments();
-        }
-        else
+        if (!augmentEnabled)
         {
             firstActivation();
-            augmentEnabled = true;
         }
+        augmentEnabled = true;
+    }
+
+    public void disableAugment()
+    {
+        augmentEnabled = false;
     }
 
     public virtual void firstActivation()
@@ -39,33 +34,21 @@ public class Augment : ScriptableObject
         // initial buff
     }
 
-    public virtual void stackAugments()
-    {
-        // return if you don't want stacking
-        // or implement custom mechanism
-    }
-
-    public virtual float applyAugmentDamageTaken(float damageTaken, Entity current, Entity target)
-    {
-        // base implementation only has references to current and target entity,
-        // from which all stats can be derived using getter methods
-        this.current = current;
-        this.target = target;
-        return 0;
-    }
-
-    public virtual float applyAugmentDamageDealt(float damageDealt, Entity current, Entity target)
-    {
-        // base implementation only has references to current and target entity,
-        // from which all stats can be derived using getter methods
-        this.current = current;
-        this.target = target;
-        return 0;
-    }
 
     public Augment GetAugment()
     {
         return this;
     }
 
+    public virtual float applyAugmentDamageTaken(float damageTaken, Entity current, Entity target)
+    {
+        // used in AugmentManager to actually apply
+        return 0;
+    }
+
+    public virtual float applyAugmentDamageDealt(float damageDealt, Entity current, Entity target, HashSet<AbilityTag> tags)
+    {
+        // used in AugmentManager to actually apply
+        return 0;
+    }
 }

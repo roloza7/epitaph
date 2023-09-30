@@ -11,18 +11,22 @@ public class FollowPlayerNode : Node
 
     private GameObject _target;
     private NavMeshAgent _agent;
-    private float _speed;
+    private float _movespeed;
 
-    public FollowPlayerNode(GameObject target, UnityEngine.AI.NavMeshAgent agent, float speed) {
-        _speed = speed;
+    public FollowPlayerNode(GameObject target) {
         _target = target;
-        _agent = agent;
+
     }
 
     public override NodeState Evaluate() {
+        if (_agent == null) {
+            _agent = (NavMeshAgent)this.GetData("agent");
+        }
+        _movespeed = ((Entity)this.GetData("entity")).EntityStats.GetStatValue(StatEnum.WALKSPEED);
+        _agent.enabled = true;
         _agent.isStopped = false;
         _agent.SetDestination(_target.transform.position);
-        _agent.speed = _speed;
+        _agent.speed = _movespeed;
         return NodeState.SUCCESS;
     }
 }

@@ -350,9 +350,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8263862798321204670, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 657781651}
-    - targetCorrespondingSourceObject: {fileID: 8263862798321204670, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 657781650}
   m_SourcePrefab: {fileID: 100100000, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
 --- !u!114 &115705338 stripped
@@ -745,21 +742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e667e04add86c4004a7a139fb121651c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  augment: {fileID: 11400000, guid: 839cceae59c8a4e939ff8d88a676bff1, type: 2}
+  onhit: {fileID: 0}
+  listener: {fileID: 11400000, guid: 1ec54eb4ade3c4c94bd817e06a8ec2a5, type: 2}
   augmentManager: {fileID: 0}
---- !u!114 &657781651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128760440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current: {fileID: 0}
 --- !u!1 &867298787
 GameObject:
   m_ObjectHideFlags: 0
@@ -20797,7 +20782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 6.71875
+      value: 8.4375
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping

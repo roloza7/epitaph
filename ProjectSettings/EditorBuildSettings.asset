@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TemplateScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Victor/Template Scene.unity
+    guid: abf69fde19a93e942a62c7ac543c6d45
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: 547b021303e82984c8a90b0d8dcf31a0
   m_configObjects: {}

@@ -8,16 +8,21 @@ using BTArchitecture;
 public class StopAgentNode : Node
 {
     // stops the agent and automatically returns success
-    private Transform _self;
+    private GameObject _self;
     private NavMeshAgent _agent;
 
-    public StopAgentNode(Transform self, UnityEngine.AI.NavMeshAgent agent) {
-        _self = self;
-        _agent = agent;
+    public StopAgentNode() {
     }
 
     public override NodeState Evaluate() {
-        _self.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        if (_agent == null) {
+            _agent = (NavMeshAgent)this.GetData("agent");
+        }
+        if (_self == null) {
+            _self = (GameObject)this.GetData("gameobject");
+        }
+        _self.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        _agent.enabled = true;
         _agent.isStopped = true;
         return NodeState.SUCCESS;
     }

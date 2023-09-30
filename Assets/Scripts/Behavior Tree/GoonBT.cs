@@ -6,26 +6,26 @@ using BTArchitecture;
 
 public class GoonBT : BehaviorTree
 {
-    [SerializeField] private float speed;
-    // Start is called before the first frame update
     protected override Node SetupTree() {
         GameObject target = GameObject.FindWithTag("Player");
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
         agent.updateRotation = false;
-        agent.speed = speed;
         agent.updateUpAxis = false;
 
         Node root = new SelectorNode(new List<Node>{
+            new UnableToMoveNode(),
             new SequenceNode(new List<Node>{
-                new DetectPlayerNode(this.gameObject),
-                new StopAgentNode(this.gameObject.transform, agent),
+                new DetectPlayerNode(),
+                new StopAgentNode(),
             }),
-            new FollowPlayerNode(target, agent, speed),
+            new FollowPlayerNode(target),
         });
-        
-        //Node root = new FollowPlayerNode(target, agent, speed);
-        
+        root.SetData("gameobject", this.gameObject);
+        root.SetData("entity", GetComponent<Entity>());
+        root.SetData("agent", agent);
+        root.SetData("controller", GetComponent<Controller>());
+
         return root;
     }
 }

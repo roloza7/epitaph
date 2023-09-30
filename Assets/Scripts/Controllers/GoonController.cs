@@ -13,7 +13,7 @@ public class GoonController : EnemyController
         timer = 0f;
     }
 
-    void Update() {
+    protected override void Update() {
         if (this.isColliding) {
             timer += Time.deltaTime;
             if (timer > damageInterval) {

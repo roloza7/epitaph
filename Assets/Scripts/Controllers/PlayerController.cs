@@ -10,22 +10,15 @@ public class PlayerController : Controller
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float chainAttackTime = 0.1f;
     [SerializeField] private List<GameObject> meleeHitboxes;
-    private Entity player;
-    private EntityStats stats;
+
     private PlayerInput playerInput;
     private Camera mainCam;
     private Rigidbody2D rb;
-    private bool canMove;
     private Vector2 movementInput;
     private int currentAttack;
     private bool hasBufferAttack;
     private bool canChainAttack;
     private Vector2 lastMovementInput;
-    public bool canChangeDirection;
-    public bool CanMove {
-        get { return canMove; }
-        set { canMove = value; }
-    }
     void Start()
     {
         canMove = true;
@@ -37,8 +30,8 @@ public class PlayerController : Controller
         currentAttack = 0;
         hasBufferAttack = false;
         canChainAttack = false;
-        player = GetComponent<Player>();
-        stats = player.EntityStats;
+        entity = GetComponent<Player>();
+        stats = entity.EntityStats;
     }
 
     // Update is called once per frame

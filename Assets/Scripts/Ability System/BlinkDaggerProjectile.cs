@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlinkDaggerProjectile : Projectile
+public class BlinkDaggerProjectile : PlayerProjectile
 {   
     public float acceleration;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (force > 0) {
             force += acceleration;
@@ -21,5 +21,5 @@ public class BlinkDaggerProjectile : Projectile
         Gizmos.DrawSphere(transform.position, 1);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {}
+    protected override void OnTriggerEnter2D(Collider2D other) {}
 }
