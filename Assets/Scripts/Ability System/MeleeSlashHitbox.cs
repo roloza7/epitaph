@@ -23,6 +23,9 @@ public class MeleeSlashHitbox : MonoBehaviour
         if (other.tag == "Enemy") {
             Enemy enemy = other.GetComponent<Enemy>();
             parent.GetComponent<Entity>().DealDamage(enemy, damage);
+
+            var kb = other.GetComponent<Knockback>();
+            kb?.KnockbackEntity(parent.GetComponent<Entity>().gameObject);
         }
         
         // Debug.Log($"Hit {other.gameObject.name}");

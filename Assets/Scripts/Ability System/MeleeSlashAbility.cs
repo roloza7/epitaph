@@ -25,7 +25,7 @@ public class MeleeSlashAbility : Ability
         Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * offset;
         Quaternion rotationToTarget = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorToTarget);
 
-        // offset of hitbox from player is hardcorded (using length/distance of 1 seems to work fine)
+        // offset of hitbox from player is hardcorded
         hitboxInstance = Instantiate(hitbox, parent.transform.position + (offset * 1.5f), rotationToTarget, parent.transform);
         hitboxInstance.parent = parent;
         hitboxInstance.damage = damage;
