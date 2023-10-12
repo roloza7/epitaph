@@ -6,6 +6,7 @@ public class MeleeSlashHitbox : MonoBehaviour
 {
     public GameObject parent;
     public float damage;
+    public float knockbackForce;
 
     // Start is called before the first frame update
     // void Start()
@@ -25,7 +26,7 @@ public class MeleeSlashHitbox : MonoBehaviour
             parent.GetComponent<Entity>().DealDamage(enemy, damage);
 
             var kb = other.GetComponent<Knockback>();
-            kb?.KnockbackEntity(parent.GetComponent<Entity>().gameObject);
+            kb?.KnockbackEntityWithCustomForce(parent.GetComponent<Entity>().gameObject, knockbackForce);
         }
         
         // Debug.Log($"Hit {other.gameObject.name}");

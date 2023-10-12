@@ -20,4 +20,5 @@ MonoBehaviour:
   activeTime: 0.2
   fillAmount: 1
   damage: 5
+  knockbackForce: 200
   hitbox: {fileID: 7273901047849713365, guid: e4124149b74b03f4f8103aa43d4ed8a7, type: 3}
