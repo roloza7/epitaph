@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +9,6 @@ public class PlayerController : Controller
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float chainAttackTime = 0.1f;
     [SerializeField] private List<GameObject> meleeHitboxes;
-
     private PlayerInput playerInput;
     private Camera mainCam;
     private Rigidbody2D rb;
@@ -19,6 +17,12 @@ public class PlayerController : Controller
     private bool hasBufferAttack;
     private bool canChainAttack;
     private Vector2 lastMovementInput;
+
+    public Vector2 LastMovementInput {
+        get {
+            return lastMovementInput;
+        }
+    }
     void Start()
     {
         canMove = true;
@@ -34,6 +38,10 @@ public class PlayerController : Controller
         stats = entity.EntityStats;
     }
 
+    public void resetPos()
+    {
+        this.transform.position = new Vector3(0, 0, 0);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

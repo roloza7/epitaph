@@ -17,5 +17,5 @@ MonoBehaviour:
   aSound: {fileID: 0}
   cooldownTime: 4
   activeTime: 0.15
-  fillAmount: 1
+  fillAmount: 0.33871737
   moveSpeedMultiplier: 3

@@ -21,5 +21,12 @@ public class BlinkDaggerProjectile : PlayerProjectile
         Gizmos.DrawSphere(transform.position, 1);
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other) {}
+    protected virtual void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(LayerMask.NameToLayer("Terrain"));
+        if (other.gameObject.layer == LayerMask.NameToLayer("Terrain")) {   
+            Destroy(this.gameObject);
+        }
+        Debug.Log($"Hit {other.gameObject.name}");
+
+    }
 }

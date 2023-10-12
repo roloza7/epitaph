@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LifeSteal
   m_EditorClassIdentifier: 
   aName: Life Steal
+  aDescription: 10% lifesteal
   aSprite: {fileID: 0}
   aSound: {fileID: 0}
   activeTime: 1

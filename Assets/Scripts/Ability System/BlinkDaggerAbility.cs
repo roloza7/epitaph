@@ -20,7 +20,7 @@ public class BlinkDaggerAbility : ProjectileAbility
     private float damage = 5;
     public bool teleported;
 
-
+    public bool destroyed;
 
     // public override void Activate(GameObject parent)
     // {
@@ -72,13 +72,21 @@ public class BlinkDaggerAbility : ProjectileAbility
                 }
             break;
             case AbilityState.reactive:
-                if (abilityPressed) {
+                if (thrownDagger == null) {
+                    destroyed = true;
+                    firing = false;
+                }
+                if (abilityPressed || destroyed) {
                     Activate(parent);
                     state = AbilityState.active;
                 }
             break;
             case AbilityState.active:
-                if (teleported == true) {
+                if (thrownDagger == null) {
+                    destroyed = true;
+                    firing = false;
+                }
+                if (teleported || destroyed) {
                     currentCooldownTime = cooldownTime;
                     state = AbilityState.cooldown;
                 }
@@ -103,13 +111,20 @@ public class BlinkDaggerAbility : ProjectileAbility
         thrownDagger = Instantiate(projectile, pos, Quaternion.identity);
         thrownDagger.parent = parent;
         firing = false;
+        destroyed = false;
     }
 
     private void GoToDagger(GameObject parent) {
         daggerThrown = false;
         canFire = false;
         teleported = true;
+        if (thrownDagger == null) {
+            destroyed = true;
+            firing = false;
+            return;
+        }
         parent.transform.position = thrownDagger.transform.position;
+
         Destroy(thrownDagger.gameObject);
         firing = false;
 

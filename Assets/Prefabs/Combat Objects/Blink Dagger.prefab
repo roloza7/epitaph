@@ -162,6 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 5
-  _data: {fileID: 11400000, guid: 0ef47d069c05b8342b5e0581dbe58f7e, type: 2}
+  damage: 0
+  _statusEffects: []
   projectileTimer: 100
+  parent: {fileID: 0}
   acceleration: -0.01

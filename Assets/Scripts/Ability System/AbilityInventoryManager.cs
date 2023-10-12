@@ -9,9 +9,9 @@ public class AbilityInventoryManager : MonoBehaviour
 
     [SerializeField] private bool DEBUG = false;
 
-    [SerializeField] private GameObject abilityCursor;
-    [SerializeField] private GameObject slotHolder;
-    [SerializeField] private GameObject hotbarSlotHolder;
+    private GameObject abilityCursor;
+    private GameObject slotHolder;
+    private GameObject hotbarSlotHolder;
 
     [SerializeField] private AbilityWrapper newAbility;
     [SerializeField] private AbilityWrapper abilityToDiscard;
@@ -42,9 +42,16 @@ public class AbilityInventoryManager : MonoBehaviour
     private bool managerActive;
 
     // Start is called before the first frame update
+    private void Awake() {
+        abilityCursor = GameObject.FindWithTag("Cursor");
+        slotHolder = GameObject.FindWithTag("Slots");
+        hotbarSlotHolder = GameObject.FindWithTag("HotBar");
+        managerActive = false;
+    }
+
+
     private void Start()
     {
-        managerActive = false;
         slots = new GameObject[slotHolder.transform.childCount];
         abilities = new SlotClass[slots.Length];
 
@@ -79,6 +86,7 @@ public class AbilityInventoryManager : MonoBehaviour
         // Add the dash ability image to the hotbar
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().sprite = dashAbility.getActiveAbility().aSprite;
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().enabled = true;
+        hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
 
         // Add AugmentManager reference so we can update augments
         augmentManager = gameObject.GetComponent<AugmentManager>();
@@ -106,7 +114,6 @@ public class AbilityInventoryManager : MonoBehaviour
                 BeginItemMove();
             }
         }
-
     }
 
     #region Active / Passive Utils
@@ -165,6 +172,7 @@ public class AbilityInventoryManager : MonoBehaviour
         hotbarAbilities[0].GetAbility().getActiveAbility().Init();
         hotbarAbilities[0].GetAbility().getActiveAbility().SetState(AbilityState.ready);
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
+        hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
 
         // Start at 1 to account for the dash ability taking up a slot
         for (int i = 1; i < hotbarSlots.Length; i++) {
@@ -173,16 +181,21 @@ public class AbilityInventoryManager : MonoBehaviour
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[(i - 1) + NUMBER_OF_ABILITIES * 2].GetAbility().getActiveAbility().aSprite;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 hotbarAbilities[i] = abilities[(i - 1) + NUMBER_OF_ABILITIES * 2];
+                hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
 
                 if (hotbarAbilities[i].GetAbility() != null) {
                     hotbarAbilities[i].GetAbility().getActiveAbility().Init();
                     hotbarAbilities[i].GetAbility().getActiveAbility().SetState(AbilityState.ready);
                     hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
+                    hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
+
                 }
 
             } catch {
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
+                hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = null;
+
             }
         }        
     }

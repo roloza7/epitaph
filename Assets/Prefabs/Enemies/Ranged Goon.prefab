@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DEBUG: 0
   current: {fileID: 0}
 --- !u!114 &4740526884836291027
 MonoBehaviour:
@@ -277,8 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337ac2db46aabb646ae9493f18c7f2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 3681736836022034573, guid: d23dd2301c73a8d4fa83268033ad61b5, type: 3}
-  projectilePos: {fileID: 3089257417117435328}
+  target: {fileID: 0}
+  projectile: {fileID: -6228182864214638976, guid: d23dd2301c73a8d4fa83268033ad61b5, type: 3}
   distanceAway: 6
   unloadSpeed: 3
 --- !u!1 &6465270139469949213
