@@ -10,6 +10,8 @@ public class RosaryBeadsConsumable : ScriptableObject
     [SerializeField]
     public string cName = "Rosary Beads";
     [SerializeField]
+    public string cDescription = "Description here";
+    [SerializeField]
     public Sprite cSprite;
     [SerializeField]
     public AudioClip cSound;
@@ -32,7 +34,7 @@ public class RosaryBeadsConsumable : ScriptableObject
     // Upgrades to the consumable will affect these fields
     public int currentCharges;
     private float effectDuration;
-    private float cooldownTime;
+    public float cooldownTime;
 
     public void Init() {
         currentCharges = startingCharges;
@@ -132,6 +134,15 @@ public class RosaryBeadsConsumable : ScriptableObject
     public void decreaseCharges() {
         currentCharges--;
     }
+
+    public List<string> GetConsumableDescriptions() {
+        List<string> descriptions = new List<string>();
+        foreach (ConsumableModifier mod in consumableModifiers) {
+            descriptions.Add(mod.cmDesc);
+        }
+        return descriptions;
+    }
+
 }
 
 public enum CooldownState {

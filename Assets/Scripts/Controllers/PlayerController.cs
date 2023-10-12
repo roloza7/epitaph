@@ -18,6 +18,12 @@ public class PlayerController : Controller
     private bool hasBufferAttack;
     private bool canChainAttack;
     private Vector2 lastMovementInput;
+
+    public Vector2 LastMovementInput {
+        get {
+            return lastMovementInput;
+        }
+    }
     void Start()
     {
         canMove = true;

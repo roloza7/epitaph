@@ -79,6 +79,7 @@ public class AbilityInventoryManager : MonoBehaviour
         // Add the dash ability image to the hotbar
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().sprite = dashAbility.getActiveAbility().aSprite;
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().enabled = true;
+        hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
 
         // Add AugmentManager reference so we can update augments
         augmentManager = gameObject.GetComponent<AugmentManager>();
@@ -165,6 +166,7 @@ public class AbilityInventoryManager : MonoBehaviour
         hotbarAbilities[0].GetAbility().getActiveAbility().Init();
         hotbarAbilities[0].GetAbility().getActiveAbility().SetState(AbilityState.ready);
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
+        hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
 
         // Start at 1 to account for the dash ability taking up a slot
         for (int i = 1; i < hotbarSlots.Length; i++) {
@@ -173,16 +175,21 @@ public class AbilityInventoryManager : MonoBehaviour
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[(i - 1) + NUMBER_OF_ABILITIES * 2].GetAbility().getActiveAbility().aSprite;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 hotbarAbilities[i] = abilities[(i - 1) + NUMBER_OF_ABILITIES * 2];
+                hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
 
                 if (hotbarAbilities[i].GetAbility() != null) {
                     hotbarAbilities[i].GetAbility().getActiveAbility().Init();
                     hotbarAbilities[i].GetAbility().getActiveAbility().SetState(AbilityState.ready);
                     hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
+                    hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
+
                 }
 
             } catch {
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
+                hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = null;
+
             }
         }        
     }

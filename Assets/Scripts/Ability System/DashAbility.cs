@@ -20,14 +20,36 @@ public class DashAbility : Ability
         ModifiableStat speed = parent.GetComponent<Player>().EntityStats.GetStat(StatEnum.WALKSPEED);
         speed.AddModifier(modifier);
         parent.GetComponent<PlayerController>().CanChangeDirection = false;
+        float dashDist = this.activeTime * speed.GetStatValue();
+        Vector2 dashDir = parent.GetComponent<PlayerController>().LastMovementInput;
+        Debug.Log(dashDir);
+        if (!IsInsideTerrain(parent, dashDist, dashDir)) {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Terrain"), LayerMask.NameToLayer("Player"), true);
+        }
     }
 
     public override void Deactivate(GameObject parent)
     {
+        Debug.Log(parent.transform.position);
         Debug.Log("dash end");
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Terrain"), LayerMask.NameToLayer("Player"), false);
         ModifiableStat speed = parent.GetComponent<Player>().EntityStats.GetStat(StatEnum.WALKSPEED);
         speed.RemoveModifier(modifier);
         parent.GetComponent<PlayerController>().CanChangeDirection = true;
+    }
+
+    //checks for collisions along the path of the dash
+    private bool IsInsideTerrain(GameObject parent, float dist, Vector2 dir) {
+        LayerMask mask = LayerMask.GetMask("Terrain");
+        Vector2 destination = new Vector2(parent.transform.position.x, parent.transform.position.y) + dir*dist;
+        Collider2D[] hits = Physics2D.OverlapPointAll(destination, mask);
+        if (hits.Length > 0) {
+            foreach (Collider2D hit in hits) {
+                Debug.Log(hit.gameObject.name);
+            }
+            return true;
+        }
+        return false;
     }
 
     public override void AbilityCooldownHandler(GameObject parent) {
