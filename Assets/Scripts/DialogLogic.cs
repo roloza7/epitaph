@@ -14,8 +14,8 @@ public class DialogLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.SetActive(false);
         textComponent.text = string.Empty;
-        StartDialog();
     }
 
     // Update is called once per frame
@@ -33,8 +33,9 @@ public class DialogLogic : MonoBehaviour
         }
     }
 
-    void StartDialog(){
+    public void StartDialog(){
         index=0;
+        gameObject.SetActive(true);
         StartCoroutine(TypeLine());
     }
 
@@ -56,6 +57,7 @@ public class DialogLogic : MonoBehaviour
         }
         else{
             gameObject.SetActive(false);
+            textComponent.text = string.Empty;
         }
     }
 }

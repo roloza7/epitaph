@@ -13,6 +13,9 @@ TagManager:
   - UI
   - LevelController
   - CinemachineCollider
+  - Friendly NPC
+  - NPC
+  - DialogBox
   layers:
   - Default
   - TransparentFX
