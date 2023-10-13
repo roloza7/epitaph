@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0427e27d845da8c4eb0166f13ba486b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAway: 5
+  distanceAway: 3
   textComponent: {fileID: 821177184}
   textbox: {fileID: 767060278}
   convoLines:

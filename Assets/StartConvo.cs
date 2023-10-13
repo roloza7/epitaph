@@ -5,7 +5,7 @@ using TMPro;
 
 public class StartConvo : MonoBehaviour
 {
-    public float distanceAway = 5f;
+    public float distanceAway = 3f;
 
     private GameObject target;
 
@@ -16,11 +16,15 @@ public class StartConvo : MonoBehaviour
     public string[] convoLines;
 
     DialogLogic DialogLogicScript;
+    private bool isKeyEnabled = true;
+
+    private string key = "e";
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("Player");
+        rb = target.GetComponent<Rigidbody>();
         textComponent.text = string.Empty;
         DialogLogicScript = GameObject.FindGameObjectWithTag("DialogBox").GetComponent<DialogLogic>();
     }
@@ -28,22 +32,44 @@ public class StartConvo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         float dist = Vector3.Distance(transform.position, target.transform.position);
+        while (){
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
         if (dist < distanceAway)
         {
             textComponent.text ="Press E to Interact";
-            if (Input.GetKeyDown("e")){
-                Debug.Log("started convo");
-                textbox.SetActive(true);
+            if (isKeyEnabled)
+                {
+                    if (Input.GetKeyDown("e"))
+                    {
+                        DisableKey();
+                        Debug.Log("started convo");
+                        textbox.SetActive(true);
 
-                //change the list dialog within the DialogLogic Script to match this dialog stated in this script
-                DialogLogicScript.lines = convoLines;
-                DialogLogicScript.StartDialog();
-            }
+                        //change the list dialog within the DialogLogic Script to match this dialog stated in this script
+                        DialogLogicScript.lines = convoLines;
+                        DialogLogicScript.StartDialog();
+                    }
+                }
         }
         else{
             textComponent.text = string.Empty;
         }
+    }
+
+    public void DisableKey()
+    {
+        isKeyEnabled = false;
+    }
+
+    // Call this method to enable the key
+    public void EnableKey()
+    {
+        isKeyEnabled = true;
     }
     
 }
