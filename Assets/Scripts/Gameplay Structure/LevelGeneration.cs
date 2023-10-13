@@ -46,6 +46,7 @@ public class LevelGeneration : MonoBehaviour
                 }
             }
         }
+        baseMap.gameObject.GetComponent<RenderBaseMap>().Render();
         topMap.GetComponent<Collider2D>().enabled = false;
         topMap.GetComponent<Collider2D>().enabled = true;
 
