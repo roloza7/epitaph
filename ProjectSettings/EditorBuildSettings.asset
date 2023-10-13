@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gabriel/GameplayLoop/DeathScene.unity
     guid: 8ec96bdb2104e444f92a7553904a1c2d
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/AbilitySelectionScene.unity
+    guid: 6c2a4704f92165542b6c4715fb8bbab4
   m_configObjects: {}

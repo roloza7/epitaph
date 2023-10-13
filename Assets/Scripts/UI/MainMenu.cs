@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Restart() {
+        Destroy(GameObject.Find("UI"));
         SceneManager.LoadScene(1);
     }
 
