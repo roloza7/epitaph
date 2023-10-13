@@ -28,15 +28,15 @@ public class EnemyPlacement : MonoBehaviour
 
     void PlaceEnemy(EnemyPlacementType enemy) {
         rampingPercent = enemy.spawnRate;
-        for (int i = bufferSize; i < mapWidth-bufferSize; i++) {
+        for (int i = 0; i < mapWidth; i++) {
             for (int j = bufferSize; j < mapHeight-bufferSize; j++) {
-                if (CheckNeighborsClear(i, j, enemy.width, enemy.height)) { 
+                if (CheckNeighborsClear(i, j-bufferSize, enemy.width, enemy.height)) { 
                     float rand = Random.Range(0.0f, 100.0f);
                     if (rand < rampingPercent) {
                         Vector3Int tileLoc = new Vector3Int(origin.x + i, origin.y + j, 0);
                         Vector3 spawnTilePos = baseMap.CellToWorld(tileLoc);
                         Instantiate(enemy.enemy, new Vector3(spawnTilePos.x+0.5f*enemy.width, spawnTilePos.y+0.5f*enemy.height, 0), Quaternion.identity);
-                        OccupyNeighbors(i, j, enemy.width, enemy.height);
+                        OccupyNeighbors(i, j-bufferSize, enemy.width, enemy.height);
                         rampingPercent = enemy.spawnRate;
                     } else {
                         rampingPercent *= rampFactor;
@@ -60,6 +60,8 @@ public class EnemyPlacement : MonoBehaviour
                 if (map[b.x, b.y] == 1) {
                     return false;
                 }
+            } else {
+                return false;
             }
         }
         return true;

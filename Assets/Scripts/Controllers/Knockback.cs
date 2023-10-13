@@ -14,7 +14,6 @@ public class Knockback : MonoBehaviour
         controller = GetComponent<Controller>();
     }
     public void KnockbackEntity(GameObject applier) {
-        Debug.Log("KNOCK");
         StopAllCoroutines();
         Vector2 direction = (transform.position - applier.transform.position).normalized;
         body.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
@@ -22,7 +21,6 @@ public class Knockback : MonoBehaviour
     }
 
     public void KnockbackEntityWithCustomForce(GameObject applier, float force) {
-        Debug.Log("KNOCK");
         StopAllCoroutines();
         Vector2 direction = (transform.position - applier.transform.position).normalized;
         body.AddForce(direction * force, ForceMode2D.Impulse);
