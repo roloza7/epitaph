@@ -24,7 +24,7 @@ public class LevelGeneration : MonoBehaviour
         automaton = gameObject.GetComponent<GoLAutomaton>();
         enemyPlacement = gameObject.GetComponent<EnemyPlacement>();
         origin = baseMap.origin;
-        width = baseMap.size.x - bufferSize;
+        width = baseMap.size.x;
         height = baseMap.size.y - bufferSize;
         terrain = automaton.Simulate(width, height);
         RenderMap();
@@ -37,7 +37,7 @@ public class LevelGeneration : MonoBehaviour
 
     void RenderMap() {
         topMap.ClearAllTiles();
-        for (int i = bufferSize; i < width ; i++) {
+        for (int i = 0; i < width ; i++) {
             for (int j = bufferSize; j < height; j++) {
                 // 1 = tile, 0 = no tile
                 if (terrain[i, j] == 1)
@@ -46,6 +46,7 @@ public class LevelGeneration : MonoBehaviour
                 }
             }
         }
+        baseMap.gameObject.GetComponent<RenderBaseMap>().Render();
         topMap.GetComponent<Collider2D>().enabled = false;
         topMap.GetComponent<Collider2D>().enabled = true;
 

@@ -32,7 +32,6 @@ public class EnemyPlacement : MonoBehaviour
             for (int j = bufferSize; j < mapHeight-bufferSize; j++) {
                 if (CheckNeighborsClear(i, j, enemy.width, enemy.height)) { 
                     float rand = Random.Range(0.0f, 100.0f);
-                    Debug.Log(rand);
                     if (rand < rampingPercent) {
                         Vector3Int tileLoc = new Vector3Int(origin.x + i, origin.y + j, 0);
                         Vector3 spawnTilePos = baseMap.CellToWorld(tileLoc);
