@@ -44,4 +44,17 @@ public class Projectile : MonoBehaviour
 
         Destroy(this.gameObject);
     }
+
+    public bool IsInsideTerrain() {
+        LayerMask mask = LayerMask.GetMask("Terrain");
+        Vector2 destination = new Vector2(transform.position.x, transform.position.y);
+        Collider2D[] hits = Physics2D.OverlapPointAll(destination, mask);
+        if (hits.Length > 0) {
+            foreach (Collider2D hit in hits) {
+                Debug.Log(hit.gameObject.name);
+            }
+            return true;
+        }
+        return false;
+    }
 }

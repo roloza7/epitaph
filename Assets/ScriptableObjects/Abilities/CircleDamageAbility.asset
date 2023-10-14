@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee380a1bfbd06fc45b0ceb96d960a66e, type: 3}
+  m_Name: CircleDamageAbility
+  m_EditorClassIdentifier: 
+  aName: New Ability
+  aSprite: {fileID: 21300000, guid: 45a7e2df17ed1164f85f6a922d4f8f4d, type: 3}
+  aSound: {fileID: 0}
+  cooldownTime: 3
+  activeTime: 1
+  fillAmount: 1
+  projectile: {fileID: -3099212276192516778, guid: fc4d0f981c790dd40a80f65728f4c1d6, type: 3}
+  fireRate: 1
+  aoeRadius: 1
+  damage: 5

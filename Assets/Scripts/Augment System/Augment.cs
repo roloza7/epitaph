@@ -6,6 +6,8 @@ public class Augment : ScriptableObject
 {
     [SerializeField]
     private string aName = "New Augment";
+    [SerializeField] public string aDescription = "New Description";
+
     [SerializeField]
     private Sprite aSprite;
     [SerializeField]

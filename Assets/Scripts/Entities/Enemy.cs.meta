@@ -3,7 +3,9 @@ guid: 8039f5099d1aeee43bd0f715a413edba
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _augmentManager: {instanceID: 0}
+  - droppedCoin: {fileID: 11400000, guid: f07c5f356fa83734eafc98271c253b25, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
