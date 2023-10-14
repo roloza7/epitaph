@@ -76,4 +76,9 @@ public class AbilitySelection : MonoBehaviour
             choiceMade = true;
         }    
     }
+
+    public void setAbilityChoices(List<AbilityWrapper> abilityChoices) {
+        abilityChoices = abilityChoices;
+    }
+
 }
