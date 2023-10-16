@@ -5,11 +5,13 @@ public class Slot<T> where T : class, ISlotItem<T>
 {
     // Internal values
     [SerializeField]
-    private T item;
+    internal T item;
 
     // GameObject references
     public GameObject slot { get; private set; }
     public Image image { get; private set; }
+
+    public TooltipFormatter formatter { get; private set; }
 
     public GameObject gameObject { get { return slot; } }
 
@@ -33,6 +35,7 @@ public class Slot<T> where T : class, ISlotItem<T>
     public Slot(GameObject slot, T item) {
         this.slot = slot;
         image = slot.transform.GetChild(0).GetComponent<Image>();
+        formatter = slot.transform.GetComponent<TooltipFormatter>();
         Item = item;
     }
 
@@ -41,7 +44,12 @@ public class Slot<T> where T : class, ISlotItem<T>
     // Removed references to deep copying slots, it doesn't make sense now that we have slots managing in-game objects
 
     public bool IsClear() {
-        return this.item == null;
+        return item == null;
+    }
+
+    // Visual Methods
+    public void SetFillAmount(float amount) {
+        image.fillAmount = amount;
     }
 
 }

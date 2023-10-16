@@ -18,7 +18,7 @@ public class ReduceQCooldownAugment : StaticAugment
 
     public override void applyAugment(Entity entity) {
         recipient = entity;
-        targetSlot = entity.transform.gameObject.GetComponent<AbilityInventoryManager>().HotBarAbilities[1];
+        // targetSlot = entity.transform.gameObject.GetComponent<AbilityInventoryManager>().HotBarAbilities[1]; TODO: Reenable Augments
         if (targetSlot.isClear()) return;
 
         originalCooldown = targetSlot.GetAbility().getActiveAbility().cooldownTime;
