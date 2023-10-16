@@ -94,5 +94,6 @@ public class SceneTransitionManager : MonoBehaviour
         playerInput.DeactivateInput();
         transition.ResetTrigger("RunStart");
         transition.SetTrigger("RunEnd");
+        abilityInventoryManager.OnRunEnd();
     }
 }

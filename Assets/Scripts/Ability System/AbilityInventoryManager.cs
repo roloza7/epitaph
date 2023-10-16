@@ -56,6 +56,10 @@ public class AbilityInventoryManager : MonoBehaviour
         augmentManager.onRunStart();
     }
 
+    public void OnRunEnd() {
+        augmentManager.onRunEnd();
+    }
+
     private void Update() {
         // One less than hotbar slots length bc dash ability takes up a slot
         if (isMovingItem && !managerActive) {
