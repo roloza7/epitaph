@@ -18,23 +18,23 @@ public class HotBar {
     public Slot<AbilityWrapper> GetDashAbilitySlot() => dashSlot;
     public Slot<AbilityWrapper> GetMutableAbilitySlot(int key) => slots[key];
 
-    private static void _RefreshAbility(Slot<AbilityWrapper> slot) { 
+    public static void RefreshAbility(Slot<AbilityWrapper> slot) { 
         slot.gameObject.GetComponent<TooltipFormatter>().Ability = slot.Item;
         if (slot.Item == null)
             return;
 
         slot.Item.ActiveAbility.Init();
         slot.Item.ActiveAbility.SetState(AbilityState.ready);
-        slot.SetFillAmount(0);
+        slot.SetFillAmount(1);
     }
 
     public void Refresh() {
         // Refresh Dash Ability
-        _RefreshAbility(dashSlot);
+        RefreshAbility(dashSlot);
 
         foreach (Slot<AbilityWrapper> slot in slots) {
             if (slot.Item == null) continue;
-            _RefreshAbility(slot);
+            RefreshAbility(slot);
         }
     }
 

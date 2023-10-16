@@ -53,4 +53,5 @@ public class Slot<T> where T : class, ISlotItem<T>
         image.fillAmount = amount;
     }
 
+    // Tooltip
 }

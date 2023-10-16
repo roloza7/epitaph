@@ -42,9 +42,8 @@ public class AbilityInventoryManager : MonoBehaviour
     {
         // Add Starting Abilities
         for (int i = 0; i < startingAbilities.Length; i++) {
-            Debug.Log("Acessing Index " + i + " to set starting abilities, array of length " + slots.Length);
             slots.Items[i] = startingAbilities[i];
-            Debug.Log("[Sprite] " + slots[i].image.sprite);
+            UpdateTooltip(slots[i]);
         }
 
         // Add AugmentManager reference so we can update augments
@@ -65,7 +64,6 @@ public class AbilityInventoryManager : MonoBehaviour
             } else {
                 BeginItemMove();
             }
-            hotbar.Refresh();
         }
     }
 
@@ -115,6 +113,10 @@ public class AbilityInventoryManager : MonoBehaviour
         return true;
     }
 
+    public void UpdateTooltip(Slot<AbilityWrapper> slot) {
+        slot.formatter.Ability = slot.Item;
+    }
+
     #endregion Inventory Utils
 
     #region Drag And Drop
@@ -149,6 +151,7 @@ public class AbilityInventoryManager : MonoBehaviour
 
         cursor.Ability = originalSlot.Item; 
         originalSlot.Item = null;
+        UpdateTooltip(originalSlot);
         isMovingItem = true;
         return;
     }
@@ -167,6 +170,8 @@ public class AbilityInventoryManager : MonoBehaviour
                 AbilityWrapper temp = slotToFill.Item;
                 slotToFill.Item = cursor.Ability;
                 cursor.Ability = temp;
+                UpdateTooltip(slotToFill);
+                HotBar.RefreshAbility(slotToFill);
                 // Don't null originalSlot, we might need it later
                 return;
             } else {
@@ -175,6 +180,8 @@ public class AbilityInventoryManager : MonoBehaviour
 
                 // Slot is not filled
                 slotToFill.Item = cursor.Ability;
+                UpdateTooltip(slotToFill);
+                HotBar.RefreshAbility(slotToFill);
                 cursor.Ability = null;
             }
         }

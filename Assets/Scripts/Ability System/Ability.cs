@@ -35,7 +35,7 @@ public class Ability : ScriptableObject
         this.state = state;
     }
 
-    // Resets skill
+    // Resets skill (useful when swapping skills)
     public void Reset(GameObject parent) {
         currentCooldownTime = 0f;
         currentActiveTime = 0f;
