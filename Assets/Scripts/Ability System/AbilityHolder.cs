@@ -12,23 +12,6 @@ public class AbilityHolder : MonoBehaviour
 
     [Header("Mutable Abilities")]
     private Slot<AbilityWrapper>[]  mutableAbilities = new Slot<AbilityWrapper>[3];
-    // [Header("Ability 1")]
-    // private Ability ability1;
-    // private Image ability1Img;
-    
-    // [Header("Ability 2")]
-    // private Ability ability2;
-    // private Image ability2Img;
-
-    // [Header("Ability 3")]
-    // private Ability ability3;
-    // private Image ability3Img;
-
-    // [Header("Dash Ability")]
-    // private Ability dashAbility;
-    // private Image dashAbilityImage;
-
-    GameObject parent;
 
     [SerializeField] private GameObject abilitySelection;
     [SerializeField] private AbilityInventoryManager abilityManager;
@@ -40,76 +23,31 @@ public class AbilityHolder : MonoBehaviour
     }
     void Start()
     {
-        // if (abilityManager.GetHotbarAbilities()[0].GetAbility() != null) {
-        //     ability1 = abilityManager.GetHotbarAbilities()[0].GetAbility();
-        //     ability1Img = abilityManager.GetHotbarSlots()[0].GetComponent<Image>();
-        // }
-
-        // if (abilityManager.GetHotbarAbilities()[1].GetAbility() != null) {
-        //     ability2 = abilityManager.GetHotbarAbilities()[1].GetAbility();
-        //     ability2Img = abilityManager.GetHotbarSlots()[1].GetComponent<Image>();
-        // }
-
-        // if (abilityManager.GetHotbarAbilities()[2].GetAbility() != null) {
-        //     ability3 = abilityManager.GetHotbarAbilities()[2].GetAbility();
-        //     ability3Img = abilityManager.GetHotbarSlots()[2].GetComponent<Image>();
-        // }
-
-
-
-
-        // ability1Img.sprite = ability1.aSprite;
-        // ability2Img.sprite = ability2.aSprite;
-        // ability3Img.sprite = ability3.aSprite;
-
-
-        // ability1Img.fillAmount = 0;
-        // ability2Img.fillAmount = 0;
-        // ability3Img.fillAmount = 0;
-        
-        // ability1.SetState(AbilityState.ready);
-        // ability2.SetState(AbilityState.ready);
-        // ability3.SetState(AbilityState.ready);
-        parent = this.gameObject;
-
-//Gotta handle making sure this happens first time ability is assignec
-        // ability1.Init();
-        // ability2.Init();
-        // ability3.Init();
-    }
-
-    // Update is called once per frame
-    private void Render() {
         if (dashAbility == null) {
             dashAbility = abilityManager.hotbar.GetDashAbilitySlot();
-            dashAbility.SetFillAmount(1);
         }
         for (int i = 0; i < mutableAbilities.Length; i++) {
             if (mutableAbilities[i] == null)
                 mutableAbilities[i] = abilityManager.hotbar.GetMutableAbilitySlot(i);
-
-            Slot<AbilityWrapper> slot = mutableAbilities[i];
-            if (slot.IsClear() == false) {
-                slot.SetFillAmount(1);
-            }
-
         }
     }
+
+    // Update is called once per frame
     void Update()
     {  
-        Render();
 
         if (dashAbility.IsClear() == false) {
-            dashAbility.Item.ActiveAbility.AbilityCooldownHandler(parent);
-            dashAbility.Item.ActiveAbility.AbilityBehavior(parent);
+            dashAbility.Item.ActiveAbility.AbilityCooldownHandler(gameObject);
+            dashAbility.Item.ActiveAbility.AbilityBehavior(gameObject);
             dashAbility.SetFillAmount(dashAbility.Item.ActiveAbility.fillAmount);
         }
 
         foreach (Slot<AbilityWrapper> slot in mutableAbilities) {
             if (slot.IsClear() == false) {
-                slot.Item.ActiveAbility.AbilityCooldownHandler(parent);
-                slot.Item.ActiveAbility.AbilityBehavior(parent);
+                slot.Item.ActiveAbility.AbilityCooldownHandler(gameObject);
+                slot.Item.ActiveAbility.AbilityBehavior(gameObject);
                 slot.SetFillAmount(slot.Item.ActiveAbility.fillAmount);
+                Debug.Log(slot.Item.ActiveAbility.fillAmount);
             }
         }
 
@@ -166,34 +104,4 @@ public class AbilityHolder : MonoBehaviour
         abilityManager.SetManagerActive(active);
     }
 
-}   
-
-// if (dashAbility == null) {
-        //     dashAbility = abilityManager.GetHotbarAbilities()[0].GetAbility().getActiveAbility();
-        //     dashAbilityImage = abilityManager.GetHotbarSlots()[0].transform.GetChild(0).GetComponent<Image>();
-        //     dashAbility.fillAmount = 1;
-        // }
-
-        // if (abilityManager.GetHotbarAbilities()[1].GetAbility() != null) {
-        //     ability1 = abilityManager.GetHotbarAbilities()[1].GetAbility().getActiveAbility();
-        //     ability1Img = abilityManager.GetHotbarSlots()[1].transform.GetChild(0).GetComponent<Image>();
-        //     ability1Img.fillAmount = 1;
-        // } else {
-        //     ability1 = null;
-        // }
-
-        // if (abilityManager.GetHotbarAbilities()[2].GetAbility() != null) {
-        //     ability2 = abilityManager.GetHotbarAbilities()[2].GetAbility().getActiveAbility();
-        //     ability2Img = abilityManager.GetHotbarSlots()[2].transform.GetChild(0).GetComponent<Image>();
-        //     ability2Img.fillAmount = 1;
-        // } else {
-        //     ability2 = null;
-        // }
-
-        // if (abilityManager.GetHotbarAbilities()[3].GetAbility() != null) {
-        //     ability3 = abilityManager.GetHotbarAbilities()[3].GetAbility().getActiveAbility();
-        //     ability3Img = abilityManager.GetHotbarSlots()[3].transform.GetChild(0).GetComponent<Image>();
-        //     ability3Img.fillAmount = 1;
-        // } else {
-        //     ability3 = null;
-        // }
+}

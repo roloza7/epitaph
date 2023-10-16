@@ -24,6 +24,7 @@ public class Slot<T> where T : class, ISlotItem<T>
             if (value != null) {
                 image.sprite = item.ASprite;
                 image.enabled = true;
+                SetFillAmount(1);
             } else {
                 image.sprite = null;
                 image.enabled = false;

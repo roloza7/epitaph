@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AbilityInventoryManager : MonoBehaviour
 {
@@ -50,7 +50,7 @@ public class AbilityInventoryManager : MonoBehaviour
         // Add AugmentManager reference so we can update augments
         augmentManager = gameObject.GetComponent<AugmentManager>();
         
-        RefreshUI();    
+        hotbar.Refresh();    
     }
 
     private void Update() {
@@ -65,6 +65,7 @@ public class AbilityInventoryManager : MonoBehaviour
             } else {
                 BeginItemMove();
             }
+            hotbar.Refresh();
         }
     }
 
@@ -93,72 +94,6 @@ public class AbilityInventoryManager : MonoBehaviour
 
     #region Inventory Utils
 
-    public void RefreshUI()
-    {
-        // no longer needed!!!!!!!! WAHOOO
-        // for (int i = 0; i < slots.Length; i++) {
-        //     try {
-        //         //slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().aSprite;
-        //         slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().getActiveAbility().aSprite;
-        //         slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-        //     } catch {
-        //         slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-        //         slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-        //     }
-        // }
-
-        // who needs debugging???
-        // bool allClear = true;
-        // foreach (SlotClass slot in abilities) {
-        //     if (slot.isClear() == false) {
-        //         if (DEBUG) Debug.Log("[AbilityInventoryManager/RefreshUI] Found ability <" + slot + "> in passive List");
-        //         allClear = false;
-        //     }
-        // }
-        // if (allClear) if (DEBUG) Debug.Log("[AbilityInventoryManager/RefreshUI] All slots cleared");
-        // RefreshEnabledAugments();
-        RefreshHotBar();
-    }
-
-    public void RefreshHotBar() {
-        hotbar.Refresh();
-    }
-
-    // public void RefreshHotBar() 
-    // {
-    //     // Refresh the dash ability on the hotbar
-    //     hotbarAbilities[0].GetAbility().getActiveAbility().Init();
-    //     hotbarAbilities[0].GetAbility().getActiveAbility().SetState(AbilityState.ready);
-    //     hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
-    //     hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
-
-
-    //     // Start at 1 to account for the dash ability taking up a slot
-    //     for (int i = 1; i < hotbarSlots.Length; i++) {
-    //         try {
-    //             //slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().aSprite;
-    //             hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = slots.Items[(i - 1) + NUMBER_OF_ABILITIES * 2].getActiveAbility().aSprite;
-    //             hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-
-    //             // CHANGE THIS IMMEDIATELY
-    //             hotbarAbilities[i] = new SlotClass(slots.Items[(i - 1) + NUMBER_OF_ABILITIES * 2]);
-    //             hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
-
-    //             if (hotbarAbilities[i].GetAbility() != null) {
-    //                 hotbarAbilities[i].GetAbility().getActiveAbility().Init();
-    //                 hotbarAbilities[i].GetAbility().getActiveAbility().SetState(AbilityState.ready);
-    //                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
-    //                 hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
-    //             }
-
-    //         } catch {
-    //             hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-    //             hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-    //             hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = null;
-    //         }
-    //     }        
-    // }
-
     /**
     *   Add
     *   Adds Ability to first available slot
@@ -172,7 +107,6 @@ public class AbilityInventoryManager : MonoBehaviour
         foreach (Slot<AbilityWrapper> slot in slots) {
             if (slot.Item == null) slotToFill = slot;
             if (slot.Item == ability) {
-                Debug.LogWarning("[InventoryManager] Can't add ability: " + ability + " is already in the inventory");
                 return false;
             }
         }
@@ -184,20 +118,35 @@ public class AbilityInventoryManager : MonoBehaviour
     #endregion Inventory Utils
 
     #region Drag And Drop
-    private Slot<AbilityWrapper> GetClosestSlot() {
+    private enum AbilitySource {
+        inventory,
+        hotbar
+    }
+    private Tuple<Slot<AbilityWrapper>, AbilitySource> GetClosestSlot() {
         foreach (Slot<AbilityWrapper> slot in slots) {
             if (Vector2.Distance(slot.gameObject.transform.position, Input.mousePosition) <= 32)
-                return slot;
+                return Tuple.Create(slot, AbilitySource.inventory);
+        }
+
+        foreach (Slot<AbilityWrapper> slot in hotbar.MutableAbilities) {
+            if (Vector2.Distance(slot.gameObject.transform.position, Input.mousePosition) <= 32)
+                return Tuple.Create(slot, AbilitySource.hotbar);;
         }
 
         return null;
     }
 
     private void BeginItemMove() {
-        originalSlot = GetClosestSlot();
-        if (originalSlot.Item == null) {
+        Tuple<Slot<AbilityWrapper>, AbilitySource> closestSlot = GetClosestSlot();
+        if (closestSlot == null) {
             return;
         } 
+        originalSlot = closestSlot.Item1;
+
+        // Reset ability state
+        if (closestSlot.Item2 == AbilitySource.hotbar)
+            originalSlot.Item.ActiveAbility.Reset(gameObject);
+
         cursor.Ability = originalSlot.Item; 
         originalSlot.Item = null;
         isMovingItem = true;
@@ -205,13 +154,14 @@ public class AbilityInventoryManager : MonoBehaviour
     }
 
     private void EndItemMove() {
-        Slot<AbilityWrapper> slotToFill = GetClosestSlot();
-        if (slotToFill == null) {
+        Tuple<Slot<AbilityWrapper>, AbilitySource> closestSlot = GetClosestSlot();
+        if (closestSlot == null) {
             // Moving failed, revert
             originalSlot.Item = cursor.Ability;
             cursor.Ability = null;
         } else {
             // Found a candidate slot
+            Slot<AbilityWrapper> slotToFill = closestSlot.Item1;
             if (slotToFill.Item != null) {
                 // Slot is filled, do some swapping
                 AbilityWrapper temp = slotToFill.Item;
@@ -220,11 +170,12 @@ public class AbilityInventoryManager : MonoBehaviour
                 // Don't null originalSlot, we might need it later
                 return;
             } else {
+                // We can safely null originalSlot
+                originalSlot.Item = null;
+
                 // Slot is not filled
                 slotToFill.Item = cursor.Ability;
                 cursor.Ability = null;
-                // We can safely null originalSlot
-                originalSlot.Item = null;
             }
         }
         isMovingItem = false;
