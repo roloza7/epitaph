@@ -34,6 +34,24 @@ public class AugmentManager : MonoBehaviour
 
     #region Run Event Triggers
 
+    public void DebugPrintAugments() {
+        Debug.Log("[Augment Manager] On Hit Augments");
+        string s = "";
+        foreach (OnHitAugment a in onHitAugments)
+            s += a + " ";
+        Debug.Log(s);
+        Debug.Log("[Augment Manager] Listener Augments");
+        s = "";
+        foreach (ListenerAugment a in listenerAugments)
+            s += a + " ";
+        Debug.Log(s);
+        Debug.Log("[Augment Manager] Static Augments");
+        s = "";
+        foreach (StaticAugment a in staticAugments)
+            s += a + " ";
+        Debug.Log(s);
+    }
+
     /*
     * Unused
     * This should be called right before player gets control on a run room i guess
@@ -41,6 +59,7 @@ public class AugmentManager : MonoBehaviour
     public void onRunStart() {
         initializeStaticAugments();
         startCoroutines();
+        DebugPrintAugments();
     }
 
     /*
@@ -50,7 +69,7 @@ public class AugmentManager : MonoBehaviour
     public void onRunEnd() {
         removeStaticAugments();
         stopAllCoroutines();
-        //clearAugments(); //disabled for the sake of debugging, should exist once we get rid of the debug script
+        clearAugments();
     }
 
     #endregion

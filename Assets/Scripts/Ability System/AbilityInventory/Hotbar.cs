@@ -12,7 +12,6 @@ public class HotBar {
     public HotBar(GameObject root, AbilityWrapper dash) {
         slots = new SlotHolder<AbilityWrapper>(root, 1);
         dashSlot = new Slot<AbilityWrapper>(root.transform.GetChild(0).gameObject, dash);
-        Debug.Log("DashSlot: " + dashSlot);
     }
 
     public Slot<AbilityWrapper> GetDashAbilitySlot() => dashSlot;

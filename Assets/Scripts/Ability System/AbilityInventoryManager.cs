@@ -52,6 +52,10 @@ public class AbilityInventoryManager : MonoBehaviour
         hotbar.Refresh();    
     }
 
+    public void OnRunStart() {
+        augmentManager.onRunStart();
+    }
+
     private void Update() {
         // One less than hotbar slots length bc dash ability takes up a slot
         if (isMovingItem && !managerActive) {
@@ -64,29 +68,24 @@ public class AbilityInventoryManager : MonoBehaviour
             } else {
                 BeginItemMove();
             }
+            RefreshEnabledAugments();
         }
     }
 
     #region Active / Passive Utils
 
-    // TODO: Make this work with rework
-    // public void RefreshEnabledAugments() {
-
-    //     augmentManager.clearAugments();
-    //     for (int i = 0; i < slots.Length - hotbarSlots.Length + 1; i++) {
-    //         AbilityWrapper slot = slots.Items[i];
-    //         if (slot != null) {
-    //             if (slot.getPassiveAbility() == null) {
-    //                 if (DEBUG) Debug.Log("[AbilityInventoryManager] Ability " + slot + " has no associated passive. This shouldn't happen");
-    //                 continue;
-    //             }
-    //             augmentManager.addAugment(slot.getPassiveAbility());
-    //         };
-    //     }
-    //     // Realistically we want this to be only applied to the AugmentManager attached to the player, so this is safe
-        
-
-    // }
+    public void RefreshEnabledAugments() {
+        augmentManager.clearAugments();
+        foreach (Slot<AbilityWrapper> slot in slots) {
+            if (slot.IsClear() == false) {
+                if (slot.Item.PassiveAbility == null) {
+                    if (DEBUG) Debug.Log("[AbilityInventoryManager] Ability " + slot + " has no associated passive. This shouldn't happen");
+                    continue;
+                }
+                augmentManager.addAugment(slot.Item.PassiveAbility);
+            }
+        }
+    }
 
     #endregion
 
@@ -110,6 +109,7 @@ public class AbilityInventoryManager : MonoBehaviour
         }
 
         slotToFill.Item = ability;
+        RefreshEnabledAugments();
         return true;
     }
 

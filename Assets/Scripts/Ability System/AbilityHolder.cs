@@ -47,7 +47,6 @@ public class AbilityHolder : MonoBehaviour
                 slot.Item.ActiveAbility.AbilityCooldownHandler(gameObject);
                 slot.Item.ActiveAbility.AbilityBehavior(gameObject);
                 slot.SetFillAmount(slot.Item.ActiveAbility.fillAmount);
-                Debug.Log(slot.Item.ActiveAbility.fillAmount);
             }
         }
 

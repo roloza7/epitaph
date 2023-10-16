@@ -85,7 +85,8 @@ public class SceneTransitionManager : MonoBehaviour
         transition.SetTrigger("RunStart");
         abilityHolder.OnAbilityInventory();
         abilityInventoryManager.hotbar.Refresh();
-        // abilityInventoryManager.RefreshEnabledAugments(); TODO: Reenable Augments 
+        abilityInventoryManager.RefreshEnabledAugments();
+        abilityInventoryManager.OnRunStart();
     }
 
     public void OnRunEnd() {
