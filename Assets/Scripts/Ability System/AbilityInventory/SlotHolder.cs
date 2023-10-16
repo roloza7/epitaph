@@ -20,10 +20,10 @@ public class SlotHolder<T> : IEnumerable<Slot<T>> where T : class, ISlotItem<T> 
         Items = new ISlotHolderItems(this);
     }
 
-    public SlotHolder (GameObject root) : this() {
+    public SlotHolder (GameObject root, int begin = 0) : this() {
         _length = root.transform.childCount;
         slots = new Slot<T>[_length];
-        for (int i = 0; i < _length; i++) {
+        for (int i = begin; i < _length; i++) {
             slots[i] = new Slot<T>(root.transform.GetChild(i).gameObject);
         }
     }
