@@ -19,15 +19,18 @@ public class AbilityInventoryManager : MonoBehaviour
 
     //public List<Ability> abilities11 = new List<Ability>();
 
-    [SerializeField] private SlotClass[] startingAbilities;
+    [SerializeField] private AbilityWrapper[] startingAbilities;
     [SerializeField] private AbilityWrapper dashAbility;
-    private SlotClass[] abilities;
+    // private SlotClass[] abilities;
     private SlotClass[] hotbarAbilities;
 
     // Getter so we can influence skill behavior using augments
     public SlotClass[] HotBarAbilities { get { return hotbarAbilities; }}
 
-    private GameObject[] slots;
+    // Fancy new classes for holding items
+    public SlotHolder<AbilityWrapper> inventorySlots;
+
+    // private GameObject[] slots;
     private GameObject[] hotbarSlots;
     private static int NUMBER_OF_ABILITIES;
 
@@ -36,7 +39,7 @@ public class AbilityInventoryManager : MonoBehaviour
 
     private SlotClass movingSlot;
     private SlotClass tempSlot;
-    private SlotClass originalSlot;
+    private Slot<AbilityWrapper> originalSlot;
     bool isMovingItem;
 
     private bool managerActive;
@@ -52,8 +55,11 @@ public class AbilityInventoryManager : MonoBehaviour
 
     private void Start()
     {
-        slots = new GameObject[slotHolder.transform.childCount];
-        abilities = new SlotClass[slots.Length];
+
+        inventorySlots = new SlotHolder<AbilityWrapper>(slotHolder);
+
+        // slots = new GameObject[slotHolder.transform.childCount];
+        // abilities = new SlotClass[slots.Length];
 
         hotbarSlots = new GameObject[hotbarSlotHolder.transform.childCount];
         hotbarAbilities = new SlotClass[hotbarSlots.Length];
@@ -64,10 +70,6 @@ public class AbilityInventoryManager : MonoBehaviour
         // One less than hotbar slots length bc dash ability takes up a slot
         NUMBER_OF_ABILITIES = hotbarSlots.Length - 1;
 
-        for (int i = 0; i < abilities.Length; i++) {
-            abilities[i] = new SlotClass();
-        }
-
         // Add the dash ability to the hotbar slots
         hotbarAbilities[0] = new SlotClass(dashAbility);
 
@@ -75,13 +77,19 @@ public class AbilityInventoryManager : MonoBehaviour
             hotbarAbilities[i] = new SlotClass();
         }
 
+        // Add Starting Abilities
         for (int i = 0; i < startingAbilities.Length; i++) {
-            abilities[i] = startingAbilities[i];
+            Debug.Log("Acessing Index " + i + " to set starting abilities, array of length " + inventorySlots.Length);
+            inventorySlots.Items[i] = startingAbilities[i];
         }
 
-        for (int i = 0; i < slotHolder.transform.childCount; i++) {
-            slots[i] = slotHolder.transform.GetChild(i).gameObject;
-        }
+        // for (int i = 0; i < startingAbilities.Length; i++) {
+        //     abilities[i] = startingAbilities[i];
+        // }
+
+        // for (int i = 0; i < slotHolder.transform.childCount; i++) {
+        //     slots[i] = slotHolder.transform.GetChild(i).gameObject;
+        // }
 
         // Add the dash ability image to the hotbar
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().sprite = dashAbility.getActiveAbility().aSprite;
@@ -121,15 +129,15 @@ public class AbilityInventoryManager : MonoBehaviour
     public void RefreshEnabledAugments() {
 
         augmentManager.clearAugments();
-        for (int i = 0; i < abilities.Length - hotbarSlots.Length + 1; i++) {
-            SlotClass slot = abilities[i];
-            if (slot.isClear() == false) {
-                if (DEBUG) Debug.Log("Found Ability <" + slot.GetAbility() + "> in abilities list");
-                if (slot.GetAbility().getPassiveAbility() == null) {
-                    if (DEBUG) Debug.Log("[AbilityInventoryManager] Ability " + slot.GetAbility() + " has no associated passive. This shouldn't happen");
+        for (int i = 0; i < inventorySlots.Length - hotbarSlots.Length + 1; i++) {
+            AbilityWrapper slot = inventorySlots.Items[i];
+            if (slot != null) {
+                if (DEBUG) Debug.Log("Found Ability <" + slot + "> in abilities list");
+                if (slot.getPassiveAbility() == null) {
+                    if (DEBUG) Debug.Log("[AbilityInventoryManager] Ability " + slot + " has no associated passive. This shouldn't happen");
                     continue;
                 }
-                augmentManager.addAugment(slot.GetAbility().getPassiveAbility());
+                augmentManager.addAugment(slot.getPassiveAbility());
             };
         }
         // Realistically we want this to be only applied to the AugmentManager attached to the player, so this is safe
@@ -143,25 +151,27 @@ public class AbilityInventoryManager : MonoBehaviour
 
     public void RefreshUI()
     {
-        for (int i = 0; i < slots.Length; i++) {
-            try {
-                //slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().aSprite;
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().getActiveAbility().aSprite;
-                slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-            } catch {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-            }
-        }
+        // no longer needed!!!!!!!! WAHOOO
+        // for (int i = 0; i < slots.Length; i++) {
+        //     try {
+        //         //slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().aSprite;
+        //         slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().getActiveAbility().aSprite;
+        //         slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
+        //     } catch {
+        //         slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
+        //         slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
+        //     }
+        // }
 
-        bool allClear = true;
-        foreach (SlotClass slot in abilities) {
-            if (slot.isClear() == false) {
-                if (DEBUG) Debug.Log("[AbilityInventoryManager/RefreshUI] Found ability <" + slot + "> in passive List");
-                allClear = false;
-            }
-        }
-        if (allClear) if (DEBUG) Debug.Log("[AbilityInventoryManager/RefreshUI] All slots cleared");
+        // who needs debugging???
+        // bool allClear = true;
+        // foreach (SlotClass slot in abilities) {
+        //     if (slot.isClear() == false) {
+        //         if (DEBUG) Debug.Log("[AbilityInventoryManager/RefreshUI] Found ability <" + slot + "> in passive List");
+        //         allClear = false;
+        //     }
+        // }
+        // if (allClear) if (DEBUG) Debug.Log("[AbilityInventoryManager/RefreshUI] All slots cleared");
         RefreshEnabledAugments();
         RefreshHotBar();
     }
@@ -179,9 +189,11 @@ public class AbilityInventoryManager : MonoBehaviour
         for (int i = 1; i < hotbarSlots.Length; i++) {
             try {
                 //slots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[i].GetAbility().aSprite;
-                hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = abilities[(i - 1) + NUMBER_OF_ABILITIES * 2].GetAbility().getActiveAbility().aSprite;
+                hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = inventorySlots.Items[(i - 1) + NUMBER_OF_ABILITIES * 2].getActiveAbility().aSprite;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                hotbarAbilities[i] = abilities[(i - 1) + NUMBER_OF_ABILITIES * 2];
+
+                // CHANGE THIS IMMEDIATELY
+                hotbarAbilities[i] = new SlotClass(inventorySlots.Items[(i - 1) + NUMBER_OF_ABILITIES * 2]);
                 hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
 
                 if (hotbarAbilities[i].GetAbility() != null) {
@@ -207,9 +219,9 @@ public class AbilityInventoryManager : MonoBehaviour
         if (slot != null) {
 
         } else {
-            for (int i = 0; i < abilities.Length; i++) {
-                if (abilities[i].GetAbility() == null) {
-                    abilities[i].AddAbility(ability);
+            for (int i = 0; i < inventorySlots.Length; i++) {
+                if (inventorySlots[i] == null) {
+                    inventorySlots.Items[i] = ability;
                     break;
                 }
             }    
@@ -226,13 +238,13 @@ public class AbilityInventoryManager : MonoBehaviour
         if (temp != null) {
             int slotToRemoveIndex = 0;
 
-            for (int i = 0; i < abilities.Length; i++) {
-                if (abilities[i].GetAbility() == ability) {
+            for (int i = 0; i < inventorySlots.Length; i++) {
+                if (inventorySlots.Items[i] == ability) {
                     slotToRemoveIndex = i;
                     break;
                 }
             }
-            abilities[slotToRemoveIndex].Clear();
+            inventorySlots[slotToRemoveIndex].Item = null;
         } else {
             return false;
         }
@@ -242,11 +254,12 @@ public class AbilityInventoryManager : MonoBehaviour
 
     }
 
+    // TODO: Change this to remove SlotClass ref
     public SlotClass Contains(AbilityWrapper ability) 
     {
-        for (int i = 0; i < abilities.Length; i++) {
-            if (abilities[i].GetAbility() == ability) {
-                return abilities[i];
+        for (int i = 0; i < inventorySlots.Length; i++) {
+            if (inventorySlots.Items[i] == ability) {
+                return new SlotClass(inventorySlots.Items[i]);
             }
         }
 
@@ -256,10 +269,11 @@ public class AbilityInventoryManager : MonoBehaviour
     #endregion Inventory Utils
 
     #region Drag And Drop
-    private SlotClass GetClosestSlot() {
-        for (int i = 0; i < slots.Length; i++) {
-            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 32) {
-                return abilities[i];
+    // TODO: Remove SlotClass Reference
+    private Slot<AbilityWrapper> GetClosestSlot() {
+        for (int i = 0; i < inventorySlots.Length; i++) {
+            if (Vector2.Distance(inventorySlots[i].gameObject.transform.position, Input.mousePosition) <= 32) {
+                return inventorySlots[i];
             }
         }
         return null;
@@ -267,11 +281,11 @@ public class AbilityInventoryManager : MonoBehaviour
 
     private bool BeginItemMove() {
         originalSlot = GetClosestSlot();
-        if (originalSlot == null || originalSlot.GetAbility() == null) {
+        if (originalSlot == null || originalSlot.Item == null) {
             return false;
         } 
-        movingSlot = new SlotClass(originalSlot); 
-        originalSlot.Clear();
+        movingSlot = new SlotClass(originalSlot.Item); 
+        originalSlot.Item = null;
         isMovingItem = true;
         RefreshUI();
         return true;
@@ -283,18 +297,18 @@ public class AbilityInventoryManager : MonoBehaviour
             Add(movingSlot.GetAbility());
             movingSlot.Clear();
         } else {
-            if (originalSlot.GetAbility() != null) {
-                if (originalSlot.GetAbility() == movingSlot.GetAbility()) {
+            if (originalSlot.Item != null) {
+                if (originalSlot.Item == movingSlot.GetAbility()) {
 
                 } else {
-                    tempSlot = new SlotClass(originalSlot);
-                    originalSlot.AddAbility(movingSlot.GetAbility());
+                    tempSlot = new SlotClass(originalSlot.Item);
+                    originalSlot.Item = movingSlot.GetAbility();
                     movingSlot.AddAbility(tempSlot.GetAbility());
                     RefreshUI();
                     return true; 
                 }
             } else {
-                originalSlot.AddAbility(movingSlot.GetAbility());
+                originalSlot.Item = movingSlot.GetAbility();
                 movingSlot.Clear();
             }
         }

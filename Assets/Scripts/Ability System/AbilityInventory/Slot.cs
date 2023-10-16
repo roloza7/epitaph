@@ -4,11 +4,14 @@ using UnityEngine.UI;
 public class Slot<T> where T : class, ISlotItem<T>
 {
     // Internal values
+    [SerializeField]
     private T item;
 
     // GameObject references
     public GameObject slot { get; private set; }
     public Image image { get; private set; }
+
+    public GameObject gameObject { get { return slot; } }
 
     // Setter Overrides
     // That way the slot manages its own sprite :)
@@ -40,4 +43,5 @@ public class Slot<T> where T : class, ISlotItem<T>
     public bool IsClear() {
         return this.item == null;
     }
+
 }
