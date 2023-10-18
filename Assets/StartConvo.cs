@@ -26,6 +26,7 @@ public class StartConvo : MonoBehaviour
         target = GameObject.FindWithTag("Player");
         rb = target.GetComponent<Rigidbody>();
         textComponent.text = string.Empty;
+        DialogBox = GameObject.FindGameObjectWithTag("DialogBox");
         DialogLogicScript = GameObject.FindGameObjectWithTag("DialogBox").GetComponent<DialogLogic>();
     }
 
@@ -35,7 +36,7 @@ public class StartConvo : MonoBehaviour
 
         
         float dist = Vector3.Distance(transform.position, target.transform.position);
-        while (){
+        while (DialogBox.activeInHierarchy == False){
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
