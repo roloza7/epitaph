@@ -16,23 +16,17 @@ public class AbilitySelection : MonoBehaviour
     private bool choiceMade;
     void OnEnable()
     {
-        Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("OnSceneLoaded: " + scene.name);
         choiceMade = false;
-        Debug.Log("count" + abilityChoices.Count);
 
         for (int i = 0; i < 3; i++) {
             if (abilityChoices.Count > 0) {
                 int randomIndex = Random.Range(0, abilityChoices.Count-1);
-                Debug.Log("i " + i);
-                Debug.Log("COUNT" + abilityChoices.Count);
-                Debug.Log("random" + randomIndex);
                 options.Add(abilityChoices[randomIndex]);
                 abilityChoices.RemoveAt(randomIndex);
             }

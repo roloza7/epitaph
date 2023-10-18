@@ -9,7 +9,7 @@ public class IncreasedFireDamageAugment : StaticAugment
     private float damageMultiplier = 2f;
     public override float applyAugmentDamageDealt(float damageDealt, Entity current, Entity target, HashSet<AbilityTag> tags)
     {
-        Debug.Log(tags);
+        //Debug.Log(tags);
         if (tags.Contains(AbilityTag.FIRE)) {
             Debug.Log("Fire Damage");
             return damageDealt * damageMultiplier;
