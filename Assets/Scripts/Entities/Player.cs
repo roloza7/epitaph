@@ -22,4 +22,8 @@ public class Player : Entity
     public void CollectCoin(int coinValue) {
         _currencyTotal += coinValue;
     }
+    public void SpendCoin(int coinValue)
+    {
+        _currencyTotal -= coinValue;
+    }
 }
