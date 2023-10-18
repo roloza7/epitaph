@@ -8,30 +8,47 @@ public class AbilityInventoryManager : MonoBehaviour
 
     private AbilityCursor cursor;
 
-    //public List<Ability> abilities11 = new List<Ability>();
-
+    // Serialized Abilities (for use in editor)
     [SerializeField] private AbilityWrapper[] startingAbilities;
     [SerializeField] private AbilityWrapper dashAbility;
-    // private SlotClass[] abilities;
-
+    
     // Fancy new classes for holding items
+    [SerializeField] private GameObject slotsRootObject; 
     public SlotHolder<AbilityWrapper> slots;
 
+    // Active Slot bar (NOT HOTBAR)
+    [SerializeField] private GameObject activesRootObject;
+    public SlotHolder<AbilityWrapper> actives;
+
+    // Passive Slot bar
+    [SerializeField] private GameObject passivesRootObject;
+    public SlotHolder<AbilityWrapper> passives;
+
+    // HotBar proper
     public HotBar hotbar { get; private set; }
     
-
-    // private GameObject[] slots;
+    // Augment manager stuff
     private AugmentManager augmentManager;
 
+    // Ability Choice UI dragging
+    [SerializeField] private AbilitySelection abilitySelection;
 
+    // Properties for moving items around
     private Slot<AbilityWrapper> originalSlot;
     bool isMovingItem;
 
+    
     private bool managerActive;
 
     // Start is called before the first frame update
     private void Awake() {
-        slots = new SlotHolder<AbilityWrapper>(GameObject.FindWithTag("Slots"));
+        // slots = new SlotHolder<AbilityWrapper>(GameObject.FindWithTag("Slots"));
+        slots = new SlotHolder<AbilityWrapper>(slotsRootObject);
+        actives = new SlotHolder<AbilityWrapper>(activesRootObject);
+        passives = new SlotHolder<AbilityWrapper>(passivesRootObject);
+
+
+        // TODO: Remove Hotbar Reference here and change how it works
         hotbar = new HotBar(GameObject.FindWithTag("HotBar"), dashAbility);
         cursor = GameObject.FindWithTag("Cursor").GetComponent<AbilityCursor>();
         managerActive = false;
@@ -47,8 +64,9 @@ public class AbilityInventoryManager : MonoBehaviour
         }
 
         // Add AugmentManager reference so we can update augments
-        augmentManager = gameObject.GetComponent<AugmentManager>();
+        augmentManager = GetComponent<AugmentManager>();
         
+        hotbar.SetupActiveBarListener(actives);
         hotbar.Refresh();    
     }
 
@@ -126,17 +144,32 @@ public class AbilityInventoryManager : MonoBehaviour
     #region Drag And Drop
     private enum AbilitySource {
         inventory,
-        hotbar
+        actives,
+        passives,
+        selection
     }
     private Tuple<Slot<AbilityWrapper>, AbilitySource> GetClosestSlot() {
+        // We want different behavior depending on where the skill comes from, 
+        // so unfortunately we have to do (something like) this :(
+
         foreach (Slot<AbilityWrapper> slot in slots) {
             if (Vector2.Distance(slot.gameObject.transform.position, Input.mousePosition) <= 32)
                 return Tuple.Create(slot, AbilitySource.inventory);
         }
 
-        foreach (Slot<AbilityWrapper> slot in hotbar.MutableAbilities) {
+        foreach (Slot<AbilityWrapper> slot in actives) {
             if (Vector2.Distance(slot.gameObject.transform.position, Input.mousePosition) <= 32)
-                return Tuple.Create(slot, AbilitySource.hotbar);;
+                return Tuple.Create(slot, AbilitySource.actives);
+        }
+
+        foreach (Slot<AbilityWrapper> slot in passives) {
+            if (Vector2.Distance(slot.gameObject.transform.position, Input.mousePosition) <= 32)
+                return Tuple.Create(slot, AbilitySource.passives);
+        }
+
+        foreach (Slot<AbilityWrapper> slot in abilitySelection.Slots){
+            if (Vector2.Distance(slot.gameObject.transform.position, Input.mousePosition) <= 32)
+                return Tuple.Create(slot, AbilitySource.selection);
         }
 
         return null;
@@ -149,20 +182,28 @@ public class AbilityInventoryManager : MonoBehaviour
         } 
         originalSlot = closestSlot.Item1;
 
-        // Reset ability state
-        if (closestSlot.Item2 == AbilitySource.hotbar)
-            originalSlot.Item.ActiveAbility.Reset(gameObject);
-
         cursor.Ability = originalSlot.Item; 
         originalSlot.Item = null;
         UpdateTooltip(originalSlot);
         isMovingItem = true;
+
+        // We don't have a slot to go back to, so we treat is as a null
+        if (closestSlot.Item2 == AbilitySource.selection) {
+            originalSlot = null;
+            // TODO: Signal Ability Selection to hide
+            abilitySelection.HideAbilityChoice();
+        }
+
+
         return;
     }
 
     private void EndItemMove() {
         Tuple<Slot<AbilityWrapper>, AbilitySource> closestSlot = GetClosestSlot();
         if (closestSlot == null) {
+            // If ability came from selection, abort
+            if (originalSlot == null) return;
+
             // Moving failed, revert
             originalSlot.Item = cursor.Ability;
             cursor.Ability = null;
@@ -175,17 +216,15 @@ public class AbilityInventoryManager : MonoBehaviour
                 slotToFill.Item = cursor.Ability;
                 cursor.Ability = temp;
                 UpdateTooltip(slotToFill);
-                HotBar.RefreshAbility(slotToFill);
                 // Don't null originalSlot, we might need it later
                 return;
             } else {
                 // We can safely null originalSlot
-                originalSlot.Item = null;
+                originalSlot = null;
 
                 // Slot is not filled
                 slotToFill.Item = cursor.Ability;
                 UpdateTooltip(slotToFill);
-                HotBar.RefreshAbility(slotToFill);
                 cursor.Ability = null;
             }
         }
