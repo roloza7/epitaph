@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8316764082345019280}
   - component: {fileID: 6766091621589694110}
   - component: {fileID: 8280379475016447503}
+  - component: {fileID: -476890195560582943}
   m_Layer: 0
   m_Name: Slowing Terrain
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 403431105019236026}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.05, y: 0.03, z: -0.75}
+  m_LocalPosition: {x: -6.05, y: 0.03, z: -0.75}
   m_LocalScale: {x: 2.7932022, y: 2.7932022, z: 2.7932022}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.745283, g: 0, b: 0.70614123, a: 1}
+  m_Color: {r: 0.49056602, g: 0.4881991, b: 0.034247044, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,3 +121,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-476890195560582943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403431105019236026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eef31f36a123f4459fc54e2d8bd50b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statusEffects:
+  - {fileID: 11400000, guid: 821cd456ca1139b448f32d2ca9c0164f, type: 2}
+  _removeStatusEffects:
+  - {fileID: 11400000, guid: f3742663321743640827570784d7e52c, type: 2}

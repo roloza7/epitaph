@@ -12,10 +12,10 @@ public class ConsumableHolder : MonoBehaviour
     [SerializeField]
     private RosaryBeadsConsumable rosaryBeadsConsumable;
     // private Image beadsConsumableImg;
-
-    // add text for number of charges
     [SerializeField]
     private GameObject consumableSlot;
+
+    // add text for number of charges
     private TextMeshProUGUI chargeCounter;
     GameObject parent;
 

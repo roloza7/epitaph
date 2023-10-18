@@ -20,6 +20,7 @@ public abstract class AbilityWrapper : ScriptableObject
         }
     }
 
+
     [SerializeField]
     private Augment passiveAbility;
 
@@ -44,7 +45,6 @@ public abstract class AbilityWrapper : ScriptableObject
     public Augment getPassiveAbility() {
         return passiveAbility;
     }
-
     public string GetWrappedDescription() {
         return description + "<br><b>Active</b>: " + activeAbility.aDescription + "<br><b>Passive</b>: " + passiveAbility.aDescription;
     }

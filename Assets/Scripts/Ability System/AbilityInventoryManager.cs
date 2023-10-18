@@ -174,6 +174,7 @@ public class AbilityInventoryManager : MonoBehaviour
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
         hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
 
+
         // Start at 1 to account for the dash ability taking up a slot
         for (int i = 1; i < hotbarSlots.Length; i++) {
             try {
@@ -188,14 +189,12 @@ public class AbilityInventoryManager : MonoBehaviour
                     hotbarAbilities[i].GetAbility().getActiveAbility().SetState(AbilityState.ready);
                     hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
                     hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
-
                 }
 
             } catch {
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
                 hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = null;
-
             }
         }        
     }

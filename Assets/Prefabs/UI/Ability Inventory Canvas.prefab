@@ -1629,8 +1629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -36, y: 0}
-  m_SizeDelta: {x: -300, y: 50}
+  m_AnchoredPosition: {x: -13, y: 0}
+  m_SizeDelta: {x: -189.9532, y: 55}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3473437240340061174
 CanvasRenderer:
@@ -1664,8 +1664,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d92b52c9b35be9478555810404d2243, type: 2}
+  m_sharedMaterial: {fileID: 8858891141546823786, guid: 6d92b52c9b35be9478555810404d2243, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2137,6 +2137,18 @@ PrefabInstance:
     - target: {fileID: 7396204706583174294, guid: b69d7266f9d0b7e44a9ea447f20311b6, type: 3}
       propertyPath: m_Name
       value: DashSlotPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754278413341773217, guid: b69d7266f9d0b7e44a9ea447f20311b6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d92b52c9b35be9478555810404d2243, type: 2}
+    - target: {fileID: 7754278413341773217, guid: b69d7266f9d0b7e44a9ea447f20311b6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8858891141546823786, guid: 6d92b52c9b35be9478555810404d2243, type: 2}
+    - target: {fileID: 7754278413341773217, guid: b69d7266f9d0b7e44a9ea447f20311b6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

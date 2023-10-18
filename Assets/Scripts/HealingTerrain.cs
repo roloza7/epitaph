@@ -15,27 +15,24 @@ public class HealingTerrain : MonoBehaviour
     //called once an entity enters the healing pool
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Entity>() != null) {
-            //determine if the Entity is a Player by seeing if it has the Player script
-            isPlayer = (collision.gameObject.GetComponent<Player>()!= null);
-            
-            //if it is and the source is player OR if it isn't and the source is enemy
-            if((isPlayer && setByPlayer) || (!isPlayer && !setByPlayer))
-            {
-                //add the Entity to the list of entities currently in the pool
-                entitiesBeingHealed.Add(collision.gameObject);
-                Debug.Log("Length of list: " + entitiesBeingHealed.Count);
-                //heal the entity while its in the pool
-                InvokeRepeating("Heal", 0f, timeInterval);
+        //determine if the Entity is a Player by seeing if it has the Player script
+        isPlayer = (collision.gameObject.GetComponent<Player>()!= null);
+        
+        //if it is and the source is player OR if it isn't and the source is enemy
+        if((isPlayer && setByPlayer) || (!isPlayer && !setByPlayer))
+        {
+            //add the Entity to the list of entities currently in the pool
+            entitiesBeingHealed.Add(collision.gameObject);
+            Debug.Log("Length of list: " + entitiesBeingHealed.Count);
+            //heal the entity while its in the pool
+            InvokeRepeating("Heal", 0f, timeInterval);
 
-            }
-            //otherwise, do nothing
-            else
-            {
-                Debug.Log("Wrong Entity!");
-            }
         }
-
+        //otherwise, do nothing
+        else
+        {
+            Debug.Log("Wrong Entity!");
+        }
         
     }
 
@@ -44,6 +41,7 @@ public class HealingTerrain : MonoBehaviour
     {
         //remove the entity from the list of entities in the pool
         entitiesBeingHealed.Remove(collision.gameObject);
+        Debug.Log("Length of list: " + entitiesBeingHealed.Count);
         //if there are no entities
         if(entitiesBeingHealed.Count == 0) 
         {

@@ -21,6 +21,9 @@ public class LichController : Controller
 
     int currentPoint = 0;
 
+    // Delete later
+    bool first = false;
+
     void Start()
     {
         hasShield = true;
@@ -33,10 +36,17 @@ public class LichController : Controller
         }
 
         lastCastTime = Time.time;
+        first = false;
     }
 
     private void Update()
     {
+        if (!first)
+        {
+            BossAbility choice = Instantiate(abilities[2]);
+            choice.AbilityBehavior(this.gameObject);
+            first = true;
+        }
         if (Time.time - lastCastTime >= castDelay)
         {
             ChooseAttack();
@@ -71,7 +81,7 @@ public class LichController : Controller
         {
             // Phase 1 stuff
             int i = Random.Range(0, 100);
-            if ( i <= 12)
+            if ( i <= 8)
             {
                 i = 2;
             } else if (i <= 60)

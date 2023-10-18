@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3222b820eebdfaf468e0ad1e2a7bb021, type: 3}
+  m_Name: Splash Damage Ability Wrapper
+  m_EditorClassIdentifier: 
+  wrapperName: 
+  activeAbility: {fileID: 11400000, guid: c91185b03e4494457831d8ae62364bd0, type: 2}
+  passiveAbility: {fileID: 11400000, guid: 1ec54eb4ade3c4c94bd817e06a8ec2a5, type: 2}
+  description: 

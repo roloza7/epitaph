@@ -8,6 +8,7 @@ public class ConsumableModifier : ScriptableObject
     [SerializeField]
     public float tickRate = 0.5f;
     [SerializeField] public string cmDesc = "New Description";
+
     public bool basedOnTickRate;
     // For use with effects like speed increase, which are only activated once
     // and last for the duration of the consumable.

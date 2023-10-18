@@ -13,6 +13,13 @@ public class BlinkDaggerProjectile : PlayerProjectile
             force += acceleration;
         }
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+
+        if (projectileTimer > 0)
+        {
+            projectileTimer -= Time.deltaTime;
+            return;
+        }
+        Destroy(this.gameObject);
     }
 
     // This is a hack, ideally have a debug mode for AoE (foreshadowing?)
@@ -22,11 +29,11 @@ public class BlinkDaggerProjectile : PlayerProjectile
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(LayerMask.NameToLayer("Terrain"));
-        if (other.gameObject.layer == LayerMask.NameToLayer("Terrain")) {   
-            Destroy(this.gameObject);
-        }
-        Debug.Log($"Hit {other.gameObject.name}");
+        // Debug.Log(LayerMask.NameToLayer("Terrain"));
+        // if (other.gameObject.layer == LayerMask.NameToLayer("Terrain")) {   
+        //     Destroy(this.gameObject);
+        // }
+        // Debug.Log($"Hit {other.gameObject.name}");
 
     }
 }

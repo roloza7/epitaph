@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity.meta
+guid: f8daa6f5dca52a346ba9186ace35f66d
+========
 guid: 8ec96bdb2104e444f92a7553904a1c2d
+>>>>>>>> sprint-5:Assets/Scenes/Gabriel/GameplayLoop/DeathScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

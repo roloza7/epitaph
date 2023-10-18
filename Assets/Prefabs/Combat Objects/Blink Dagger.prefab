@@ -164,6 +164,6 @@ MonoBehaviour:
   force: 5
   damage: 0
   _statusEffects: []
-  projectileTimer: 100
+  projectileTimer: 5
   parent: {fileID: 0}
   acceleration: -0.01

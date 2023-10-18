@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Splash Projectile Testing 1/NavMesh-Navmesh.asset.meta
+guid: a69014cecafffe448b4a76f457ee8330
+========
 guid: 8105c36c62df0414b817686e9745ae42
+>>>>>>>> sprint-5:Assets/Scenes/Gabriel/GameplayLoop/NavMesh-Navmesh 1.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 23800000
