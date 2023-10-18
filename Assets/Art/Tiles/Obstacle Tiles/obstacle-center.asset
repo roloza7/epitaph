@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: grass tiles_4
+  m_Name: obstacle-center
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1297908959, guid: a20e666b94d9e654aa6ccd75d79e0b93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05dca9cc189ca4c458145bdccae15baf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
