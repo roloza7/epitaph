@@ -18,13 +18,17 @@ public class StartConvo : MonoBehaviour
     DialogLogic DialogLogicScript;
     private bool isKeyEnabled = true;
 
+    private GameObject DialogBox;
+
+    private Rigidbody2D rb;
+
     private string key = "e";
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("Player");
-        rb = target.GetComponent<Rigidbody>();
+        rb = target.GetComponent<Rigidbody2D>();
         textComponent.text = string.Empty;
         DialogBox = GameObject.FindGameObjectWithTag("DialogBox");
         DialogLogicScript = GameObject.FindGameObjectWithTag("DialogBox").GetComponent<DialogLogic>();
@@ -33,12 +37,10 @@ public class StartConvo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
         float dist = Vector3.Distance(transform.position, target.transform.position);
-        while (DialogBox.activeInHierarchy == False){
+        while (DialogBox.activeInHierarchy == false){
             rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            //rb.angularVelocity = Vector3.zero;
         }
         if (dist < distanceAway)
         {
