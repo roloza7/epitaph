@@ -9,17 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e92e7855c8e0c4bb10ab0865ca7319, type: 3}
-  m_Name: Ray
+  m_Script: {fileID: 11500000, guid: de5760e44cb2f1840bf01e227d12db1b, type: 3}
+  m_Name: Melee Slash
   m_EditorClassIdentifier: 
-  aName: Ray
+  aName: Melee Slash
   aDescription: New Description
-  aSprite: {fileID: 21300000, guid: c971afeb93c79954aa97717998cf3e3f, type: 3}
+  aSprite: {fileID: 21300000, guid: d4f2b2797c86a3247a442c000208f660, type: 3}
   aSound: {fileID: 0}
-  cooldownTime: 4
-  activeTime: 4
+  cooldownTime: 1
+  activeTime: 0.2
   fillAmount: 1
-  rayWidth: 0.25
-  range: 100
-  damage: 1
-  tickRate: 0.2
+  damage: 5
+  knockbackForce: 200
+  hitbox: {fileID: 7273901047849713365, guid: e4124149b74b03f4f8103aa43d4ed8a7, type: 3}
