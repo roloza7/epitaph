@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneHasCombat: 1
-  nextLevel: 3
+  nextLevel: 7
   levelGenerator: {fileID: 0}
   disableRunEnd: 0
 --- !u!4 &276756998
@@ -23912,6 +23912,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98e89ea2ca0aebf4ea3bca8cc495b5c2, type: 2}
   - {fileID: 11400000, guid: 8f95c090da30fc34cb3b55737e8254fc, type: 2}
   - {fileID: 11400000, guid: 68ca8abe57bdf9046aa4ead7eb505518, type: 2}
+  - {fileID: 11400000, guid: 8abaeafadcb366d4582f63b2865c2f1d, type: 2}
+  - {fileID: 11400000, guid: f5a10d81cbd04824ca171078fe8c3c5a, type: 2}
 --- !u!114 &1517632681575891875
 MonoBehaviour:
   m_ObjectHideFlags: 0
