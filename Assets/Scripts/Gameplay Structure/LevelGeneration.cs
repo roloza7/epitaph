@@ -25,8 +25,8 @@ public class LevelGeneration : MonoBehaviour
         enemyPlacement = gameObject.GetComponent<EnemyPlacement>();
         origin = baseMap.origin;
         width = baseMap.size.x;
-        height = baseMap.size.y - bufferSize;
-        terrain = automaton.Simulate(width, height);
+        height = baseMap.size.y;
+        terrain = automaton.Simulate(width, height, bufferSize);
         RenderMap();
         surface2D.BuildNavMeshAsync();
     }
@@ -37,16 +37,8 @@ public class LevelGeneration : MonoBehaviour
 
     void RenderMap() {
         topMap.ClearAllTiles();
-        for (int i = 0; i < width ; i++) {
-            for (int j = bufferSize; j < height; j++) {
-                // 1 = tile, 0 = no tile
-                if (terrain[i, j] == 1)
-                {
-                    topMap.SetTile(new Vector3Int(i + origin.x, j + origin.y, 0), obstacleTile);
-                }
-            }
-        }
-        baseMap.gameObject.GetComponent<RenderBaseMap>().Render();
+        topMap.gameObject.GetComponent<RenderObstacleMap>().Render(terrain, baseMap.origin);
+        baseMap.gameObject.GetComponent<RenderBaseMap>().Render(terrain, baseMap.origin);
         topMap.GetComponent<Collider2D>().enabled = false;
         topMap.GetComponent<Collider2D>().enabled = true;
 

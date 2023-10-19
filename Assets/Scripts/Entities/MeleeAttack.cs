@@ -32,7 +32,7 @@ public class MeleeAttack : MonoBehaviour
     public void Attack(Vector3 mousePos) {
         DetermineAttackDir(mousePos);
         rotated = false;
-        Debug.Log(attackDir);
+        //Debug.Log(attackDir);
         switch(attackDir) {
             case AttackDirection.left:
                 transform.localPosition = new Vector2(-1.0f * offset.x, 0);

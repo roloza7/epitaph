@@ -13,11 +13,8 @@ public class AbilitySelection : MonoBehaviour
     public SlotHolder<AbilityWrapper> Slots { get { return choiceSlots; } }
 
     [SerializeField] private List<AbilityWrapper> abilityChoices;
-    private List<AbilityWrapper> options = new List<AbilityWrapper>();
-    private bool choiceMade;
     void OnEnable()
     {
-        //Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -25,9 +22,6 @@ public class AbilitySelection : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ShowAbilityChoice();
-        //Debug.Log("OnSceneLoaded: " + scene.name);
-        choiceMade = false;
-        //Debug.Log("count" + abilityChoices.Count);
 
         for (int i = 0; i < 3; i++) {
             if (abilityChoices.Count > 0) {
