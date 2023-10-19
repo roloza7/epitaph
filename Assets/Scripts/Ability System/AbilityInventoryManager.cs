@@ -175,6 +175,7 @@ public class AbilityInventoryManager : MonoBehaviour
 
         // We don't have a slot to go back to, so we treat is as a null
         if (closestSlot.Item2 == AbilitySource.selection) {
+            originalSlot.formatter.Disable();
             originalSlot = null;
             // TODO: Signal Ability Selection to hide
             abilitySelection.HideAbilityChoice();

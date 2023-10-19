@@ -201,7 +201,9 @@ public class AugmentManager : MonoBehaviour
         if (DEBUG) Debug.Log("Adding augment");
         if (DEBUG) Debug.Log(augment.GetType());
         if (augments.Contains(augment) == true) {
-            throw new Exception("[AugmentManager.cs] Tried to add an augment that is already in the list of current augments");
+            // throw new Exception("[AugmentManager.cs] Tried to add an augment that is already in the list of current augments");
+            Debug.LogWarning("[AugmentManager.cs] Tried to add an augment that is already in the list of current augments");
+            return;
         }
         augments.Add(augment);
     }
