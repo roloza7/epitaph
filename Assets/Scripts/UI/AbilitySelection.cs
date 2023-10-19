@@ -29,9 +29,6 @@ public class AbilitySelection : MonoBehaviour
                 choiceSlots[i].Item = abilityChoices[randomIndex];
                 choiceSlots[i].formatter.Ability = abilityChoices[randomIndex];
                 abilityChoices.RemoveAt(randomIndex);
-            } else {
-                choiceSlots[i].Item = null;
-                choiceSlots[i].formatter.Ability = null;
             }
         }
 
@@ -43,16 +40,19 @@ public class AbilitySelection : MonoBehaviour
     }
 
     public void HideAbilityChoice() {
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-
         // Send abilities that were not chosen back into pool
         ReplaceUnchosenAbilities();
+
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void ReplaceUnchosenAbilities() {
         foreach (Slot<AbilityWrapper> slot in choiceSlots) {
-            if (slot.Item != null)
+            if (slot.Item != null) {
                 abilityChoices.Add(slot.Item);
+                slot.Item = null;
+                slot.formatter.Ability = null;
+            }
         }
     }
     public void ShowAbilityChoice() {
