@@ -44,7 +44,7 @@ public class HotBar {
         
         for (int i = 0; i < actives.Length; i++) {
             Slot<AbilityWrapper> listener = slots[i];
-            actives[i].callback = (Slot<AbilityWrapper> slot) => {
+            actives[i].callback = (Slot<AbilityWrapper> slot, AbilityWrapper _) => {
                 if (listener.Item == slot.Item) return;
                 listener.Item = slot.Item;
                 RefreshAbility(listener);

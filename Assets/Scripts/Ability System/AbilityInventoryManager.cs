@@ -68,14 +68,15 @@ public class AbilityInventoryManager : MonoBehaviour
         
         hotbar.SetupActiveBarListener(actives);
         hotbar.Refresh();    
+        augmentManager.SetupPassiveBarListener(passives);
     }
 
     public void OnRunStart() {
-        augmentManager.onRunStart();
+        augmentManager.OnRunStart();
     }
 
     public void OnRunEnd() {
-        augmentManager.onRunEnd();
+        augmentManager.OnRunEnd();
     }
 
     private void Update() {
@@ -90,25 +91,11 @@ public class AbilityInventoryManager : MonoBehaviour
             } else {
                 BeginItemMove();
             }
-            RefreshEnabledAugments();
         }
     }
 
     #region Active / Passive Utils
-
-    public void RefreshEnabledAugments() {
-        augmentManager.clearAugments();
-        foreach (Slot<AbilityWrapper> slot in slots) {
-            if (slot.IsClear() == false) {
-                if (slot.Item.PassiveAbility == null) {
-                    if (DEBUG) Debug.Log("[AbilityInventoryManager] Ability " + slot + " has no associated passive. This shouldn't happen");
-                    continue;
-                }
-                augmentManager.addAugment(slot.Item.PassiveAbility);
-            }
-        }
-    }
-
+    // No longer needed!
     #endregion
 
     #region Inventory Utils
@@ -131,7 +118,6 @@ public class AbilityInventoryManager : MonoBehaviour
         }
 
         slotToFill.Item = ability;
-        RefreshEnabledAugments();
         return true;
     }
 

@@ -7,7 +7,7 @@ public class Slot<T> where T : class, ISlotItem<T>
 {
     // Internal values
     [SerializeField]
-    internal T item;
+    private T item;
 
     // GameObject references
     public GameObject slot { get; private set; }
@@ -21,7 +21,7 @@ public class Slot<T> where T : class, ISlotItem<T>
     // lets us to define callbacks for slot change events
     // basically this allows the slot to notify interested classes when the item in the slot changes
     // useful for keeping track of which augments and skills are slotted
-    public delegate void onItemChangeCallback(Slot<T> Item);
+    public delegate void onItemChangeCallback(Slot<T> slot, T _old);
 
     // We won't really need to 'get' the callback ever, so it's privated to reduce exposure
     public onItemChangeCallback callback { private get; set; }
@@ -31,6 +31,7 @@ public class Slot<T> where T : class, ISlotItem<T>
     public T Item {
         get { return item; }
         set {
+            T _old = item;
             item = value;
             if (value != null) {
                 image.sprite = item.ASprite;
@@ -40,7 +41,7 @@ public class Slot<T> where T : class, ISlotItem<T>
                 image.sprite = null;
                 image.enabled = false;
             }
-            callback?.Invoke(this);
+            callback?.Invoke(this, _old);
         }
     }
 
