@@ -7,7 +7,9 @@ public class DialogLogic : MonoBehaviour
 {
 
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI nameComponent;
     public string[] lines;
+    public string[] namesPerLine;
     public float textSpeed;
     private int index;
 
@@ -17,6 +19,7 @@ public class DialogLogic : MonoBehaviour
     {
         gameObject.SetActive(false);
         textComponent.text = string.Empty;
+        nameComponent.text = string.Empty;
         StartConvoScript = GameObject.FindGameObjectWithTag("NPC").GetComponent<StartConvo>();
     }
 
@@ -39,6 +42,7 @@ public class DialogLogic : MonoBehaviour
         index=0;
         gameObject.SetActive(true);
         StartCoroutine(TypeLine());
+        nameComponent.text = namesPerLine[index];
     }
 
     IEnumerator TypeLine(){
@@ -56,11 +60,13 @@ public class DialogLogic : MonoBehaviour
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
+            nameComponent.text = namesPerLine[index];
         }
         else
         {
             gameObject.SetActive(false);
             textComponent.text = string.Empty;
+            nameComponent.text = string.Empty;
             StartConvoScript.EnableKey();
 
         }

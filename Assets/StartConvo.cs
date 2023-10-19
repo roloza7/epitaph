@@ -14,6 +14,7 @@ public class StartConvo : MonoBehaviour
     public GameObject textbox;
 
     public string[] convoLines;
+    public string[] convoLinesNames;
 
     DialogLogic DialogLogicScript;
     private bool isKeyEnabled = true;
@@ -38,10 +39,6 @@ public class StartConvo : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(transform.position, target.transform.position);
-        while (DialogBox.activeInHierarchy == false){
-            rb.velocity = Vector3.zero;
-            //rb.angularVelocity = Vector3.zero;
-        }
         if (dist < distanceAway)
         {
             textComponent.text ="Press E to Interact";
@@ -55,6 +52,7 @@ public class StartConvo : MonoBehaviour
 
                         //change the list dialog within the DialogLogic Script to match this dialog stated in this script
                         DialogLogicScript.lines = convoLines;
+                        DialogLogicScript.namesPerLine = convoLinesNames;
                         DialogLogicScript.StartDialog();
                     }
                 }
