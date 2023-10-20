@@ -163,7 +163,7 @@ public class AbilityInventoryManager : MonoBehaviour
 
     private void BeginItemMove() {
         Tuple<Slot<AbilityWrapper>, AbilitySource> closestSlot = GetClosestSlot();
-        if (closestSlot == null) {
+        if (closestSlot == null || closestSlot.Item1.Item == null) {
             return;
         } 
         originalSlot = closestSlot.Item1;
@@ -188,7 +188,7 @@ public class AbilityInventoryManager : MonoBehaviour
     private void EndItemMove() {
         Tuple<Slot<AbilityWrapper>, AbilitySource> closestSlot = GetClosestSlot();
         if (closestSlot == null) {
-            // If ability came from selection, abort
+            // If ability came from selection, abort (don't snap back)
             if (originalSlot == null) return;
 
             // Moving failed, revert
@@ -197,7 +197,12 @@ public class AbilityInventoryManager : MonoBehaviour
         } else {
             // Found a candidate slot
             Slot<AbilityWrapper> slotToFill = closestSlot.Item1;
+
+            // Prevent slotting items into selection
+            if (closestSlot.Item2 == AbilitySource.selection) return;
+
             if (slotToFill.Item != null) {
+
                 // Slot is filled, do some swapping
                 AbilityWrapper temp = slotToFill.Item;
                 slotToFill.Item = cursor.Ability;
