@@ -16,6 +16,8 @@ public class StartConvo : MonoBehaviour
     public string[] convoLines;
     public string[] convoLinesNames;
 
+    public List<Sprite> allSprites;
+
     DialogLogic DialogLogicScript;
     private bool isKeyEnabled = true;
 
@@ -53,6 +55,7 @@ public class StartConvo : MonoBehaviour
                         //change the list dialog within the DialogLogic Script to match this dialog stated in this script
                         DialogLogicScript.lines = convoLines;
                         DialogLogicScript.namesPerLine = convoLinesNames;
+                        DialogLogicScript.Sprites = allSprites;
                         DialogLogicScript.StartDialog();
                     }
                 }

@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogLogic : MonoBehaviour
 {
 
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI nameComponent;
+
+    public Image characterComponenet;
     public string[] lines;
     public string[] namesPerLine;
+    public List<Sprite> Sprites;
     public float textSpeed;
     private int index;
 
@@ -43,6 +47,7 @@ public class DialogLogic : MonoBehaviour
         gameObject.SetActive(true);
         StartCoroutine(TypeLine());
         nameComponent.text = namesPerLine[index];
+        characterComponenet.sprite = Sprites[index];
     }
 
     IEnumerator TypeLine(){
@@ -61,6 +66,7 @@ public class DialogLogic : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
             nameComponent.text = namesPerLine[index];
+            characterComponenet.sprite = Sprites[index];
         }
         else
         {
