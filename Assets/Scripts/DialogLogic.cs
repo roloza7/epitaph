@@ -10,6 +10,8 @@ public class DialogLogic : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI nameComponent;
 
+    private GameObject target;
+
     public Image characterComponenet;
     public string[] lines;
     public string[] namesPerLine;
@@ -22,6 +24,7 @@ public class DialogLogic : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
+        target = GameObject.FindWithTag("Player");
         textComponent.text = string.Empty;
         nameComponent.text = string.Empty;
         StartConvoScript = GameObject.FindGameObjectWithTag("NPC").GetComponent<StartConvo>();
@@ -30,6 +33,10 @@ public class DialogLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.activeSelf)
+        {
+            target.GetComponent<PlayerController>().enabled = false;
+        }
         if(Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index]){
@@ -74,7 +81,7 @@ public class DialogLogic : MonoBehaviour
             textComponent.text = string.Empty;
             nameComponent.text = string.Empty;
             StartConvoScript.EnableKey();
-
+            target.GetComponent<PlayerController>().enabled = true;
         }
     }
 }
