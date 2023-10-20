@@ -12,7 +12,8 @@ public class AbilitySelection : MonoBehaviour
     private SlotHolder<AbilityWrapper> choiceSlots;
     public SlotHolder<AbilityWrapper> Slots { get { return choiceSlots; } } 
 
-    [SerializeField] private List<AbilityWrapper> abilityChoices;
+    [SerializeField] private List<AbilityWrapper> startingAbilityChoices;
+    private List<AbilityWrapper> abilityChoices = null;
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -21,6 +22,10 @@ public class AbilitySelection : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (abilityChoices == null)
+            // Copying because unity does NOT like serialized fields changing as much as this one does
+            abilityChoices = new List<AbilityWrapper>(startingAbilityChoices);
+
         ShowAbilityChoice();
 
         for (int i = 0; i < 3; i++) {
