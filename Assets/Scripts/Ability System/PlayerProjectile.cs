@@ -29,7 +29,7 @@ public class PlayerProjectile : Projectile
             Debug.Log($"Hit {other.gameObject.name}");
 
         }
-            Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 
 }

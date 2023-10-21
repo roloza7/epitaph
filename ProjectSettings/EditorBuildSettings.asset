@@ -8,10 +8,37 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TemplateScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Victor/Template Scene.unity
     guid: abf69fde19a93e942a62c7ac543c6d45
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DeathScreen.unity
     guid: 547b021303e82984c8a90b0d8dcf31a0
+  - enabled: 0
+    path: Assets/Scenes/Rodrigo/Gameplay Loop Test/MainRoom.unity
+    guid: 94b3baa97316f6f46bd642eb382a3b08
+  - enabled: 0
+    path: Assets/Scenes/Rodrigo/Gameplay Loop Test/NextRoom.unity
+    guid: 6a307d14e25626c4d910babdfc73319e
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/MainMenu.unity
+    guid: 8c58cc5255190b44189652d0651e44e8
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/MainRoomTemplate.unity
+    guid: 16977fe0957d2de47a9d3749e859f14d
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/Room2Template.unity
+    guid: 108e983b47aac6e4487503677a1ae249
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/Room3Template.unity
+    guid: 11ce9a95c82a0164b90c6f57d390dc81
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/BossRoom.unity
+    guid: a118fe419ec30754e8c2a01706e5f63c
+  - enabled: 1
+    path: Assets/Scenes/Gabriel/GameplayLoop/DeathScene.unity
+    guid: f8daa6f5dca52a346ba9186ace35f66d
+  - enabled: 0
+    path: Assets/Scenes/Gabriel/GameplayLoop/AbilitySelectionScene.unity
+    guid: 6c2a4704f92165542b6c4715fb8bbab4
   m_configObjects: {}

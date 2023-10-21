@@ -9,9 +9,9 @@ public class AbilityInventoryManager : MonoBehaviour
 
     [SerializeField] private bool DEBUG = false;
 
-    [SerializeField] private GameObject abilityCursor;
-    [SerializeField] private GameObject slotHolder;
-    [SerializeField] private GameObject hotbarSlotHolder;
+    private GameObject abilityCursor;
+    private GameObject slotHolder;
+    private GameObject hotbarSlotHolder;
 
     [SerializeField] private AbilityWrapper newAbility;
     [SerializeField] private AbilityWrapper abilityToDiscard;
@@ -42,9 +42,16 @@ public class AbilityInventoryManager : MonoBehaviour
     private bool managerActive;
 
     // Start is called before the first frame update
+    private void Awake() {
+        abilityCursor = GameObject.FindWithTag("Cursor");
+        slotHolder = GameObject.FindWithTag("Slots");
+        hotbarSlotHolder = GameObject.FindWithTag("HotBar");
+        managerActive = false;
+    }
+
+
     private void Start()
     {
-        managerActive = false;
         slots = new GameObject[slotHolder.transform.childCount];
         abilities = new SlotClass[slots.Length];
 
@@ -107,7 +114,6 @@ public class AbilityInventoryManager : MonoBehaviour
                 BeginItemMove();
             }
         }
-
     }
 
     #region Active / Passive Utils
@@ -168,6 +174,7 @@ public class AbilityInventoryManager : MonoBehaviour
         hotbarSlots[0].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
         hotbarSlots[0].GetComponent<TooltipFormatter>().Ability = dashAbility;
 
+
         // Start at 1 to account for the dash ability taking up a slot
         for (int i = 1; i < hotbarSlots.Length; i++) {
             try {
@@ -182,14 +189,12 @@ public class AbilityInventoryManager : MonoBehaviour
                     hotbarAbilities[i].GetAbility().getActiveAbility().SetState(AbilityState.ready);
                     hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
                     hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = hotbarAbilities[i].GetAbility();
-
                 }
 
             } catch {
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
                 hotbarSlots[i].GetComponent<TooltipFormatter>().Ability = null;
-
             }
         }        
     }

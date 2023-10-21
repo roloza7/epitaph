@@ -6,8 +6,13 @@ using BTArchitecture;
 
 public class GoonBT : BehaviorTree
 {
+    private GameObject target;
+
+    private void Awake()
+    {
+        target = GameObject.FindWithTag("Player");
+    }
     protected override Node SetupTree() {
-        GameObject target = GameObject.FindWithTag("Player");
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
         agent.updateRotation = false;

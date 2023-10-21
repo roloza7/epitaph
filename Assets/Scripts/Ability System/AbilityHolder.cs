@@ -27,9 +27,12 @@ public class AbilityHolder : MonoBehaviour
 
     [SerializeField] private GameObject abilitySelection;
     [SerializeField] private AbilityInventoryManager abilityManager;
-    private bool abilityInventoryActive;
+    public bool abilityInventoryActive {get; private set;}
 
     // Start is called before the first frame update
+    void Awake() {
+        abilityInventoryActive = false;
+    }
     void Start()
     {
         // if (abilityManager.GetHotbarAbilities()[0].GetAbility() != null) {
@@ -49,7 +52,6 @@ public class AbilityHolder : MonoBehaviour
 
 
 
-        abilityInventoryActive = false;
 
         // ability1Img.sprite = ability1.aSprite;
         // ability2Img.sprite = ability2.aSprite;
@@ -69,8 +71,6 @@ public class AbilityHolder : MonoBehaviour
         // ability1.Init();
         // ability2.Init();
         // ability3.Init();
-
-        EnableInventory(abilityInventoryActive);
     }
 
     // Update is called once per frame
@@ -86,20 +86,24 @@ public class AbilityHolder : MonoBehaviour
             ability1 = abilityManager.GetHotbarAbilities()[1].GetAbility().getActiveAbility();
             ability1Img = abilityManager.GetHotbarSlots()[1].transform.GetChild(0).GetComponent<Image>();
             ability1Img.fillAmount = 1;
+        } else {
+            ability1 = null;
         }
 
         if (abilityManager.GetHotbarAbilities()[2].GetAbility() != null) {
             ability2 = abilityManager.GetHotbarAbilities()[2].GetAbility().getActiveAbility();
             ability2Img = abilityManager.GetHotbarSlots()[2].transform.GetChild(0).GetComponent<Image>();
             ability2Img.fillAmount = 1;
-
+        } else {
+            ability2 = null;
         }
 
         if (abilityManager.GetHotbarAbilities()[3].GetAbility() != null) {
             ability3 = abilityManager.GetHotbarAbilities()[3].GetAbility().getActiveAbility();
             ability3Img = abilityManager.GetHotbarSlots()[3].transform.GetChild(0).GetComponent<Image>();
             ability3Img.fillAmount = 1;
-
+        } else {
+            ability3 = null;
         }
 
         if (ability1 != null) {
@@ -185,6 +189,12 @@ public class AbilityHolder : MonoBehaviour
         abilityInventoryActive = !abilityInventoryActive;
         EnableInventory(abilityInventoryActive);
        // abilitySelection.SetActive(abilityInventoryActive);
+    }
+
+    // Programmaticaly triggered inventory - for scene transitions
+    public void OnAbilityInventory() {
+        abilityInventoryActive = !abilityInventoryActive;
+        EnableInventory(abilityInventoryActive);
     }
 
     public void EnableInventory(bool active) {
