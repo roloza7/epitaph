@@ -28,8 +28,9 @@ public class GoLAutomaton : MonoBehaviour
 
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                if (j < bufferSize || j + bufferSize > height) {
+                if (j < bufferSize | j + bufferSize > height) {
                     terrain[i, j] = 0;
+                    Debug.Log("zeroed");
                 }
             }
         }

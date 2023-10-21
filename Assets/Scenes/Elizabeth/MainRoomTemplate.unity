@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4323706495432064238, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: attackShiftMultiplier
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: slotHolder
       value: 
@@ -380,6 +384,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7431162728635106128, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: meleeKnockback
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431162728635106128, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: meleeKnockbackDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7513517971410403101, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: slotHolder
       value: 
@@ -419,6 +431,22 @@ PrefabInstance:
     - target: {fileID: 8263862798321204670, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903533914029787822, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: meleeKnockback
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903533914029787822, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: meleeKnockbackDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131759123542474506, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: meleeKnockback
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131759123542474506, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: meleeKnockbackDuration
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6615919859577196368, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
@@ -21625,6 +21653,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1701540284313024237, guid: bd544527869c7b7488255e3c263927c2, type: 3}
       propertyPath: entityToTrack
+      value: 
+      objectReference: {fileID: 115705338}
+    - target: {fileID: 2417757279782104703, guid: bd544527869c7b7488255e3c263927c2, type: 3}
+      propertyPath: player
       value: 
       objectReference: {fileID: 115705338}
     - target: {fileID: 3193081217934252868, guid: bd544527869c7b7488255e3c263927c2, type: 3}

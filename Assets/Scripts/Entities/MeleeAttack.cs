@@ -8,6 +8,8 @@ public class MeleeAttack : MonoBehaviour
         left, right, up, down
     }
     public AttackDirection attackDir;
+    public float meleeKnockback;
+    public float meleeKnockbackDuration;
     private Vector2 offset;
     private BoxCollider2D meleeHitbox;
     private SpriteRenderer hitboxRenderer;
@@ -59,7 +61,7 @@ public class MeleeAttack : MonoBehaviour
             source.DealDamage(enemy, source.EntityStats.GetStatValue(StatEnum.ATTACK));
 
             var kb = other.GetComponent<Knockback>();
-            kb?.KnockbackEntity(source.gameObject);
+            kb?.KnockbackCustomForce(source.gameObject, meleeKnockback, meleeKnockbackDuration);
         }
      }
 

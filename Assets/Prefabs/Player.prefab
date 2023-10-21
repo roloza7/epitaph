@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDir: 0
+  meleeKnockback: 75
+  meleeKnockbackDuration: 0.15
 --- !u!1 &2020586579564352269
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDir: 0
+  meleeKnockback: 75
+  meleeKnockbackDuration: 0.15
 --- !u!1 &2337684489412259880
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDir: 0
+  meleeKnockback: 75
+  meleeKnockbackDuration: 0.15
 --- !u!1 &8263862798321204670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,9 +1153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUG: 0
-  abilityCursor: {fileID: 0}
-  slotHolder: {fileID: 0}
-  hotbarSlotHolder: {fileID: 0}
   newAbility: {fileID: 0}
   abilityToDiscard: {fileID: 0}
   startingAbilities:
