@@ -11,7 +11,7 @@ public class StartConvo : MonoBehaviour
 
     public TextMeshProUGUI textComponent;
 
-    public GameObject textbox;
+    private GameObject textbox;
 
     public string[] convoLines;
     public string[] convoLinesNames;
@@ -30,6 +30,8 @@ public class StartConvo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textbox = GameObject.FindGameObjectWithTag("DialogBox");
+        //textComponent = this.GetComponent<TextMeshProUGUI>();
         target = GameObject.FindWithTag("Player");
         rb = target.GetComponent<Rigidbody2D>();
         textComponent.text = string.Empty;

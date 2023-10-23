@@ -16,6 +16,7 @@ TagManager:
   - Friendly NPC
   - NPC
   - DialogBox
+  - NPCPrompt
   layers:
   - Default
   - TransparentFX
