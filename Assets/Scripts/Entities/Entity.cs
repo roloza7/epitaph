@@ -8,7 +8,9 @@ public class Entity : MonoBehaviour
 {
     [SerializeField] private EntityStats _entityStats;
     public EntityStats EntityStats => _entityStats;
-    [SerializeField] private float intialHealth;
+    [SerializeField] protected float intialHealth;
+    [SerializeField] protected Animator animator;
+
     protected Health _health;
     public float HealthVal => _health.health;
     public Health Health => _health;
@@ -75,5 +77,6 @@ public class Entity : MonoBehaviour
     {
         target.TakeDamage(dmgAmt);
     }
+
 }
     
