@@ -39,6 +39,10 @@ public class RayCastAbility : Ability
     {
         firing = false;
         mandalaMan.Deactivate();
+
+        // Added so we can deactivate laser on demand too
+        lineRenderer.enabled = false;
+        EnableParticleMan(false);
     }
 
     public override void Init()

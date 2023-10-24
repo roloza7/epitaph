@@ -13,6 +13,7 @@ TagManager:
   - UI
   - LevelController
   - CinemachineCollider
+  - ChooseAbilityUI
   layers:
   - Default
   - TransparentFX

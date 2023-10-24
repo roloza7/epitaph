@@ -36,4 +36,13 @@ public class TooltipFormatter : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         tmp.enabled = false;
     }
+
+    /**
+    * sometimes we want to disable tooltips manually
+    * such as when we click on an ability to choose it from the selection screen
+    */
+    public void Disable()
+    {
+        tmp.enabled = false;
+    }
 }
