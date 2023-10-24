@@ -39,6 +39,10 @@ public class RayCastAbility : Ability
     {
         firing = false;
         mandalaMan.Deactivate();
+
+        // Added so we can deactivate laser on demand too
+        lineRenderer.enabled = false;
+        EnableParticleMan(false);
     }
 
     public override void Init()
@@ -53,6 +57,7 @@ public class RayCastAbility : Ability
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         canTick = true;
         firing = false;
+        Debug.Log("Init Mandala");
     } 
 
     //Tells the shader how long the laser is so the shader scales correctly.

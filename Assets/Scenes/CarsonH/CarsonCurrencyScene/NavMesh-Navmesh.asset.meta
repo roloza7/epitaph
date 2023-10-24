@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/melee attack tweak/NavMesh-Navmesh.asset.meta
+guid: e970653e28d8961409f2ec5d8061e985
+========
+guid: 82baa0a22dbf5b248bdbc69cdb4ddcc8
+>>>>>>>> sprint-5:Assets/Scenes/CarsonH/CarsonCurrencyScene/NavMesh-Navmesh.asset.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 23800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

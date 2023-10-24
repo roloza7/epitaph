@@ -6,7 +6,7 @@ using UnityEngine;
 public class ProjectileAbility : Ability
 {
     protected Camera mainCamera;
-    protected Vector3 mousePos;
+    protected Vector2 mousePos;
     protected bool firing;
     public Projectile projectile;
 

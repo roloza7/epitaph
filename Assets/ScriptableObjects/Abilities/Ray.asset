@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Ray
   m_EditorClassIdentifier: 
   aName: Ray
-  aSprite: {fileID: 21300000, guid: 064e49902f24df44a80f34136291d48f, type: 3}
+  aDescription: New Description
+  aSprite: {fileID: 21300000, guid: c971afeb93c79954aa97717998cf3e3f, type: 3}
   aSound: {fileID: 0}
   cooldownTime: 4
   activeTime: 4

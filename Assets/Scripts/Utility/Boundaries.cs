@@ -8,10 +8,10 @@ public class Boundaries : MonoBehaviour
     //basic boundaries for entities
     
     private Vector2 xBounds;
-    private Vector2 yBounds;
+    public Vector2 yBounds { get; private set; }
 
     //width and height of entity
-    private Vector2 widthHeight;
+    public Vector2 widthHeight { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,6 @@ public class Boundaries : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void LateUpdate() {

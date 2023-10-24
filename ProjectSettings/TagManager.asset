@@ -7,6 +7,13 @@ TagManager:
   - RotatePoint
   - Enemy
   - Walkable
+  - Cursor
+  - Slots
+  - HotBar
+  - UI
+  - LevelController
+  - CinemachineCollider
+  - ChooseAbilityUI
   layers:
   - Default
   - TransparentFX
@@ -19,7 +26,7 @@ TagManager:
   - Terrain
   - Enemy Projectile
   - Player
-  - 
+  - Camera
   - 
   - 
   - 

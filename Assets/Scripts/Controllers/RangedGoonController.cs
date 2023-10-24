@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class RangedGoonController : EnemyController
 {
-    [SerializeField] private GameObject target;
+    private GameObject target;
     public EnemyProjectile projectile;
     private float timer;
 
     public float distanceAway;
 
     public float unloadSpeed;
-    
+
+    private void Awake()
+    {
+        target = GameObject.FindWithTag("Player");
+    }
+
     protected override void Update() {
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         float dist = Vector3.Distance(transform.position, target.transform.position);
