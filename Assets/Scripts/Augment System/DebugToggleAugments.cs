@@ -22,13 +22,15 @@ public class DebugToggleAugments : MonoBehaviour
         {
             if (!active) {
                 Debug.Log("Starting Run");
-                augmentManager.onRunStart();
+                augmentManager.OnRunStart();
             }
             else {
                 Debug.Log("Stopping Run");
-                augmentManager.onRunEnd();
+                augmentManager.OnRunEnd();
             } 
             active = !active;
         }
+        else if (Input.GetKeyDown(KeyCode.M))
+            augmentManager.DebugPrintAugments();
     }
 }

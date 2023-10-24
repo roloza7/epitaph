@@ -22,8 +22,8 @@ public class TestAugment : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             listener.enableAugment();
-            augmentManager.addAugment(listener);
-            augmentManager.startCoroutines();
+            augmentManager.AddAugment(listener);
+            augmentManager.OnRunStart();
         }
     }
 }

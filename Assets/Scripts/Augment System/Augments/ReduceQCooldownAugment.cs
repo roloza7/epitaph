@@ -9,27 +9,25 @@ public class ReduceQCooldownAugment : StaticAugment
 
     private Entity recipient;
 
-    private SlotClass targetSlot;
+    private Slot<AbilityWrapper> targetSlot;
 
     private float originalCooldown;
 
     [SerializeField]
-    private float cooldownReduction = 0.99f;
+    private float cooldownReduction = 0.70f;
 
     public override void applyAugment(Entity entity) {
         recipient = entity;
-        targetSlot = entity.transform.gameObject.GetComponent<AbilityInventoryManager>().HotBarAbilities[1];
-        if (targetSlot.isClear()) return;
+        targetSlot = entity.transform.gameObject.GetComponent<AbilityInventoryManager>().hotbar.GetMutableAbilitySlot(0);
+        if (targetSlot.IsClear()) return;
 
-        originalCooldown = targetSlot.GetAbility().getActiveAbility().cooldownTime;
-        targetSlot.GetAbility().getActiveAbility().cooldownTime = originalCooldown * (1 - cooldownReduction);
-        Debug.Log(originalCooldown);
-        Debug.Log(targetSlot.GetAbility().getActiveAbility().cooldownTime);
+        originalCooldown = targetSlot.Item.ActiveAbility.cooldownTime;
+        targetSlot.Item.ActiveAbility.cooldownTime = originalCooldown * (1 - cooldownReduction);
     }
 
     public override void removeAugment() {
-        if (targetSlot.isClear()) return;
-        targetSlot.GetAbility().getActiveAbility().cooldownTime = originalCooldown;
+        if (targetSlot.IsClear()) return;
+        targetSlot.Item.ActiveAbility.cooldownTime = originalCooldown;
     }
 
 }

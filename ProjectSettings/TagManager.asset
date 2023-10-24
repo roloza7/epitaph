@@ -13,10 +13,7 @@ TagManager:
   - UI
   - LevelController
   - CinemachineCollider
-  - Friendly NPC
-  - NPC
-  - DialogBox
-  - NPCPrompt
+  - ChooseAbilityUI
   layers:
   - Default
   - TransparentFX
