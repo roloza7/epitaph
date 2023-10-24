@@ -849,6 +849,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilitySelection
       objectReference: {fileID: 0}
+    - target: {fileID: 7963016555316367454, guid: 9903f472e451c344d97e6c48c0621b3b, type: 3}
+      propertyPath: startingAbilityChoices.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963016555316367454, guid: 9903f472e451c344d97e6c48c0621b3b, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cdb47186fde68a4ca7fdd31933c5a81, type: 2}
+    - target: {fileID: 7963016555316367454, guid: 9903f472e451c344d97e6c48c0621b3b, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 98e89ea2ca0aebf4ea3bca8cc495b5c2, type: 2}
+    - target: {fileID: 7963016555316367454, guid: 9903f472e451c344d97e6c48c0621b3b, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f95c090da30fc34cb3b55737e8254fc, type: 2}
+    - target: {fileID: 7963016555316367454, guid: 9903f472e451c344d97e6c48c0621b3b, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 68ca8abe57bdf9046aa4ead7eb505518, type: 2}
+    - target: {fileID: 7963016555316367454, guid: 9903f472e451c344d97e6c48c0621b3b, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8abaeafadcb366d4582f63b2865c2f1d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
