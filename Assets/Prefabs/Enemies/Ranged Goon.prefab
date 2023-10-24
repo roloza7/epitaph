@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7458921348859501869}
   - component: {fileID: 4740526884836291027}
   - component: {fileID: 614890760918059336}
+  - component: {fileID: 3172618287407877323}
   m_Layer: 7
   m_Name: Ranged Goon
   m_TagString: Enemy
@@ -280,9 +281,23 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.25, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
+--- !u!114 &3172618287407877323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678772690974721006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780b30c740f88dd4d8e9de4a0a6f807f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackMultiplier: 0.8
+  knockbackDurationMultiplier: 1
 --- !u!1 &6465270139469949213
 GameObject:
   m_ObjectHideFlags: 0

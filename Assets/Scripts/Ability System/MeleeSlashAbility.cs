@@ -8,6 +8,7 @@ public class MeleeSlashAbility : Ability
 
     public float damage;
     public float knockbackForce;
+    public float knockbackDuration;
     private Camera mainCamera;
     public MeleeSlashHitbox hitbox;
     private MeleeSlashHitbox hitboxInstance;
@@ -31,6 +32,7 @@ public class MeleeSlashAbility : Ability
         hitboxInstance.parent = parent;
         hitboxInstance.damage = damage;
         hitboxInstance.knockbackForce = knockbackForce;
+        hitboxInstance.knockbackDuration = knockbackDuration;
         // Debug.Log("Melee Slash");
     }
 

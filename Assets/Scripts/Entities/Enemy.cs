@@ -8,15 +8,29 @@ public class Enemy : Entity
     [SerializeField] CoinValueEnum enemyCoinValue;
     private const int minNumberOfCoins = 2;
     private const int maxNumberOfCoins = 4;
-
+    private SpriteRenderer renderer;
     private bool hasDied = false;
-    
+    protected override void Start() {
+        base.Start();
+        renderer = GetComponent<SpriteRenderer>();
+    }
     public override void Die() {
         if (!hasDied) {
             DropCoins();
         }
         hasDied = true;
         Destroy(gameObject);
+    }
+    
+    public override void TakeDamage(float amount) {
+        base.TakeDamage(amount);
+        StartCoroutine(DamageFlash());
+
+    }
+    public IEnumerator DamageFlash() {
+        renderer.color = new Color(1.0f, 0.32f, 0.28f);
+        yield return new WaitForSeconds(0.12f);
+        renderer.color = Color.white;
     }
 
     public void DropCoins() {
