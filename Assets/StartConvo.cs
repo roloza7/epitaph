@@ -40,30 +40,47 @@ public class StartConvo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        float dist = Vector3.Distance(transform.position, target.transform.position);
-        if (dist < distanceAway)
-        {
-            textComponent.text ="Press E to Interact";
-            if (isKeyEnabled)
-                {
-                    if (Input.GetKeyDown("e"))
-                    {
-                        DisableKey();
-                        Debug.Log("started convo");
-                        textbox.SetActive(true);
+    // void Update()
+    // {
+    //     float dist = Vector3.Distance(transform.position, target.transform.position);
+    //     if (dist < distanceAway)
+    //     {
+    //         textComponent.text ="Press E to Interact";
+    //         if (isKeyEnabled)
+    //             {
+    //                 if (Input.GetKeyDown("e"))
+    //                 {
+    //                     DisableKey();
+    //                     Debug.Log("started convo");
+    //                     textbox.SetActive(true);
 
-                        //change the list dialog within the DialogLogic Script to match this dialog stated in this script
-                        DialogLogicScript.lines = convoLines;
-                        DialogLogicScript.namesPerLine = convoLinesNames;
-                        DialogLogicScript.Sprites = allSprites;
-                        DialogLogicScript.StartDialog();
-                    }
-                }
-        }
-        else{
-            textComponent.text = string.Empty;
+    //                     //change the list dialog within the DialogLogic Script to match this dialog stated in this script
+    //                     DialogLogicScript.lines = convoLines;
+    //                     DialogLogicScript.namesPerLine = convoLinesNames;
+    //                     DialogLogicScript.Sprites = allSprites;
+    //                     DialogLogicScript.StartDialog();
+    //                 }
+    //             }
+    //     }
+    //     else{
+    //         textComponent.text = string.Empty;
+    //     }
+    // }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("triggered NPC");
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("started convo");
+            textbox.SetActive(true);
+
+            //change the list dialog within the DialogLogic Script to match this dialog stated in this script
+            DialogLogicScript.lines = convoLines;
+            DialogLogicScript.namesPerLine = convoLinesNames;
+            DialogLogicScript.Sprites = allSprites;
+            DialogLogicScript.StartDialog();
         }
     }
 

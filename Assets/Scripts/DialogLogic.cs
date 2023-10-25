@@ -35,7 +35,13 @@ public class DialogLogic : MonoBehaviour
     {
         if (gameObject.activeSelf)
         {
-            target.GetComponent<PlayerController>().enabled = false;
+            Rigidbody2D playerRigid = target.GetComponent<Rigidbody2D>();
+            playerRigid.velocity = Vector2.zero;
+            PlayerController playerController = target.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.enabled = false;
+            }
         }
         if(Input.GetMouseButtonDown(0))
         {
