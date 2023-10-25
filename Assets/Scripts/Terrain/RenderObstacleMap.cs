@@ -20,7 +20,6 @@ public class RenderObstacleMap : MonoBehaviour
                 // 1 = tile, 0 = no tile
                 if (terrain[i, j] == 1)
                 {
-                    Debug.Log("obstacle");
                     if (j < tilemap.size.y - 1 && terrain[i, j + 1] == 0) {
                         tilemap.SetTile(new Vector3Int(i + origin.x, j + origin.y, 0), obstacleTopTile);
 

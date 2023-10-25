@@ -2,8 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbilityWrapper : ScriptableObject
+public abstract class AbilityWrapper : ScriptableObject, ISlotItem<AbilityWrapper>
 {
+
+    // Interface Methods
+    public AbilityWrapper Item { get { return this; } }
+    public Sprite ASprite { get { return activeAbility.aSprite; } }
+
+    // End Interface Methods
+
     [SerializeField]
     private string wrapperName;
     public string WrapperName {

@@ -22,6 +22,7 @@ public class DashAbility : Ability
         parent.GetComponent<PlayerController>().CanChangeDirection = false;
         float dashDist = this.activeTime * speed.GetStatValue();
         Vector2 dashDir = parent.GetComponent<PlayerController>().LastMovementInput;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         Debug.Log(dashDir);
         if (!IsInsideTerrain(parent, dashDist, dashDir)) {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Terrain"), LayerMask.NameToLayer("Player"), true);
@@ -30,6 +31,8 @@ public class DashAbility : Ability
 
     public override void Deactivate(GameObject parent)
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+
         Debug.Log("dash end");
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Terrain"), LayerMask.NameToLayer("Player"), false);
 

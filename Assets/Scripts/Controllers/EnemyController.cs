@@ -7,7 +7,6 @@ public class EnemyController : Controller
 {
     protected bool isColliding;
     protected Enemy enemy;
-
     
     public bool IsColliding {
         get {return isColliding;}
@@ -25,7 +24,9 @@ public class EnemyController : Controller
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        if (CanMove) {
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        }
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other) {

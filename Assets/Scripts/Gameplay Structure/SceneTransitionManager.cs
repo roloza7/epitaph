@@ -84,8 +84,8 @@ public class SceneTransitionManager : MonoBehaviour
         playerInput.ActivateInput();
         transition.SetTrigger("RunStart");
         abilityHolder.OnAbilityInventory();
-        abilityInventoryManager.RefreshHotBar();
-        abilityInventoryManager.RefreshEnabledAugments();
+        abilityInventoryManager.hotbar.Refresh();
+        abilityInventoryManager.OnRunStart();
     }
 
     public void OnRunEnd() {
@@ -93,5 +93,6 @@ public class SceneTransitionManager : MonoBehaviour
         playerInput.DeactivateInput();
         transition.ResetTrigger("RunStart");
         transition.SetTrigger("RunEnd");
+        abilityInventoryManager.OnRunEnd();
     }
 }
