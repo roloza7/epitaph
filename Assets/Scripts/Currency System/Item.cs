@@ -18,8 +18,14 @@ public class Item : ScriptableObject
         return this.cost;
     }
 
+    public void disable()
+    {
+        enabled = false;
+    }
+
     public virtual void activate(Player player)
     {
+        Debug.Log("Activating: " + itemName);
         if (!enabled)
         {
             firstActivation(player);
@@ -48,7 +54,7 @@ public class Item : ScriptableObject
         return 0;
     }
 
-    public virtual float applyItemDamageDealt(float damageDealt, Entity current, Entity target, HashSet<AbilityTag> tags)
+    public virtual float applyItemDamageDealt(float damageDealt, Entity current, Entity target)
     {
         return 0;
     }

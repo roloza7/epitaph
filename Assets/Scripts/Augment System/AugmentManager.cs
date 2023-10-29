@@ -27,6 +27,14 @@ public class AugmentManager : MonoBehaviour
 
     // Augments that are continuous from run start to run end
     private List<StaticAugment> staticAugments = new List<StaticAugment>();
+
+    private ItemManager itemManager;
+
+    private void Awake()
+    {
+        itemManager = GameObject.FindWithTag("Player").GetComponent<ItemManager>();
+    }
+
     public void setCurrent(Entity current)
     {
         this.current = current;
@@ -117,6 +125,7 @@ public class AugmentManager : MonoBehaviour
         this.target = target;
         this.damageDealt = damage;
         dealAugmentedDamage(tags);
+
     }
 
     // this applies the augment AFTER we already took damage
