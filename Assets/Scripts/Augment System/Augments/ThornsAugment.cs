@@ -12,7 +12,6 @@ public class ThornsAugment : OnHitAugment
 
     public override void firstActivation()
     {
-        Debug.Log("Thorns activated.");
     }
 
     public override float applyAugmentDamageDealt(float damageDealt, Entity current, Entity target, HashSet<AbilityTag> tags)
