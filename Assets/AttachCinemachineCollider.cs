@@ -18,7 +18,7 @@ public class AttachCinemachineCollider : MonoBehaviour
 
     private void attach() {
         CompositeCollider2D collider = GameObject.FindGameObjectWithTag("CinemachineCollider").GetComponent<CompositeCollider2D>();
-        Debug.Log("Finding Collider..." + collider);
+        //Debug.Log("Finding Collider..." + collider);
         this.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = collider;
     }
 }
