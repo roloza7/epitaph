@@ -9,6 +9,7 @@ public class OpenPauseUI : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu; 
 
+    [SerializeField] public GameObject keybindMenu; 
     //[SerializeField] private InputAction pausing;
     //[SerializeField] public InputActionAsset playerPausing;
     void Start(){
@@ -35,6 +36,6 @@ public class OpenPauseUI : MonoBehaviour
 
     public void ChangeControls(){
         //opens menu to change control scheme for when playing the game
-        Debug.Log("change control");
+        keybindMenu.SetActive(true);
     }
 }
