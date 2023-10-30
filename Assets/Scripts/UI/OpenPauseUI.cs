@@ -9,15 +9,15 @@ public class OpenPauseUI : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu; 
 
-    [SerializeField] private InputAction pausing;
-    [SerializeField] public InputActionAsset playerPausing;
+    //[SerializeField] private InputAction pausing;
+    //[SerializeField] public InputActionAsset playerPausing;
     void Start(){
-        var gameplayActionMap = playerPausing.GetActionMap("Player");
-        pausing = gameplayActionMap.GetAction("Pause");   
-        pausing.per
+        //var gameplayActionMap = playerPausing.GetActionMap("Player");
+        //pausing = gameplayActionMap.GetAction("Pause");   
+        //pausing.per
     }
 
-    public void Update(){
+    void Update(){
         if (Input.GetKeyDown(KeyCode.Escape)){
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
