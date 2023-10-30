@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OpenPauseUI : MonoBehaviour
 {
@@ -8,11 +9,12 @@ public class OpenPauseUI : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu; 
 
-    private PlayerInput playerInput;
-
+    [SerializeField] private InputAction pausing;
+    [SerializeField] public InputActionAsset playerPausing;
     void Start(){
-        playerInput = GetComponent<PlayerInput>();
-        
+        var gameplayActionMap = playerPausing.GetActionMap("Player");
+        pausing = gameplayActionMap.GetAction("Pause");   
+        pausing.per
     }
 
     public void Update(){
