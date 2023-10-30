@@ -2,8 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbilityWrapper : ScriptableObject
+public abstract class AbilityWrapper : ScriptableObject, ISlotItem<AbilityWrapper>
 {
+
+    // Interface Methods
+    public AbilityWrapper Item { get { return this; } }
+    public Sprite ASprite { get { return activeAbility.aSprite; } }
+
+    // End Interface Methods
+
     [SerializeField]
     private string wrapperName;
     public string WrapperName {
@@ -19,6 +26,7 @@ public abstract class AbilityWrapper : ScriptableObject
             return activeAbility;
         }
     }
+
 
     [SerializeField]
     private Augment passiveAbility;
@@ -44,7 +52,6 @@ public abstract class AbilityWrapper : ScriptableObject
     public Augment getPassiveAbility() {
         return passiveAbility;
     }
-
     public string GetWrappedDescription() {
         return description + "<br><b>Active</b>: " + activeAbility.aDescription + "<br><b>Passive</b>: " + passiveAbility.aDescription;
     }

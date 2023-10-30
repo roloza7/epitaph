@@ -540,6 +540,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &509428135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 403431105019236026, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+  m_PrefabInstance: {fileID: 932334272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &509428140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509428135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eef31f36a123f4459fc54e2d8bd50b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setByPlayer: 0
+  baseMoveSpeedMultiplier: 0.3
 --- !u!1 &565278531
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +953,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &932334272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 403431105019236026, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_Name
+      value: Slowing Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.9877477
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9675246
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316764082345019280, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5063030812145340046, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 403431105019236026, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509428140}
+  m_SourcePrefab: {fileID: 100100000, guid: 5de8eb1794fb5da4f98cadb36f52e55a, type: 3}
 --- !u!1001 &956751823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20965,7 +21045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 11.78125
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping
@@ -21486,3 +21566,4 @@ SceneRoots:
   - {fileID: 833160838}
   - {fileID: 569684605}
   - {fileID: 956751823}
+  - {fileID: 932334272}

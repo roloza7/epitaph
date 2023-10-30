@@ -76,3 +76,16 @@ public class SpeedIncrease: StatModifier
         changeBaseValue = false;
     }
 }
+
+[System.Serializable]
+public class SpeedDecrease: StatModifier
+{
+    public SpeedDecrease(float multiplier)
+    {
+        applicationType = ApplicationType.MULTIPLY;
+        stat = StatEnum.WALKSPEED;
+        this.amount = multiplier;
+        beneficial = false;
+        changeBaseValue = false;
+    }
+}

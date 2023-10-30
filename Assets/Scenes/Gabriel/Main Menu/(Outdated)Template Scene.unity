@@ -179,6 +179,18 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4323706495432064238, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: attackDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323706495432064238, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: chainAttackTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323706495432064238, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: attackShiftMultiplier
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: slotHolder
       value: 
@@ -926,7 +938,11 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/melee attack tweak.unity
+  m_NavMeshData: {fileID: 23800000, guid: 9f43c7a1cb36b264597c497f77beb694, type: 2}
+========
   m_NavMeshData: {fileID: 23800000, guid: ae6da32c3071e374cac510414676f00d, type: 2}
+>>>>>>>> sprint-5:Assets/Scenes/Gabriel/Main Menu/(Outdated)Template Scene.unity
 --- !u!4 &867298790
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Splash Projectile Testing 1.meta
+guid: 655eaf84b3ac5024a842b3a558df208e
+folderAsset: yes
+========
 guid: 815be55a3b42f8e4a94561f5891f89a3
+>>>>>>>> sprint-5:Assets/Scenes/Gabriel/GameplayLoop/(Outdated)Template Scene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

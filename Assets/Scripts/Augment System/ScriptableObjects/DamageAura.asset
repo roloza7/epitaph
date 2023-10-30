@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DamageAura
   m_EditorClassIdentifier: 
   aName: Damage Aura
+  aDescription: New Description
   aSprite: {fileID: 0}
   aSound: {fileID: 0}
   activeTime: 1
   augmentEnabled: 1
   radius: 5
-  interval: 1
+  interval: 0.1
   damage: 1

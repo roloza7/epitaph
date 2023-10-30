@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDir: 0
+  meleeKnockback: 75
+  meleeKnockbackDuration: 0.15
 --- !u!1 &2020586579564352269
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDir: 0
+  meleeKnockback: 75
+  meleeKnockbackDuration: 0.15
 --- !u!1 &2337684489412259880
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDir: 0
+  meleeKnockback: 75
+  meleeKnockbackDuration: 0.15
 --- !u!1 &8263862798321204670
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,12 +682,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b9470150fe2b9499a0569741455513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   chainAttackTime: 0.1
   meleeHitboxes:
   - {fileID: 433368079217481562}
   - {fileID: 6925524437547162389}
   - {fileID: 2020586579564352269}
+  attackDelay: 0.2
+  attackShiftMultiplier: 4
 --- !u!114 &6421672317329216225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1138,9 @@ MonoBehaviour:
         v: 0
         hasValue: 0
   intialHealth: 100
+  animator: {fileID: 0}
   _augmentManager: {fileID: 0}
+  killable: 0
 --- !u!114 &4451322402477620099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,16 +1153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b508dc3b1d4391f4f830037fcced6474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityCursor: {fileID: 0}
-  slotHolder: {fileID: 0}
-  hotbarSlotHolder: {fileID: 0}
+  DEBUG: 0
   newAbility: {fileID: 0}
   abilityToDiscard: {fileID: 0}
   startingAbilities:
-  - ability: {fileID: 11400000, guid: 1f9323a04fe5d6c4cae7914b97d5261c, type: 2}
-  - ability: {fileID: 11400000, guid: 8608b9fd89d27124b925db2bc02fb71e, type: 2}
-  - ability: {fileID: 11400000, guid: 35d014d610ade4f4a91d66c2b61b2abc, type: 2}
-  dashAbility: {fileID: 11400000, guid: 7ed3257df13a0594fa64d5a6895f3c62, type: 2}
+  - ability: {fileID: 0}
+  - ability: {fileID: 0}
+  - ability: {fileID: 0}
+  dashAbility: {fileID: 0}
 --- !u!114 &5672681696680130112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DEBUG: 0
   current: {fileID: 0}
 --- !u!114 &3434454387022078660
 MonoBehaviour:
@@ -1193,6 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rosaryBeadsConsumable: {fileID: 11400000, guid: c43a9f784babdf042be5b25b65b7dddf, type: 2}
+  consumableSlot: {fileID: 0}
 --- !u!1 &8356434180221140268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1251,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000a9ea66537bf5dfcfe1760079

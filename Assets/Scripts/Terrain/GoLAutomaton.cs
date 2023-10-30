@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class GoLAutomaton : MonoBehaviour
 {
@@ -9,44 +8,33 @@ public class GoLAutomaton : MonoBehaviour
     [Range(0, 8)] [SerializeField] private int birthLimit;
     [Range(1, 8)] [SerializeField] private int deathLimit;
     [Range(1, 10)] [SerializeField] private int numRuns;
-    [SerializeField] private Tilemap topMap;
-    [SerializeField] private Tilemap baseMap;
-    [SerializeField] private Tile obstacleTile;
     private int[,] terrain;
-    private Vector3Int origin;
-
     private int width;
     private int height;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        origin = baseMap.origin;
-        Simulate(numRuns);
-    }
+    private int bufferSize;
 
-    public void Simulate(int runs) {
-        width = baseMap.size.x;
-        height = baseMap.size.y;
-        ClearMap(false);
+    public int[,] Simulate(int w, int h, int buffer) {
+        buffer = bufferSize;
+        width = w;
+        height = h;
         if (terrain == null) {
             terrain = new int[width, height];
             InitPos();
         }
 
-        for (int i = 0; i < runs; i++) {
+        for (int i = 0; i < numRuns; i++) {
             terrain = GenTilePos(terrain);
         }
 
-        for (int i = 0; i < width ; i++) {
+        for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                // 1 = tile, 0 = no tile
-                if (terrain[i, j] == 1)
-                {
-                    topMap.SetTile(new Vector3Int(i + origin.x, j + origin.y, 0), obstacleTile);
+                if (j < bufferSize | j + bufferSize > height) {
+                    terrain[i, j] = 0;
+                    Debug.Log("zeroed");
                 }
             }
         }
+        return terrain;
     }
 
     private int[,] GenTilePos(int[,] prevMap) {
@@ -95,12 +83,6 @@ public class GoLAutomaton : MonoBehaviour
         }
     }
 
-    private void ClearMap(bool complete) {
-        topMap.ClearAllTiles();
 
-        if (complete) {
-            terrain = null;
-        }
-    }
 
 }

@@ -167,6 +167,8 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -807406213
       objectReference: {fileID: 0}
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+========
     - target: {fileID: 3434454387022078660, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: chargeCounter
       value: 
@@ -175,6 +177,7 @@ PrefabInstance:
       propertyPath: consumableSlot
       value: 
       objectReference: {fileID: 784370994}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
     - target: {fileID: 4323706495432064238, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: moveSpeed
       value: 10
@@ -186,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: dashAbility
       value: 
-      objectReference: {fileID: 11400000, guid: 77ee3af21df94a947a3dcd8341fbbdac, type: 2}
+      objectReference: {fileID: 11400000, guid: 7ed3257df13a0594fa64d5a6895f3c62, type: 2}
     - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: abilityCursor
       value: 
@@ -202,6 +205,13 @@ PrefabInstance:
     - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: startingAbilities.Array.data[0].ability
       value: 
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+      objectReference: {fileID: 11400000, guid: 1f9323a04fe5d6c4cae7914b97d5261c, type: 2}
+    - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: startingAbilities.Array.data[1].ability
+      value: 
+      objectReference: {fileID: 11400000, guid: 8608b9fd89d27124b925db2bc02fb71e, type: 2}
+========
       objectReference: {fileID: 11400000, guid: 7cdb47186fde68a4ca7fdd31933c5a81, type: 2}
     - target: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: startingAbilities.Array.data[1].ability
@@ -211,6 +221,7 @@ PrefabInstance:
       propertyPath: startingAbilities.Array.data[2].ability
       value: 
       objectReference: {fileID: 11400000, guid: 68ca8abe57bdf9046aa4ead7eb505518, type: 2}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
     - target: {fileID: 5731619865225059497, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -254,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 6086381338991058192, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: _augmentManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1801145471}
     - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -373,7 +384,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6086381338991058192, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
   m_PrefabInstance: {fileID: 115705337}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712963380}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab4a0225d7e19f04caad9ce18096aa14, type: 3}
@@ -788,15 +799,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Health:
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 0}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &565278535
+CanvasRenderer:
+========
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0
   m_MaxWindowSize: 0
 --- !u!114 &491997291
 MonoBehaviour:
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+  m_GameObject: {fileID: 565278531}
+  m_CullTransparentMesh: 1
+========
   m_GameObject: {fileID: 491997283}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -876,12 +975,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 459b5ddf25cbaa54e9901fc43c961a6b, type: 3}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
 --- !u!114 &657781648 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 573003372959300552, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
   m_PrefabInstance: {fileID: 115705337}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712963380}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34526342824b52f4eb2b8d8600c67cee, type: 3}
@@ -892,12 +992,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4451322402477620099, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
   m_PrefabInstance: {fileID: 115705337}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712963380}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b508dc3b1d4391f4f830037fcced6474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+========
 --- !u!1 &668088075 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 131428394989678669, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
@@ -1023,6 +1125,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
 --- !u!1 &867298787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1189,11 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+  m_NavMeshData: {fileID: 23800000, guid: 4eac75d4f3c71ed4fb844942263eae4e, type: 2}
+========
   m_NavMeshData: {fileID: 23800000, guid: 2cfa7983645b4b24eba8148282a5bdbe, type: 2}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
 --- !u!4 &867298790
 Transform:
   m_ObjectHideFlags: 0
@@ -1115,7 +1222,11 @@ GameObject:
   - component: {fileID: 1136228352}
   - component: {fileID: 1136228351}
   - component: {fileID: 1136228350}
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+  - component: {fileID: 1136228349}
+========
   - component: {fileID: 1136228354}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
   m_Layer: 8
   m_Name: Tilemap_Obstacle
   m_TagString: Untagged
@@ -1138,6 +1249,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1290587626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136228349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136228347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c8d6349be44c68dff3d220992400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TileModifiers:
+  - tile: {fileID: 11400000, guid: 29445d43d0de75a439e113cdce7714e2, type: 2}
+    overrideArea: 1
+    area: 1
 --- !u!114 &1136228350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,8 +1277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
+  m_OverrideArea: 0
+  m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!19719996 &1136228351
@@ -21125,7 +21252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 6.015625
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping
@@ -21312,7 +21439,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2012536588
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+--- !u!1 &1801145470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801145472}
+  - component: {fileID: 1801145471}
+  m_Layer: 0
+  m_Name: AugmentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1801145471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801145470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current: {fileID: 0}
+--- !u!4 &1801145472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801145470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1854398268
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -21320,47 +21493,281 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3123401531990179349, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
-      propertyPath: m_Name
-      value: Global Light
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7970010976829148841, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
+    - target: {fileID: 2705744642854855661, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772729188899198128, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_Name
+      value: Ability Inventory Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772729188899198128, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+--- !u!1 &1854398269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5875922121385317363, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+  m_PrefabInstance: {fileID: 1854398268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1854398270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5361620038237010708, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+  m_PrefabInstance: {fileID: 1854398268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1854398271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5402695521882228891, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+  m_PrefabInstance: {fileID: 1854398268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1854398272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1120886785055535779, guid: d69503851536e48feac967a8aaa6cd36, type: 3}
+  m_PrefabInstance: {fileID: 1854398268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1876761411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876761415}
+  - component: {fileID: 1876761414}
+  - component: {fileID: 1876761413}
+  - component: {fileID: 1876761412}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1876761412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876761411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1876761413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876761411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1876761414
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876761411}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1876761415
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876761411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 565278532}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!1001 &2099300110
+========
+--- !u!1001 &2012536588
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 85941256721382627, guid: fd90c421dcca4f646acc217f17b13fa9, type: 3}
+      propertyPath: current
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866140760894025706, guid: fd90c421dcca4f646acc217f17b13fa9, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501312554407395264, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_Name
+      value: Goon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259183407807982041, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -21368,6 +21775,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+  m_SourcePrefab: {fileID: 100100000, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
+========
   m_SourcePrefab: {fileID: 100100000, guid: 59e56d9849a0cb04d81bcd2abb53b467, type: 3}
 --- !u!1001 &2448836505812479305
 PrefabInstance:
@@ -21532,6 +21942,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd544527869c7b7488255e3c263927c2, type: 3}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -21542,6 +21953,13 @@ SceneRoots:
   - {fileID: 867298790}
   - {fileID: 209009490}
   - {fileID: 1597951230}
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test.unity
+  - {fileID: 1854398268}
+  - {fileID: 2099300110}
+  - {fileID: 1320100118}
+  - {fileID: 1290587626}
+  - {fileID: 1801145472}
+========
   - {fileID: 1320100118}
   - {fileID: 1290587626}
   - {fileID: 2012536588}
@@ -21549,3 +21967,4 @@ SceneRoots:
   - {fileID: 569684605}
   - {fileID: 276756998}
   - {fileID: 2448836505812479305}
+>>>>>>>> sprint-5:Assets/Scenes/Reuben/MainRoomTemplate.unity

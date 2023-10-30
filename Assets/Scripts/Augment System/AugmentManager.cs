@@ -18,15 +18,21 @@ public class AugmentManager : MonoBehaviour
     private float damageDealt = 0;
 
     // active augments should be handled in the backend, no need to expose
+    
+    // Trying something new here - not deleting old logic for now
+    private readonly List<Augment> augments = new List<Augment>();
 
-    // Augments that are procced on hit
-    private List<OnHitAugment> onHitAugments = new List<OnHitAugment>();
+    // Coroutine dictionary - so we can keep track of what's going on
+    private readonly Dictionary<Augment, IEnumerator> coroutines = new Dictionary<Augment, IEnumerator>();
 
-    // Augments that proc on player-related event
-    private List<ListenerAugment> listenerAugments = new List<ListenerAugment>();
+    // // Augments that are procced on hit
+    // private List<OnHitAugment> onHitAugments = new List<OnHitAugment>();
 
-    // Augments that are continuous from run start to run end
-    private List<StaticAugment> staticAugments = new List<StaticAugment>();
+    // // Augments that proc on player-related event
+    // private List<ListenerAugment> listenerAugments = new List<ListenerAugment>();
+
+    // // Augments that are continuous from run start to run end
+    // private List<StaticAugment> staticAugments = new List<StaticAugment>();
     public void setCurrent(Entity current)
     {
         this.current = current;
@@ -34,64 +40,117 @@ public class AugmentManager : MonoBehaviour
 
     #region Run Event Triggers
 
+    public void DebugPrintAugments() {
+        Debug.Log("[Augment Manager] Augments");
+        string s = "";
+        foreach (Augment a in augments)
+            s += a;
+        if (s != "") Debug.Log(s);
+        else Debug.Log("No Augments");
+    }
+
     /*
     * Unused
     * This should be called right before player gets control on a run room i guess
     */
-    public void onRunStart() {
-        initializeStaticAugments();
-        startCoroutines();
+    public void OnRunStart() {
+        ActivateAllAugments();
     }
 
     /*
     * Also unused
     * Called right after player loses control on a run room
     */
-    public void onRunEnd() {
-        removeStaticAugments();
-        stopAllCoroutines();
-        //clearAugments(); //disabled for the sake of debugging, should exist once we get rid of the debug script
+    public void OnRunEnd() {
+        DeactivateAllAugments();
+    }
+
+    #endregion
+
+    #region Listener
+    /*
+    * do not panic!
+    * This is the part that makes it so we know what to add as an augment or not
+    * Will attach to the passives bar and update the list of passives whenever there is a change 
+    */
+
+    public void PassiveSlotCallback(Slot<AbilityWrapper> slot, AbilityWrapper old) {
+        if (slot.Item) AddAugment(slot.Item.PassiveAbility);
+        if (old) RemoveAugment(old.PassiveAbility);
+    }
+    
+    public void SetupPassiveBarListener(SlotHolder<AbilityWrapper> passives) {
+        for (int i = 0; i < passives.Length; i++)
+            passives[i].callback = PassiveSlotCallback;
+    }
+    #endregion
+
+    #region QOL utils
+
+    private void ActivateAllAugments() {
+        foreach (Augment augment in augments)
+            ActivateAugment(augment);
+    }
+    
+    private void ActivateAugment(Augment augment) {
+        if (augment is StaticAugment)
+            ActivateStaticAugment((StaticAugment) augment);
+        else if (augment is ListenerAugment)
+            ActivateListenerAugment((ListenerAugment) augment);
+    }
+
+    private void DeactivateAllAugments() {
+        foreach (Augment augment in augments)
+            DeactivateAugment(augment);
+    }
+
+    private void DeactivateAugment(Augment augment) {
+        if (augment is StaticAugment)
+            DeactivateStaticAugment((StaticAugment) augment);
+        else if (augment is ListenerAugment)
+            DeactivateListenerAugment((ListenerAugment) augment);
     }
 
     #endregion
 
     #region Static Augments
-
-    private void initializeStaticAugments() {
+    private void ActivateStaticAugment(StaticAugment augment) {
         if (!this.current) return;
 
-        foreach (StaticAugment augment in staticAugments) {
-            augment.applyAugment(this.current);
-        }
+        augment.applyAugment(this.current);
     }
 
-    private void removeStaticAugments() {
+    private void DeactivateStaticAugment(StaticAugment augment) {
         if (!this.current) return;
 
-        foreach (StaticAugment augment in staticAugments) {
-            augment.removeAugment();
-        }
+        augment.removeAugment();
     }
 
     #endregion
 
     #region Listener Augments
 
-    public void startCoroutines()
+    private void ActivateListenerAugment(ListenerAugment augment)
     {
-        foreach (ListenerAugment augment in listenerAugments)
-        {
-            augment.setCoroutineStarted(false);
-            if (!augment.getCoroutineStarted())
-            {
-                augment.setCoroutineStarted(true);
-                StartCoroutine(augment.passiveBehavior(current));
-            }
-        }
+        if (coroutines.ContainsKey(augment))
+            DeactivateListenerAugment(augment);
+
+        IEnumerator routine = augment.passiveBehavior(current);
+        StartCoroutine(routine);
+        coroutines.Add(augment, routine);
+        
+        augment.setCoroutineStarted(true);
     }
 
-    public void stopAllCoroutines() {
-        StopAllCoroutines();
+    private void DeactivateListenerAugment(ListenerAugment augment)
+    {
+        if (coroutines.ContainsKey(augment) == false)
+            return;
+
+        StopCoroutine(coroutines[augment]);
+        coroutines.Remove(augment);
+
+        augment.setCoroutineStarted(false);
     }
 
     #endregion
@@ -122,68 +181,45 @@ public class AugmentManager : MonoBehaviour
     // this applies the augment AFTER we already took damage
     public void takeAugmentedDamage()
     {
-        foreach (OnHitAugment augment in onHitAugments)
-        {
+        foreach (Augment augment in augments)
             current.TakeDamageAugmented(augment.applyAugmentDamageTaken(damageTaken, current, target));
-        }
 
-        foreach (StaticAugment augment in staticAugments)
-        {
-            current.TakeDamageAugmented(augment.applyAugmentDamageTaken(damageTaken, current, target));
-        }
-
-        foreach (ListenerAugment augment in listenerAugments)
-        {
-            current.TakeDamageAugmented(augment.applyAugmentDamageTaken(damageTaken, current, target));
-        }
     }
 
     // applies the augment AFTER we already deal damage
     public void dealAugmentedDamage(HashSet<AbilityTag> tags)
     {
-        foreach(OnHitAugment augment in onHitAugments)
-        {
+        foreach (Augment augment in augments)
             current.DealDamageAugmented(target, augment.applyAugmentDamageDealt(damageDealt, current, target, tags));
-        }
-
-        foreach (StaticAugment augment in staticAugments)
-        {
-            current.DealDamageAugmented(target, augment.applyAugmentDamageDealt(damageTaken, current, target, tags));
-        }
-
-        foreach (ListenerAugment augment in listenerAugments)
-        {
-            current.DealDamageAugmented(target, augment.applyAugmentDamageDealt(damageTaken, current, target, tags));
-        }
     }
 
     
     #endregion
 
     #region General Utils
-    public void addAugment(Augment augment) {
+    public void AddAugment(Augment augment) {
         if (DEBUG) Debug.Log("Adding augment");
         if (DEBUG) Debug.Log(augment.GetType());
-        if (augment is OnHitAugment) {
-            if (DEBUG) Debug.Log("Adding OnHitAugment");
-            onHitAugments.Add((OnHitAugment)augment);
+        if (augments.Contains(augment) == true) {
+            // throw new Exception("[AugmentManager.cs] Tried to add an augment that is already in the list of current augments");
+            Debug.LogWarning("[AugmentManager.cs] Tried to add an augment that is already in the list of current augments");
+            return;
         }
-        if (augment is ListenerAugment) {
-            if (DEBUG) Debug.Log("Adding ListenerAugment");
-            listenerAugments.Add((ListenerAugment)augment);
-        }
-        if (augment is StaticAugment) {
-            if (DEBUG) Debug.Log("Adding StaticAugment");
-            staticAugments.Add((StaticAugment)augment);
-        }
+        augments.Add(augment);
     }
 
-    public void clearAugments() {
-        if (DEBUG) Debug.Log("[Augment Manager] Clearing all augments");
-        onHitAugments.Clear();
-        listenerAugments.Clear();
-        staticAugments.Clear();
+    public void RemoveAugment(Augment augment) {
+        if (DEBUG) Debug.Log("Removing augment");
+        if (DEBUG) Debug.Log(augment.GetType());
+        if (augments.Contains(augment) == false) {
+            throw new Exception("[AugmentManager.cs] Tried to remove an augment that is not in the list of current augments");
+        }
+        augments.Remove(augment);
+    }
 
+    public void ClearAugments() {
+        if (DEBUG) Debug.Log("[Augment Manager] Clearing all augments");
+        augments.Clear();
     }
 
     #endregion

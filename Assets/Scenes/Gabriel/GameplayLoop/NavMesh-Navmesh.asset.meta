@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Ian/SlowTerrain/NavMesh-Navmesh.asset.meta
+guid: 0c653e9fcefd9e54eba8277bd84a083f
+========
 guid: b0bd2aade38cfc848a5c92fdfa2bac3d
+>>>>>>>> sprint-5:Assets/Scenes/Gabriel/GameplayLoop/NavMesh-Navmesh.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 23800000

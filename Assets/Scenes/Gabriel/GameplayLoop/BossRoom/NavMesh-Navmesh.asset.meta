@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Elizabeth/Healing Test/NavMesh-Navmesh.asset.meta
+guid: bcd3fcf674475fc45aa08fb5ee0e9573
+========
 guid: 07578ccb7fc3b2940abcc4e727d88e65
+>>>>>>>> sprint-5:Assets/Scenes/Gabriel/GameplayLoop/BossRoom/NavMesh-Navmesh.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 23800000

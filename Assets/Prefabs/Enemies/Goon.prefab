@@ -334,8 +334,8 @@ SpriteRenderer:
   m_SortingLayerID: -807406213
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d4f2b2797c86a3247a442c000208f660, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c94a87f4703a9674095464f952c0e9d0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -406,7 +406,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.34793782
 --- !u!195 &3588630299456367025
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -465,6 +465,8 @@ MonoBehaviour:
         hasValue: 0
   intialHealth: 10
   _augmentManager: {fileID: 0}
+  coin: {fileID: 3681736836022034573, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
+  enemyCoinValue: 10
 --- !u!114 &1866140760894025706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,5 +531,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780b30c740f88dd4d8e9de4a0a6f807f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDelay: 0.15
-  knockbackForce: 100
+  knockbackMultiplier: 1
+  knockbackDurationMultiplier: 1

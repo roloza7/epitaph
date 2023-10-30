@@ -26,7 +26,6 @@ public class EnemyProjectile : Projectile
         if (other.gameObject.tag == "Player"){
             var entity = other.GetComponent<Entity>();
             entity.GetComponent<Entity>().DealDamage(entity, damage);
-            Debug.Log($"Hit {other.gameObject.name}");
             // Uncomment this to add in status effects when the projectile hits the player
             //var statusEffectManager = player.GetComponent<StatusEffectManager>();
             //    statusEffectManager?.ApplyEffects(_statusEffects);
