@@ -46,10 +46,10 @@ public class StartConvo : MonoBehaviour
         if (useHitboxToInteract != true){
             if (dist < distanceAway)
             {
-                textComponent.text ="Press E to Interact";
+                textComponent.text ="Press Space to Interact";
                 if (isKeyEnabled)
                     {
-                        if (Input.GetKeyDown("e"))
+                        if (Input.GetKeyDown(KeyCode.Space))
                         {
                             DisableKey();
                             Debug.Log("started convo");
