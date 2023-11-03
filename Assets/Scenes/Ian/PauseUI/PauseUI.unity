@@ -21891,6 +21891,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 876726238}
     m_Modifications:
+    - target: {fileID: 2239916317216425785, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
+      propertyPath: m_Text
+      value: Ability
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239916317576675504, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
+      propertyPath: m_Name
+      value: RebindInteract
+      objectReference: {fileID: 0}
     - target: {fileID: 4090808727549321986, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
       propertyPath: m_Name
       value: KeybindUI
