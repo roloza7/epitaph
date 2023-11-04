@@ -21482,7 +21482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping
@@ -21893,15 +21893,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2239916317216425785, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
       propertyPath: m_Text
-      value: Ability
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 2239916317576675504, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
       propertyPath: m_Name
       value: RebindInteract
       objectReference: {fileID: 0}
+    - target: {fileID: 2239916317576675516, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
+      propertyPath: m_Action
+      value: 
+      objectReference: {fileID: -9019384787733014518, guid: 21b609349249f4a4983c9fffa631599c, type: 3}
+    - target: {fileID: 2239916317576675516, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
+      propertyPath: m_BindingId
+      value: c1af1ffb-0661-46de-96d9-211e2b44dec4
+      objectReference: {fileID: 0}
     - target: {fileID: 4090808727549321986, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
       propertyPath: m_Name
       value: KeybindUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347160573817077992, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
+      propertyPath: m_Text
+      value: Space
       objectReference: {fileID: 0}
     - target: {fileID: 7253133363954885350, guid: 54ccf86e35be95a49851665f8b1ec38f, type: 3}
       propertyPath: m_Pivot.x
