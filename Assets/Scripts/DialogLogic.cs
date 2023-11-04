@@ -10,6 +10,8 @@ public class DialogLogic : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI nameComponent;
 
+    public GameObject arrow;
+
     private GameObject target;
 
     public Image characterComponenet;
@@ -19,10 +21,14 @@ public class DialogLogic : MonoBehaviour
     public float textSpeed;
     private int index;
 
+    UIAnimator UIAnimatorScript;
+
     StartConvo StartConvoScript;
     // Start is called before the first frame update
     void Start()
     {
+        arrow.SetActive(false);
+        UIAnimatorScript = arrow.GetComponent<UIAnimator>();
         gameObject.SetActive(false);
         target = GameObject.FindWithTag("Player");
         textComponent.text = string.Empty;
@@ -45,6 +51,7 @@ public class DialogLogic : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0))
         {
+            arrow.SetActive(true);
             if (textComponent.text == lines[index]){
                 nextLine();
             }
@@ -73,6 +80,8 @@ public class DialogLogic : MonoBehaviour
     }
 
     void nextLine(){
+        UIAnimatorScript.Func_PlayUIAnim();
+        arrow.SetActive(false);
         if (index < lines.Length-1)
         {
             index++;
@@ -88,6 +97,7 @@ public class DialogLogic : MonoBehaviour
             nameComponent.text = string.Empty;
             StartConvoScript.EnableKey();
             target.GetComponent<PlayerController>().enabled = true;
+            UIAnimatorScript.Func_StopUIAnim();
         }
     }
 }
