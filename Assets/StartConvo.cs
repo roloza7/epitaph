@@ -51,8 +51,8 @@ public class StartConvo : MonoBehaviour
                     {
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
+                            Debug.Log("pressed Space in range");
                             DisableKey();
-                            Debug.Log("started convo");
                             textbox.SetActive(true);
 
                             //change the list dialog within the DialogLogic Script to match this dialog stated in this script
