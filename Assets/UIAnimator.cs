@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIAnimatior : MonoBehaviour
+public class UIAnimator : MonoBehaviour
 {
 
     public Image m_Image;
