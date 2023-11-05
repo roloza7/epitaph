@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 6170306525537607807}
   - component: {fileID: 5025486653731204929}
   - component: {fileID: 8769290010812509541}
-  - component: {fileID: 5653781311816380330}
   - component: {fileID: 4614883044539392897}
-  - component: {fileID: 6929545105408812288}
   - component: {fileID: 8201140986216838603}
   - component: {fileID: 7458921348859501869}
   - component: {fileID: 4740526884836291027}
   - component: {fileID: 614890760918059336}
   - component: {fileID: 3172618287407877323}
+  - component: {fileID: 4973184373563217926}
   m_Layer: 7
   m_Name: Ranged Goon
   m_TagString: Enemy
@@ -145,18 +144,6 @@ NavMeshAgent:
   m_BaseOffset: 0.49999997
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5653781311816380330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5678772690974721006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 775b2743fe1296740aa09b967eb879a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4614883044539392897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,18 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
---- !u!114 &6929545105408812288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5678772690974721006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0935540c92d974147b6c88c2abccb923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8201140986216838603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +192,7 @@ MonoBehaviour:
         v: 0
         hasValue: 0
   intialHealth: 15
+  animator: {fileID: 0}
   _augmentManager: {fileID: 0}
   coin: {fileID: 3681736836022034573, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
   enemyCoinValue: 20
@@ -246,9 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337ac2db46aabb646ae9493f18c7f2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fleeDist: 6
   projectile: {fileID: -6228182864214638976, guid: d23dd2301c73a8d4fa83268033ad61b5, type: 3}
-  distanceAway: 6
-  unloadSpeed: 3
+  distanceAway: 12
+  unloadSpeed: 2
 --- !u!58 &614890760918059336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -298,6 +275,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackMultiplier: 0.8
   knockbackDurationMultiplier: 1
+--- !u!114 &4973184373563217926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678772690974721006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53ef9de36c90914a9e8372550bb19a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6465270139469949213
 GameObject:
   m_ObjectHideFlags: 0

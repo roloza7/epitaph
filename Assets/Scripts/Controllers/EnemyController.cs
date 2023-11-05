@@ -7,7 +7,11 @@ public class EnemyController : Controller
 {
     protected bool isColliding;
     protected Enemy enemy;
-    
+
+    [SerializeField] protected float fleeDist;
+    public float FleeDist {
+        get {return fleeDist;}
+    }
     public bool IsColliding {
         get {return isColliding;}
     }
