@@ -24,6 +24,7 @@ public class DialogLogic : MonoBehaviour
     UIAnimator UIAnimatorScript;
 
     StartConvo StartConvoScript;
+    
     // Start is called before the first frame update
     void Start()
     {
