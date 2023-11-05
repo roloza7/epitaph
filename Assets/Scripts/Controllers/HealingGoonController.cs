@@ -43,7 +43,7 @@ public class HealingGoonController : EnemyController
                 lowestEnemy = enemy;
             }
         }
-        return lowestEnemy.transform.position;
+        return lowestEnemy.transform.position + new Vector3(0f, -1.0f, 0f);
     }
 
     void SpawnTerrain(Vector3 pos) {

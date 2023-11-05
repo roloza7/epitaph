@@ -31,10 +31,9 @@ public class FleeFromPlayerNode :  Node
             _agent.enabled = true;
             _agent.isStopped = false;
             _agent.speed = _movespeed;
-            Vector3 dir = _target.transform.position - _enemyController.transform.position;
+            Vector3 dir = _enemyController.transform.position - _target.transform.position;
             Vector3.Normalize(dir);
-            _agent.SetDestination(_enemyController.transform.position + 50.0f * dir);
-            Debug.Log("hello");
+            _agent.SetDestination(_enemyController.transform.position + dir);
             return NodeState.SUCCESS;
         }
         return NodeState.FAILURE;        
