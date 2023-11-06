@@ -26,6 +26,7 @@ public class PlayerController : Controller
     }
     void Start()
     {
+        base.Start();
         canMove = true;
         canChangeDirection = true;
         playerInput = GetComponent<PlayerInput>();

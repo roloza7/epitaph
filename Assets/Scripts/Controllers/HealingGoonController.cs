@@ -29,6 +29,8 @@ public class HealingGoonController : EnemyController
                 SpawnTerrain(spawnLoc);
             }
         }
+        animator.SetFloat("vel x", agent.velocity.x);
+        animator.SetFloat("vel y", agent.velocity.y);
     }
 
     Vector3 SweepArea() {
@@ -47,6 +49,7 @@ public class HealingGoonController : EnemyController
     }
 
     void SpawnTerrain(Vector3 pos) {
+        animator.SetTrigger("is casting");
         Instantiate(healingTerrain, pos, Quaternion.identity);
     }
 }

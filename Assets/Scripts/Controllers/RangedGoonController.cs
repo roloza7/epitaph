@@ -30,9 +30,13 @@ public class RangedGoonController : EnemyController
                 Shoot();
             }
         }
+        animator.SetFloat("vel x", agent.velocity.x);
+        animator.SetFloat("vel y", agent.velocity.y);
     }
 
     void Shoot(){
+        animator.SetTrigger("is casting");
+
         Projectile proj = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
         proj.parent = gameObject;
 
