@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Rosary Beads Consumable
   m_EditorClassIdentifier: 
   cName: Rosary Beads
+  cDescription: Description here
   cSprite: {fileID: 0}
   cSound: {fileID: 0}
-  startingCharges: 3
+  startingCharges: 5
   baseEffectDuration: 5
   baseCooldownTime: 1
   startingModifiers:
   - {fileID: 11400000, guid: fa7fb92ac0b1837459006b3cde8c097a, type: 2}
+  currentCharges: 0
+  cooldownTime: 0

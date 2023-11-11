@@ -20,7 +20,7 @@ public class RangedGoonController : EnemyController
     protected override void Update() {
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         float dist = Vector3.Distance(transform.position, target.transform.position);
-        if (dist < distanceAway)
+        if (dist < distanceAway && dist > fleeDist)
         {
             agent.velocity = Vector2.zero;
             timer += Time.deltaTime;
