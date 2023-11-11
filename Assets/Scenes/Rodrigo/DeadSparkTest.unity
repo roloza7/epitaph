@@ -21803,29 +21803,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6144941326132241923, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
   m_PrefabInstance: {fileID: 1611650631}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1560757050 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3519041177635523426, guid: de4d28908bb481442b8ae36eaf75a3e3, type: 3}
-  m_PrefabInstance: {fileID: 5674878681044776528}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1560757051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2418160628289271806, guid: de4d28908bb481442b8ae36eaf75a3e3, type: 3}
   m_PrefabInstance: {fileID: 5674878681044776528}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1560757052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560757050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 296ba05d8f2f6a84e89a492587792dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightning_prefab: {fileID: 1294107029407179311, guid: 62d1d82cf796a644a9e3d29a25870bfb, type: 3}
 --- !u!1001 &1597951230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22322,10 +22304,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3519041177635523426, guid: de4d28908bb481442b8ae36eaf75a3e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1560757052}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4d28908bb481442b8ae36eaf75a3e3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
