@@ -18,6 +18,11 @@ public class GoonController : EnemyController
     protected override void Update() {
         animator.SetFloat("vel x", agent.velocity.x);
         animator.SetFloat("vel y", agent.velocity.y);
+        if (agent.velocity.magnitude < 0.05) {
+            animator.SetBool("is stopped", false);
+        } else {
+            animator.SetBool("is stopped", false);
+        }
         if (this.isColliding) {
             timer += Time.deltaTime;
             if (timer > damageInterval) {
