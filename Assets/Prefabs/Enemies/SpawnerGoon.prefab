@@ -404,7 +404,6 @@ GameObject:
   - component: {fileID: 3419974051499496107}
   - component: {fileID: 419889670727287571}
   - component: {fileID: 7357457874771326544}
-  - component: {fileID: 377486549933244635}
   - component: {fileID: 90021263590254876}
   - component: {fileID: 8899804498749992875}
   - component: {fileID: 3700553975127145091}
@@ -606,25 +605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c55701937e17794196565fafe575849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fleeDist: 0
   spawningEnemy: {fileID: 7869210425373712410, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
   spawnPos: {fileID: 6142660500821680078}
   shortestSpawnTime: 8
   longestSpawnTime: 10
   spawnRadius: 4
   spawnAmount: 2
---- !u!114 &377486549933244635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8574721898858376987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5358e109baf578d4d8704db7998316ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageInterval: 1
 --- !u!114 &90021263590254876
 MonoBehaviour:
   m_ObjectHideFlags: 0
