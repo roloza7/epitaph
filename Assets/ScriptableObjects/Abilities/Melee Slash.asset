@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aName: Melee Slash
   aDescription: New Description
-  aSprite: {fileID: 21300000, guid: d4f2b2797c86a3247a442c000208f660, type: 3}
+  aSprite: {fileID: -9216119207062539962, guid: b1a6475f14baa49449b83671fc3aff7c, type: 3}
   aSound: {fileID: 0}
   cooldownTime: 1
   activeTime: 0.2
   fillAmount: 1
+  _animationClips:
+  - {fileID: 7400000, guid: 53bb6881daebc0a4cbaa6f52e97a3e24, type: 2}
   damage: 5
   knockbackForce: 200
   knockbackDuration: 0.3

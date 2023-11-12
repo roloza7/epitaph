@@ -345,6 +345,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: a8b891c1-8233-4f06-b7f7-647b66a9bddf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: d2fd7cfe-911e-4b7c-9d84-ea546deb96dd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: Player/Pause[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: Player/Interact[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421672317329216225, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -21546,7 +21566,7 @@ PrefabInstance:
       objectReference: {fileID: 115705338}
     - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: startingAbilityChoices.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: startingAbilityChoices.Array.data[5]
@@ -21556,6 +21576,10 @@ PrefabInstance:
       propertyPath: startingAbilityChoices.Array.data[6]
       value: 
       objectReference: {fileID: 11400000, guid: 97d9eefe74d917b428f96f39eaff03dc, type: 2}
+    - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: f5a10d81cbd04824ca171078fe8c3c5a, type: 2}
     - target: {fileID: 6651983184219794938, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
