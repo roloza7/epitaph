@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7509041470071400577}
   - component: {fileID: 2951822557027470164}
   - component: {fileID: -8631970439499270126}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BaseCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 10
+  pullSpd: 3
