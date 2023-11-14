@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
 
@@ -24,10 +25,15 @@ public class DialogLogic : MonoBehaviour
     UIAnimator UIAnimatorScript;
 
     StartConvo StartConvoScript;
+
+    public InputActionAsset inputActionAsset;
+
+    private InputActionMap actionMap;
     
     // Start is called before the first frame update
     void Start()
     {
+        actionMap = inputActionAsset.FindActionMap("Player");
         arrow.SetActive(false);
         UIAnimatorScript = arrow.GetComponent<UIAnimator>();
         gameObject.SetActive(false);
@@ -97,6 +103,7 @@ public class DialogLogic : MonoBehaviour
             textComponent.text = string.Empty;
             nameComponent.text = string.Empty;
             StartConvoScript.EnableKey();
+            actionMap.Enable();
             target.GetComponent<PlayerController>().enabled = true;
             UIAnimatorScript.Func_StopUIAnim();
         }

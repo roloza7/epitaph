@@ -378,3 +378,5 @@ MonoBehaviour:
   - test name
   allSprites:
   - {fileID: 1666564762, guid: af2c12106ff89db45bc437f7736fe966, type: 3}
+  useHitboxToInteract: 1
+  inputActionAsset: {fileID: -944628639613478452, guid: 21b609349249f4a4983c9fffa631599c, type: 3}

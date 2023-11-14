@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class StartConvo : MonoBehaviour
@@ -8,6 +9,8 @@ public class StartConvo : MonoBehaviour
     public float distanceAway = 3f;
 
     private GameObject target;
+
+    private bool isActionKeyPressed = false;
 
     public TextMeshProUGUI textComponent;
 
@@ -27,9 +30,17 @@ public class StartConvo : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public InputActionAsset inputActionAsset;
+
+    private InputActionMap actionMap;
+
+    private InputAction actionKey;
+
     // Start is called before the first frame update
     void Start()
     {
+        actionMap = inputActionAsset.FindActionMap("Player");
+        actionKey = actionMap.FindAction("Interact");
         textbox = GameObject.FindGameObjectWithTag("DialogBox");
         //textComponent = this.GetComponent<TextMeshProUGUI>();
         target = GameObject.FindWithTag("Player");
@@ -37,6 +48,8 @@ public class StartConvo : MonoBehaviour
         textComponent.text = string.Empty;
         DialogBox = GameObject.FindGameObjectWithTag("DialogBox");
         DialogLogicScript = GameObject.FindGameObjectWithTag("DialogBox").GetComponent<DialogLogic>();
+        actionKey.started += OnActionKeyStarted;
+        actionKey.Enable();
     }
 
     //Update is called once per frame
@@ -46,13 +59,16 @@ public class StartConvo : MonoBehaviour
         if (useHitboxToInteract != true){
             if (dist < distanceAway)
             {
-                textComponent.text ="Press Space to Interact";
+                textComponent.text ="Press "+actionKey.GetBindingDisplayString(0)+" to Interact";
                 if (isKeyEnabled)
                     {
-                        if (Input.GetKeyDown(KeyCode.Space))
+                        if (isActionKeyPressed)
                         {
+                            isActionKeyPressed = false;
+                            actionMap.Disable();
                             Debug.Log("pressed Space in range");
                             DisableKey();
+                            actionMap.Disable();
                             textbox.SetActive(true);
 
                             //change the list dialog within the DialogLogic Script to match this dialog stated in this script
@@ -97,6 +113,12 @@ public class StartConvo : MonoBehaviour
     public void EnableKey()
     {
         isKeyEnabled = true;
+    }
+
+    private void OnActionKeyStarted(InputAction.CallbackContext context)
+    {
+        // Set the boolean variable to true when the action key is pressed
+        isActionKeyPressed = true;
     }
     
 }
