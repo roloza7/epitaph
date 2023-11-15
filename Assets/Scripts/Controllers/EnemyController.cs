@@ -19,6 +19,7 @@ public class EnemyController : Controller
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        base.Start();
         isColliding = false;
         enemy = GetComponent<Enemy>();
         canMove = true;
