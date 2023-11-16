@@ -18,8 +18,8 @@ MonoBehaviour:
   aSound: {fileID: 0}
   cooldownTime: 1
   activeTime: 0.8
-  fillAmount: 0.12921293
+  fillAmount: 1
   damage: 5
   knockbackForce: 200
   knockbackDuration: 0.3
-  hitbox: {fileID: 7273901047849713365, guid: e4124149b74b03f4f8103aa43d4ed8a7, type: 3}
+  hitbox: {fileID: 7273901047849713365, guid: 4a1a8529361693d488511619090f9a75, type: 3}

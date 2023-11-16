@@ -21566,7 +21566,7 @@ PrefabInstance:
       objectReference: {fileID: 115705338}
     - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: startingAbilityChoices.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: startingAbilityChoices.Array.data[5]
@@ -21580,6 +21580,10 @@ PrefabInstance:
       propertyPath: startingAbilityChoices.Array.data[7]
       value: 
       objectReference: {fileID: 11400000, guid: f5a10d81cbd04824ca171078fe8c3c5a, type: 2}
+    - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
+      propertyPath: startingAbilityChoices.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: fa74d850e0551784aa8685a81e2dba64, type: 2}
     - target: {fileID: 6651983184219794938, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

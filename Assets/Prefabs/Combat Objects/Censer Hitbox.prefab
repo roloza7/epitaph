@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7273901047849713365}
   - component: {fileID: 6341970050393120518}
   m_Layer: 3
-  m_Name: Slash Hitbox
+  m_Name: Censer Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
