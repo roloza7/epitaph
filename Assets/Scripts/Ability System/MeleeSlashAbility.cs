@@ -39,6 +39,7 @@ public class MeleeSlashAbility : Ability
     }
 
     public override void Deactivate(GameObject parent) {
+        
         Destroy(hitboxInstance.gameObject);
         // Debug.Log("Melee Slash Done");
     }
