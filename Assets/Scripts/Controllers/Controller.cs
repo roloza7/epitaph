@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour
     protected Entity entity;
     protected EntityStats stats;
     protected bool canMove;
+    protected Animator animator;
 
     protected bool canChangeDirection;
     public bool CanMove {
@@ -18,9 +19,9 @@ public class Controller : MonoBehaviour
         set { canChangeDirection = value; }
     }
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
