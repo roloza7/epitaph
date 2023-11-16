@@ -647,7 +647,7 @@ MonoBehaviour:
   baseMap: {fileID: 1303979486}
   obstacleTile: {fileID: 11400000, guid: 11f1bcb1e200de248992583daf224f66, type: 2}
   surface2D: {fileID: 867298789}
-  bufferSize: 5
+  bufferSize: 50
 --- !u!4 &328195784
 Transform:
   m_ObjectHideFlags: 0
