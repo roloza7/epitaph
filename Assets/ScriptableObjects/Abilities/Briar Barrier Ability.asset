@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9af85fea0bb8a4ebfea5cce50742a6, type: 3}
   m_Name: Briar Barrier Ability
   m_EditorClassIdentifier: 
-  aName: Briar Barrier
-  aDescription: New Description
+  aName: Briar Barricade
+  aDescription: A shield of thorns is an excellent deterrent for any prospective
+    attackers.
   aSprite: {fileID: 21300000, guid: f48a3e9fcbdcc3f41bb2664d2b5e088f, type: 3}
   aSound: {fileID: 0}
   cooldownTime: 1
