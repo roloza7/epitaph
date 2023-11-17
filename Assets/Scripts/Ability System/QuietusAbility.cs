@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class QuietusAbility : Ability
 {
-public float damage;
+    public float damage;
     public float knockbackForce;
     public float knockbackDuration;
     private Camera mainCamera;

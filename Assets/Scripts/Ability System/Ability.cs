@@ -55,6 +55,7 @@ public class Ability : ScriptableObject
 public enum AbilityState {
     ready,
     reactive,
+    charge,
     active,
     cooldown
 }
