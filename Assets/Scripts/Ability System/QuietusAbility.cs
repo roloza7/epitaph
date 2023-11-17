@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class MeleeSlashAbility : Ability
+public class QuietusAbility : Ability
 {
-
     public float damage;
     public float knockbackForce;
     public float knockbackDuration;
     private Camera mainCamera;
-    public MeleeSlashHitbox hitbox;
-    private MeleeSlashHitbox hitboxInstance;
+    public CircleSlashHitbox hitbox;
+    private CircleSlashHitbox hitboxInstance;
     private Vector3 mousePos;
 
     public override void Init() {
@@ -20,16 +19,16 @@ public class MeleeSlashAbility : Ability
     }
 
     public override void Activate(GameObject parent) {
-        mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        // mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 mouseDirection = mousePos - parent.transform.position;
-        Vector3 offset = new Vector3(mouseDirection.x, mouseDirection.y, 0).normalized;
+        // Vector3 mouseDirection = mousePos - parent.transform.position;
+        // Vector3 offset = new Vector3(mouseDirection.x, mouseDirection.y, 0).normalized;
         
-        Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * offset;
-        Quaternion rotationToTarget = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorToTarget);
+        // Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * offset;
+        // Quaternion rotationToTarget = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorToTarget);
 
         // offset of hitbox from player is hardcorded
-        hitboxInstance = Instantiate(hitbox, parent.transform.position + (offset * 1.5f), rotationToTarget, parent.transform);
+        hitboxInstance = Instantiate(hitbox, parent.transform);// + (offset * 1.5f), rotationToTarget, parent.transform);
         hitboxInstance.parent = parent;
         hitboxInstance.damage = damage;
         hitboxInstance.knockbackForce = knockbackForce;
@@ -75,7 +74,4 @@ public class MeleeSlashAbility : Ability
             break;
         }
     }
-
-
-
 }
