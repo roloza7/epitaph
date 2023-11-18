@@ -21,7 +21,7 @@ public class ConsumableFormatter : MonoBehaviour, IPointerEnterHandler, IPointer
     }
     // Start is called before the first frame update
     void Start() {
-        anim = GetComponent<Animator>();
+       anim = GetComponent<Animator>();
        tmp = this.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
        tmp.enabled = false;
        tooltipImg = this.transform.GetChild(0).GetComponent<Image>();
