@@ -1152,6 +1152,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6651983184219794938}
     m_Modifications:
+    - target: {fileID: 3331315748849221126, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331315748849221126, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.57600003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331315748849221126, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331315748849221126, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 61.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3597059956976268875, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_Name
       value: Consumable Inventory Canvas
@@ -1159,6 +1175,14 @@ PrefabInstance:
     - target: {fileID: 3630300684904497957, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630300684904497957, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_margin.w
+      value: -31.998278
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630300684904497957, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_margin.z
+      value: -94.92823
       objectReference: {fileID: 0}
     - target: {fileID: 3790472205754911105, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_Type
@@ -1183,6 +1207,18 @@ PrefabInstance:
     - target: {fileID: 3790472205754911105, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_FillClockwise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819610558648648114, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819610558648648114, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819610558648648114, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5941756741367598866, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1292,13 +1328,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8037877599733591409, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037877599733591409, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 9067823347440025892, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 192
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 9067823347440025892, guid: cd33cc4bb531b3440b8a4737fb219237, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 125
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1569,6 +1613,10 @@ PrefabInstance:
     - target: {fileID: 4630502207486156802, guid: 1a48aea598183b44dac7a45bda83c11a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438671172950540387, guid: 1a48aea598183b44dac7a45bda83c11a, type: 3}
+      propertyPath: m_Name
+      value: Tooltip
       objectReference: {fileID: 0}
     - target: {fileID: 6665293168161110541, guid: 1a48aea598183b44dac7a45bda83c11a, type: 3}
       propertyPath: m_AnchoredPosition.x
