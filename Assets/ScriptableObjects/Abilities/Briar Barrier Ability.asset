@@ -17,7 +17,7 @@ MonoBehaviour:
     attackers.
   aSprite: {fileID: 21300000, guid: f48a3e9fcbdcc3f41bb2664d2b5e088f, type: 3}
   aSound: {fileID: 0}
-  cooldownTime: 1
+  cooldownTime: 6
   activeTime: 1
   fillAmount: 1
   bbController: {fileID: 3208837980793783396, guid: c3a4164038e6ea240ae5ebcb2c9c9e28, type: 3}
