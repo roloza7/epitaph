@@ -51,6 +51,6 @@ public class SpawnerGoonController : EnemyController
         //logic to spawn
         Vector2 randomPos = (Random.insideUnitCircle * spawnRadius);
         randomPos += (Vector2)spawnPos.position;
-        Instantiate(spawningEnemy, randomPos, Quaternion.identity);
+        Instantiate(spawningEnemy, randomPos, Quaternion.identity, this.transform.parent);
     }    
 }
