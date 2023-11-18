@@ -29,7 +29,7 @@ public class EnemyPlacement : MonoBehaviour
 
     void PlaceEnemy(EnemyPlacementType enemy) {
         rampingPercent = enemy.spawnRate;
-        for (int i = 0; i < mapWidth; i++) {
+        for (int i = 2; i < mapWidth - 1; i++) {
             for (int j = bufferSize; j < mapHeight-bufferSize; j++) {
                 if (CheckNeighborsClear(i, j-bufferSize, enemy.width, enemy.height)) { 
                     float rand = Random.Range(0.0f, 100.0f);
