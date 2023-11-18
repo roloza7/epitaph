@@ -694,11 +694,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   registeredEnemyTypes:
   - enemy: {fileID: 8574721898858376987, guid: 1e62417cd2add474bbfaef2507bc3fcb, type: 3}
-    spawnRate: 0
+    spawnRate: 1.3
     width: 2
     height: 2
   - enemy: {fileID: 7869210425373712410, guid: e13f1331564d0ba4fb721a92bf9e874e, type: 3}
-    spawnRate: 0
+    spawnRate: 0.8
     width: 1
     height: 1
   enemyManager: {fileID: 1330688843}
@@ -1408,7 +1408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 8.328125
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping
