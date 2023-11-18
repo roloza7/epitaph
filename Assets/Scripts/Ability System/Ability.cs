@@ -18,7 +18,9 @@ public class Ability : ScriptableObject
     protected float currentActiveTime;
     protected float currentCooldownTime;
     public float fillAmount;
+    // [SerializeField] protected AnimationClip[] _animationClips;
 
+    // protected Animation animation;
     public virtual void Activate(GameObject parent) {}
     public virtual void Deactivate(GameObject parent) {}
     // Handles ability cooldown system
@@ -35,6 +37,16 @@ public class Ability : ScriptableObject
         this.state = state;
     }
 
+    // Resets skill (useful when swapping skills)
+    public void Reset(GameObject parent) {
+        currentCooldownTime = 0f;
+        currentActiveTime = 0f;
+        if (state == AbilityState.active)
+            Deactivate(parent);
+        state = AbilityState.ready;
+        fillAmount = 1f;
+    }
+
     public Ability GetAbility() {
         return this;
     }
@@ -43,6 +55,7 @@ public class Ability : ScriptableObject
 public enum AbilityState {
     ready,
     reactive,
+    charge,
     active,
     cooldown
 }

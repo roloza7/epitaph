@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 6870733073187240334}
   - component: {fileID: 85941256721382627}
   - component: {fileID: 8615839123305296803}
+  - component: {fileID: 6497885136062840430}
   m_Layer: 7
   m_Name: Goon
   m_TagString: Enemy
@@ -334,12 +335,12 @@ SpriteRenderer:
   m_SortingLayerID: -807406213
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c94a87f4703a9674095464f952c0e9d0, type: 3}
+  m_Sprite: {fileID: 3563771265999580370, guid: 6e0d758a6d44bb142848aed1bbb76f04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9375, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -406,7 +407,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.34793782
 --- !u!195 &3588630299456367025
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
         v: 0
         hasValue: 0
   intialHealth: 10
+  animator: {fileID: 0}
   _augmentManager: {fileID: 0}
   coin: {fileID: 3681736836022034573, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
   enemyCoinValue: 10
@@ -504,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5358e109baf578d4d8704db7998316ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fleeDist: 0
   damageInterval: 1
 --- !u!114 &85941256721382627
 MonoBehaviour:
@@ -531,5 +534,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780b30c740f88dd4d8e9de4a0a6f807f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDelay: 0.15
-  knockbackForce: 100
+  knockbackMultiplier: 1
+  knockbackDurationMultiplier: 1
+--- !u!95 &6497885136062840430
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869210425373712410}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62f2b998d092a3a4c9ca25ee592214fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

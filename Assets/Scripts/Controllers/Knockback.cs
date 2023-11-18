@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    [SerializeField] private float knockbackDelay; // how much force is applied on knockback
-    [SerializeField] private float knockbackForce; // how long "CC" is
+    [SerializeField] private float knockbackMultiplier; // how much force is applied on knockback
+    [SerializeField] private float knockbackDurationMultiplier; // how long "CC" is
+
     private Rigidbody2D body;
     private Controller controller;
 
@@ -13,22 +14,16 @@ public class Knockback : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         controller = GetComponent<Controller>();
     }
-    public void KnockbackEntity(GameObject applier) {
-        StopAllCoroutines();
-        Vector2 direction = (transform.position - applier.transform.position).normalized;
-        body.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
-        StartCoroutine(ResetKnockBack());
-    }
 
-    public void KnockbackEntityWithCustomForce(GameObject applier, float force) {
+    public void KnockbackCustomForce(GameObject applier, float force, float duration) {
         StopAllCoroutines();
         Vector2 direction = (transform.position - applier.transform.position).normalized;
-        body.AddForce(direction * force, ForceMode2D.Impulse);
-        StartCoroutine(ResetKnockBack());
+        body.AddForce(direction * force * knockbackMultiplier, ForceMode2D.Impulse);
+        StartCoroutine(ResetKnockBack(duration));
     }
-    private IEnumerator ResetKnockBack() {
+    private IEnumerator ResetKnockBack(float timer) {
         controller.CanMove = false;
-        yield return new WaitForSeconds(knockbackDelay);
+        yield return new WaitForSeconds(timer * knockbackDurationMultiplier);
         body.velocity = Vector3.zero;
         controller.CanMove = true;
     }

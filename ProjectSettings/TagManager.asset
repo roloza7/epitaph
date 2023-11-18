@@ -13,6 +13,7 @@ TagManager:
   - UI
   - LevelController
   - CinemachineCollider
+  - ChooseAbilityUI
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Enemy Projectile
   - Player
   - Camera
-  - 
+  - Currency
   - 
   - 
   - 

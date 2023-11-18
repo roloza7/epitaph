@@ -26,6 +26,7 @@ public class PlayerController : Controller
     }
     void Start()
     {
+        base.Start();
         canMove = true;
         canChangeDirection = true;
         playerInput = GetComponent<PlayerInput>();
@@ -47,6 +48,19 @@ public class PlayerController : Controller
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 vel = Vector3.Normalize(rb.velocity);
+        if (!isAttacking) {
+            animator.SetFloat("vel x", vel.x);
+            animator.SetFloat("vel y", vel.y);
+        }
+
+
+        if (rb.velocity.magnitude < 0.1 && !isAttacking) {
+            animator.SetBool("is stopped", true);
+        } else {
+            animator.SetBool("is stopped", false);
+        }
+
         if(!canMove) {
             rb.velocity = Vector3.zero;
             return;
@@ -94,6 +108,8 @@ public class PlayerController : Controller
         Vector2 mousePosNorm = (new Vector2(mousePos.x, mousePos.y)).normalized;
         rb.velocity = mousePosNorm * attackShiftMultiplier;
         MeleeAttack meleeAttack = meleeHitboxes[currentAttack].GetComponent<MeleeAttack>();
+        int atkTag = currentAttack + 1;
+        animator.SetTrigger("is melee " + atkTag);
         meleeAttack.SetActive();
         meleeAttack.Attack(mousePos);
         yield return new WaitForSeconds(attackDelay);
