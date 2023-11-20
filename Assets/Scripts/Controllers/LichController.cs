@@ -81,7 +81,7 @@ public class LichController : Controller
         {
             // Phase 1 stuff
             int i = Random.Range(0, 100);
-            if ( i <= 8)
+            if (i <= 8)
             {
                 i = 2;
             } else if (i <= 60)
@@ -98,6 +98,7 @@ public class LichController : Controller
         {
             // Phase 2 stuff
             print("Crystals destroyed!, Phase 2 doesn't exist yet sorry");
+
         }
     }
 
