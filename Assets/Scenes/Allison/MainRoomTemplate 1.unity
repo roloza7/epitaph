@@ -672,8 +672,8 @@ MonoBehaviour:
     spawnRate: 13.8
     width: 1
     height: 2
-  rampFactor: 0
-  baseMap: {fileID: 0}
+  rampFactor: 1
+  baseMap: {fileID: 1303979486}
 --- !u!1 &483199515
 GameObject:
   m_ObjectHideFlags: 0
