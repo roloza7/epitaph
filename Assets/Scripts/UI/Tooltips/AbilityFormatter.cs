@@ -14,7 +14,6 @@ public class AbilityFormatter : TooltipFormatter
         if (Ability != null) {
             UpdateText();
             tmp.enabled = true;
-            tooltipImg.enabled = true;
         }
     }
 }

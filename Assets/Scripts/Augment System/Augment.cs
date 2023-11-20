@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,14 +52,5 @@ public class Augment : ScriptableObject
     {
         // used in AugmentManager to actually apply
         return 0;
-    }
-
-    // For VFX
-    public virtual void OnApply(Entity parent) {
-        return;
-    }
-
-    public virtual void OnExpire(Entity parent) {
-        return;
     }
 }

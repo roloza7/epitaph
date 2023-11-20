@@ -18,9 +18,7 @@ public class Ability : ScriptableObject
     protected float currentActiveTime;
     protected float currentCooldownTime;
     public float fillAmount;
-    // [SerializeField] protected AnimationClip[] _animationClips;
-
-    // protected Animation animation;
+    
     public virtual void Activate(GameObject parent) {}
     public virtual void Deactivate(GameObject parent) {}
     // Handles ability cooldown system
@@ -55,7 +53,6 @@ public class Ability : ScriptableObject
 public enum AbilityState {
     ready,
     reactive,
-    charge,
     active,
     cooldown
 }

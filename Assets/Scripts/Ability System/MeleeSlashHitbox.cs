@@ -9,6 +9,12 @@ public class MeleeSlashHitbox : MonoBehaviour
     public float knockbackForce;
     public float knockbackDuration;
 
+    // Start is called before the first frame update
+    // void Start()
+    // {
+        
+    // }
+
     // Update is called once per frame
     // void Update()
     // {

@@ -26,7 +26,6 @@ public class LichController : Controller
 
     void Start()
     {
-        base.Start();
         hasShield = true;
         activeCrystals = 3;
 

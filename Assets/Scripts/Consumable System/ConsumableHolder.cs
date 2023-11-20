@@ -16,6 +16,7 @@ public class ConsumableHolder : MonoBehaviour
     private GameObject consumableSlot;
 
     // add text for number of charges
+    private TextMeshProUGUI chargeCounter;
     GameObject parent;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class ConsumableHolder : MonoBehaviour
         parent = this.gameObject;
         rosaryBeadsConsumable.Init();
 
+        chargeCounter = consumableSlot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();;
         consumableSlot.GetComponent<ConsumableFormatter>().Consumable = rosaryBeadsConsumable;
     }
 
@@ -32,6 +34,7 @@ public class ConsumableHolder : MonoBehaviour
     {
         rosaryBeadsConsumable.ConsumableCooldownHandler(parent);
         rosaryBeadsConsumable.ConsumableBehavior(parent.GetComponent<Player>());
+        chargeCounter.SetText("" + rosaryBeadsConsumable.currentCharges);
         // beadsConsumableImg.fillAmount = beadsConsumable.fillAmount;
         // update counter of charges on hotbar
     }

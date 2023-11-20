@@ -33,9 +33,6 @@ public class AugmentManager : MonoBehaviour
 
     // // Augments that are continuous from run start to run end
     // private List<StaticAugment> staticAugments = new List<StaticAugment>();
-
-    // Can't remove augment mid-procs, so we mark them for removal
-    private readonly List<Augment> augmentsToRemove = new List<Augment>();
     public void setCurrent(Entity current)
     {
         this.current = current;
@@ -187,7 +184,6 @@ public class AugmentManager : MonoBehaviour
         foreach (Augment augment in augments)
             current.TakeDamageAugmented(augment.applyAugmentDamageTaken(damageTaken, current, target));
 
-        ResolveRemovedAugments();
     }
 
     // applies the augment AFTER we already deal damage
@@ -195,8 +191,6 @@ public class AugmentManager : MonoBehaviour
     {
         foreach (Augment augment in augments)
             current.DealDamageAugmented(target, augment.applyAugmentDamageDealt(damageDealt, current, target, tags));
-
-        ResolveRemovedAugments();
     }
 
     
@@ -212,28 +206,15 @@ public class AugmentManager : MonoBehaviour
             return;
         }
         augments.Add(augment);
-        augment.OnApply(current);
-    }
-
-    private void ResolveRemovedAugments() {
-        foreach (Augment augment in augmentsToRemove)
-            RemoveAugment(augment);
-        augmentsToRemove.Clear();
-    }
-    public void MarkRemoveAugment(Augment augment) {
-        if (augmentsToRemove.Contains(augment) == false)
-            augmentsToRemove.Add(augment);
     }
 
     public void RemoveAugment(Augment augment) {
         if (DEBUG) Debug.Log("Removing augment");
         if (DEBUG) Debug.Log(augment.GetType());
         if (augments.Contains(augment) == false) {
-            Debug.LogWarning("[AugmentManager.cs] Tried to remove an augment that is not in the list of current augments");
-            return;
+            throw new Exception("[AugmentManager.cs] Tried to remove an augment that is not in the list of current augments");
         }
         augments.Remove(augment);
-        augment.OnExpire(current);
     }
 
     public void ClearAugments() {

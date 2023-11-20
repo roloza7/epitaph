@@ -10,10 +10,4 @@ public class UIAnimationEvents : MonoBehaviour
         levelGeneration = GameObject.Find("LevelGenerator").GetComponent<LevelGeneration>();
         levelGeneration.PlaceEnemies();
     }
-
-    public void Update() {
-        if (levelGeneration == null) {
-            levelGeneration = GameObject.Find("LevelGenerator").GetComponent<LevelGeneration>();
-        }
-    }
 }

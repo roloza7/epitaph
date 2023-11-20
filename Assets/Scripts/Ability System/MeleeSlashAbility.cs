@@ -16,7 +16,6 @@ public class MeleeSlashAbility : Ability
 
     public override void Init() {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        //animation = GameObject.FindGameObjectWithTag("Player").GetComponent<Animation>();
     }
 
     public override void Activate(GameObject parent) {
@@ -35,11 +34,9 @@ public class MeleeSlashAbility : Ability
         hitboxInstance.knockbackForce = knockbackForce;
         hitboxInstance.knockbackDuration = knockbackDuration;
         // Debug.Log("Melee Slash");
-        //_animator.Play();
     }
 
     public override void Deactivate(GameObject parent) {
-        
         Destroy(hitboxInstance.gameObject);
         // Debug.Log("Melee Slash Done");
     }

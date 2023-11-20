@@ -21428,7 +21428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 6.140625
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping
@@ -21540,18 +21540,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 115705338}
-    - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
-      propertyPath: startingAbilityChoices.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
-      propertyPath: startingAbilityChoices.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 50f0325b0fa597142b2a68913ce8e1dd, type: 2}
-    - target: {fileID: 4784591851518141097, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
-      propertyPath: startingAbilityChoices.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 97d9eefe74d917b428f96f39eaff03dc, type: 2}
     - target: {fileID: 6651983184219794938, guid: 9addc653d913cbd4e975b7c4e4c03c5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

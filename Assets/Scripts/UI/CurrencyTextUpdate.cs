@@ -12,12 +12,12 @@ public class CurrencyTextUpdate : MonoBehaviour
     void Start()
     {
        tmp = this.GetComponent<TextMeshProUGUI>();
-       tmp.SetText(player.CurrencyTotal.ToString());
+       tmp.SetText("Coins: " + player.CurrencyTotal);
     }
 
     // Update is called once per frame
     void Update()
     {
-        tmp.SetText(player.CurrencyTotal.ToString());
+        tmp.SetText("Coins: " + player.CurrencyTotal);
     }
 }
