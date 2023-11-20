@@ -11,10 +11,10 @@ public class EnemyPlacement : MonoBehaviour
     private int[,] map;
     private float rampingPercent;
     [SerializeField] private float rampFactor;
-    [SerializeField] private Tilemap baseMap;
+    [SerializeField] protected Tilemap baseMap;
     private Vector3Int origin;
     private int bufferSize;
-    public void PlaceEnemies(int[,] occupiedMap, int buffer) {
+    public virtual void PlaceEnemies(int[,] occupiedMap, int buffer) {
         bufferSize = buffer;
         map = occupiedMap.Clone() as int[,];
         mapWidth = occupiedMap.GetLength(0);
@@ -45,6 +45,7 @@ public class EnemyPlacement : MonoBehaviour
             }
         }
     }
+
     private void OccupyNeighbors(int x, int y, int width, int height) {
         BoundsInt bounds = new BoundsInt(x, y, 0, width, height, 1);
         foreach (var b in bounds.allPositionsWithin) {

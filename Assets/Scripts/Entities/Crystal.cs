@@ -22,7 +22,7 @@ public class Crystal : Enemy
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
         );
         lineRenderer.colorGradient = gradient;
-
+        lineRenderer.sortingLayerName = "Entities";
     }
 
     // Update is called once per frame
@@ -40,8 +40,8 @@ public class Crystal : Enemy
     }
     public override void TakeDamage(float amount)
     {
-        Health.TakeDamage(amount);
         damaged = true;
+        base.TakeDamage(amount);
     }
 
     public bool WasDamaged()

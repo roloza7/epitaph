@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7079943805722927504}
   - component: {fileID: 2324313265744234841}
   - component: {fileID: 7369087475589511085}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df4ecac6d19c3c4db9e83ad6e7fe31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityToTrack: {fileID: 2440258421963178563}
+  entityToTrack: {fileID: 3531954819092212818}
   trackPlayer: 0
 --- !u!1 &6483573570010530734
 GameObject:
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 2153245670085928438}
   - component: {fileID: 4524901074201150888}
   - component: {fileID: 4289735137290801955}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Health Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,10 +263,10 @@ GameObject:
   - component: {fileID: 1825452796799296510}
   - component: {fileID: 6446944047238119916}
   - component: {fileID: 4565701369142477152}
-  - component: {fileID: 2440258421963178563}
   - component: {fileID: 5098524728875619201}
   - component: {fileID: 3531954819092212818}
-  m_Layer: 0
+  - component: {fileID: 5392360216172922369}
+  m_Layer: 7
   m_Name: Health Crystal
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -368,45 +368,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEBUG: 0
   current: {fileID: 0}
---- !u!114 &2440258421963178563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115196569041467007}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8039f5099d1aeee43bd0f715a413edba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _entityStats:
-    _stats:
-    - statName: 1
-      intialValue: 5
-      currentBaseValue: 5
-      beneficial: 1
-      maxValue:
-        v: 0
-        hasValue: 0
-      minValue:
-        v: 0
-        hasValue: 0
-    - statName: 2
-      intialValue: 10
-      currentBaseValue: 10
-      beneficial: 1
-      maxValue:
-        v: 0
-        hasValue: 0
-      minValue:
-        v: 0
-        hasValue: 0
-  intialHealth: 40
-  animator: {fileID: 0}
-  _augmentManager: {fileID: 0}
-  coin: {fileID: 0}
-  enemyCoinValue: 0
 --- !u!61 &5098524728875619201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -489,3 +450,32 @@ MonoBehaviour:
   intialHealth: 40
   animator: {fileID: 0}
   _augmentManager: {fileID: 0}
+  coin: {fileID: 3681736836022034573, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
+  enemyCoinValue: 10
+--- !u!50 &5392360216172922369
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115196569041467007}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
