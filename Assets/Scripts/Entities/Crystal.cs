@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crystal : Entity
+public class Crystal : Enemy
 {
     LichController lich;
     bool damaged = false;
