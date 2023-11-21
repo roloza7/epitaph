@@ -25,6 +25,6 @@ public class BossPlacement : EnemyPlacement
         Vector3Int tileLoc = new Vector3Int(origin.x + (mapWidth/2), origin.y + (mapWidth / 2), 0);
         Vector3 spawnTilePos = baseMap.CellToWorld(tileLoc);
 
-        Instantiate(enemy.enemy, new Vector3(spawnTilePos.x + 0.5f * enemy.width, spawnTilePos.y + 0.5f * enemy.height, 0), Quaternion.identity);
+        Instantiate(enemy.enemy, new Vector3(spawnTilePos.x, spawnTilePos.y + 0.5f * enemy.height, 0), Quaternion.identity);
     }
 }

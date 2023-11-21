@@ -109,7 +109,7 @@ public class LichController : Controller
         // BossAbility choice = defensiveAbilities[0];
         // choice.AbilityBehavior(this.gameObject);
 
-        //TeleportFromPlayer();
+        TeleportFromPlayer();
     }
 
     //honestly can be changed into an ability that tps to a random point later when theres time

@@ -670,8 +670,8 @@ MonoBehaviour:
   registeredEnemyTypes:
   - enemy: {fileID: 7420526011425623586, guid: 908da6f16c6a22743acf372f79e594be, type: 3}
     spawnRate: 0
-    width: 5
-    height: 7
+    width: 15
+    height: 16
   rampFactor: 0
   baseMap: {fileID: 1303979486}
 --- !u!1 &483199515
@@ -21424,7 +21424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332539973567506672, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: orthographic size
-      value: 7.0859375
+      value: 7.5625
       objectReference: {fileID: 0}
     - target: {fileID: 8230270512330466987, guid: 99b87bacd72da334e8fb815f89150211, type: 3}
       propertyPath: m_GridSnapping
