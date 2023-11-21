@@ -80,18 +80,17 @@ public class LichController : Controller
         if (activeCrystals > 0)
         {
             // Phase 1 stuff
-            //int i = Random.Range(0, 100);
-            //if (i <= 8)
-            //{
-            //    i = 2;
-            // } else if (i <= 60)
-            //{
-            //    i = 0;
-            //} else
-            //{
-            //    i = 1;
-            //}
-            int i = 4;
+            int i = Random.Range(0, 100);
+            if (i <= 8)
+            {
+                i = 2;
+             } else if (i <= 60)
+            {
+                i = 0;
+            } else
+            {
+                i = 1;
+            }
             BossAbility choice = Instantiate(abilities[i]);
             choice.AbilityBehavior(this.gameObject);
         }
@@ -109,7 +108,29 @@ public class LichController : Controller
         // BossAbility choice = defensiveAbilities[0];
         // choice.AbilityBehavior(this.gameObject);
 
-        // TeleportFromPlayer();
+        int i = Random.Range(0, 100);
+        if (i <= 50)
+        {
+            i = 0;
+        }
+        else if (i <= 45)
+        {
+            i = 1;
+        }
+        else
+        {
+            i = 2;
+        }
+
+        if (i < defensiveAbilities.Count)
+        {
+            BossAbility choice = Instantiate(defensiveAbilities[i]);
+            choice.AbilityBehavior(this.gameObject);
+        }
+        else
+        {
+            TeleportFromPlayer();
+        }
     }
 
     //honestly can be changed into an ability that tps to a random point later when theres time
