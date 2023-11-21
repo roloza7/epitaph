@@ -590,8 +590,8 @@ MonoBehaviour:
   intialHealth: 30
   animator: {fileID: 0}
   _augmentManager: {fileID: 0}
-  coin: {fileID: 0}
-  enemyCoinValue: 0
+  coin: {fileID: 3681736836022034573, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
+  enemyCoinValue: 30
 --- !u!1 &5002518720383025579
 GameObject:
   m_ObjectHideFlags: 0
