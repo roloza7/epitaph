@@ -13,7 +13,7 @@ public class AbilitySelection : MonoBehaviour
     public SlotHolder<AbilityWrapper> Slots { get { return choiceSlots; } } 
 
     [SerializeField] private List<AbilityWrapper> startingAbilityChoices;
-    private List<AbilityWrapper> abilityChoices = null;
+    private List<AbilityWrapper> abilityChoices;
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -36,9 +36,8 @@ public class AbilitySelection : MonoBehaviour
                 abilityChoices.RemoveAt(randomIndex);
             }
         }
-
-        
     }
+    
     void Awake()
     {
         choiceSlots = new SlotHolder<AbilityWrapper>(root);

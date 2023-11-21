@@ -1104,6 +1104,10 @@ MonoBehaviour:
     spawnRate: 0.6
     width: 1
     height: 1
+  - enemy: {fileID: 5678772690974721006, guid: 7f373d6a099e9a44887dcf98c99447d5, type: 3}
+    spawnRate: 0.2
+    width: 1
+    height: 1
   enemyManager: {fileID: 788307478}
   rampFactor: 1
   baseMap: {fileID: 101055881}
