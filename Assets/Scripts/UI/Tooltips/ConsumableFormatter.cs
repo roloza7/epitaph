@@ -36,6 +36,7 @@ public class ConsumableFormatter : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void UpdateText() {
         string descriptions = "";
+        Debug.Log(consumable.GetConsumableDescriptions().Count);
         if (consumable.GetConsumableDescriptions().Count > 0) {
             descriptions = System.String.Join(',', consumable.GetConsumableDescriptions());
         }
