@@ -113,7 +113,7 @@ public class LichController : Controller
         {
             i = 0;
         }
-        else if (i <= 45)
+        else if (i <= 85)
         {
             i = 1;
         }
