@@ -150,12 +150,4 @@ public class LichController : Controller
         currentPoint = (currentPoint + 1) % tppoints.Count;
         this.transform.position = tppoints[currentPoint];
     }
-
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.tag == "Player")
-    //     {
-    //         ChooseDefensive();
-    //     }
-    // }
 }

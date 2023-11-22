@@ -9,11 +9,6 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class BossPlacement : EnemyPlacement
 {
-    private Vector3Int origin;
-    private int bufferSize;
-    private int mapWidth;
-    private int mapHeight;
-
     public override void PlaceEnemies(int[,] occupiedMap, int buffer)
     { 
         mapWidth = occupiedMap.GetLength(0);
