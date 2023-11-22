@@ -10,11 +10,12 @@ public class EnemyPlacement : MonoBehaviour
     private int mapHeight;
     private int[,] map;
     private float rampingPercent;
+    [SerializeField] private GameObject enemyManager;
     [SerializeField] private float rampFactor;
-    [SerializeField] protected Tilemap baseMap;
+    [SerializeField] private Tilemap baseMap;
     private Vector3Int origin;
     private int bufferSize;
-    public virtual void PlaceEnemies(int[,] occupiedMap, int buffer) {
+    public void PlaceEnemies(int[,] occupiedMap, int buffer) {
         bufferSize = buffer;
         map = occupiedMap.Clone() as int[,];
         mapWidth = occupiedMap.GetLength(0);
@@ -27,15 +28,16 @@ public class EnemyPlacement : MonoBehaviour
     }
 
     void PlaceEnemy(EnemyPlacementType enemy) {
+        Debug.Log("Enemy Placed");
         rampingPercent = enemy.spawnRate;
-        for (int i = 0; i < mapWidth; i++) {
+        for (int i = 3; i < mapWidth - 2; i++) {
             for (int j = bufferSize; j < mapHeight-bufferSize; j++) {
                 if (CheckNeighborsClear(i, j-bufferSize, enemy.width, enemy.height)) { 
                     float rand = Random.Range(0.0f, 100.0f);
                     if (rand < rampingPercent) {
                         Vector3Int tileLoc = new Vector3Int(origin.x + i, origin.y + j, 0);
                         Vector3 spawnTilePos = baseMap.CellToWorld(tileLoc);
-                        Instantiate(enemy.enemy, new Vector3(spawnTilePos.x+0.5f*enemy.width, spawnTilePos.y+0.5f*enemy.height, 0), Quaternion.identity);
+                        Instantiate(enemy.enemy, new Vector3(spawnTilePos.x+0.5f*enemy.width, spawnTilePos.y+0.5f*enemy.height, 0), Quaternion.identity, enemyManager.transform);
                         OccupyNeighbors(i, j-bufferSize, enemy.width, enemy.height);
                         rampingPercent = enemy.spawnRate;
                     } else {
@@ -45,7 +47,6 @@ public class EnemyPlacement : MonoBehaviour
             }
         }
     }
-
     private void OccupyNeighbors(int x, int y, int width, int height) {
         BoundsInt bounds = new BoundsInt(x, y, 0, width, height, 1);
         foreach (var b in bounds.allPositionsWithin) {

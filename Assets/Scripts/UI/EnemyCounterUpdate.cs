@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CurrencyTextUpdate : MonoBehaviour
+public class EnemyCounterUpdate : MonoBehaviour
 {
-    private Player player;
+    private GameObject enemyManager;
     private TextMeshProUGUI tmp;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        enemyManager = GameObject.FindWithTag("EnemyManager");
        tmp = this.GetComponent<TextMeshProUGUI>();
-       tmp.SetText("Coins: " + player.CurrencyTotal);
+       tmp.SetText(enemyManager.transform.childCount.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        tmp.SetText("Coins: " + player.CurrencyTotal);
+
+       tmp.SetText(enemyManager.transform.childCount.ToString());
     }
 }
