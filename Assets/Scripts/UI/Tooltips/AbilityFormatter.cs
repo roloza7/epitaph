@@ -15,6 +15,7 @@ public class AbilityFormatter : TooltipFormatter
             StartCoroutine(SetBoxSize());
             UpdateText();
             tmp.enabled = true;
+            tooltipImg.enabled = true;
         }
     }
 }
