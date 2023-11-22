@@ -26,7 +26,6 @@ public class DeathKnightController : EnemyController
         if (timer < unloadSpeed) {
             timer += Time.deltaTime;
         }
-        Debug.Log(dist);
         if (dist < distanceAway)
         {
             
