@@ -450,8 +450,8 @@ MonoBehaviour:
   intialHealth: 40
   animator: {fileID: 0}
   _augmentManager: {fileID: 0}
-  coin: {fileID: 3681736836022034573, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
-  enemyCoinValue: 10
+  coin: {fileID: -8631970439499270126, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
+  enemyCoinValue: 5
 --- !u!50 &5392360216172922369
 Rigidbody2D:
   serializedVersion: 4

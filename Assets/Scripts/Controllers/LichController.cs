@@ -21,7 +21,6 @@ public class LichController : Controller
 
     int currentPoint = 0;
 
-    // Delete later
     bool first = false;
 
     void Start()
@@ -42,15 +41,21 @@ public class LichController : Controller
 
     private void Update()
     {
-       // if (!first)
-       // {
-       //     BossAbility choice = Instantiate(abilities[2]);
-       //     choice.AbilityBehavior(this.gameObject);
-       //     first = true;
-       // }
-        if (Time.time - lastCastTime >= castDelay)
+       if (!first)
+       {
+           BossAbility choice = Instantiate(abilities[2]);
+           choice.AbilityBehavior(this.gameObject);
+           first = true;
+       } else if (Time.time - lastCastTime >= castDelay)
         {
-            ChooseAttack();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            float distance = (player.transform.position - this.transform.position).magnitude;
+            
+            if (distance < 5 && !hasShield) {
+                ChooseDefensive();
+            } else {
+                ChooseAttack();
+            }
             lastCastTime= Time.time;
         }
     }
@@ -98,17 +103,21 @@ public class LichController : Controller
         else
         {
             // Phase 2 stuff
-            //change boss layer so it can take dmg
-            print("Crystals destroyed!, Phase 2 doesn't exist yet sorry");
-
+            int i = Random.Range(0, 100);
+            if (i <= 60)
+            {
+                i = 0;
+            } else
+            {
+                i = 1;
+            }
+            BossAbility choice = Instantiate(abilities[i]);
+            choice.AbilityBehavior(this.gameObject);
         }
     }
 
     public void ChooseDefensive()
     {
-        // BossAbility choice = defensiveAbilities[0];
-        // choice.AbilityBehavior(this.gameObject);
-
         int i = Random.Range(0, 100);
         if (i <= 50)
         {
@@ -141,11 +150,11 @@ public class LichController : Controller
         this.transform.position = tppoints[currentPoint];
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            ChooseDefensive();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Player")
+    //     {
+    //         ChooseDefensive();
+    //     }
+    // }
 }
