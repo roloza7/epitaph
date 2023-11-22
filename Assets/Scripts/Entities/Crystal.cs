@@ -10,6 +10,7 @@ public class Crystal : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         lich = this.transform.parent.GetComponentInChildren<LichController>();
         lastDamaged = Time.time;
         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();

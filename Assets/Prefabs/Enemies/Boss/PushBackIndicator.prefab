@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5953069154960587446}
   - component: {fileID: 7503424624624101085}
   - component: {fileID: 2532434103855377830}
+  - component: {fileID: -9087603119218721114}
   m_Layer: 0
   m_Name: PushBackIndicator
   m_TagString: Untagged
@@ -99,6 +100,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeTime: 1
   damage: 5
-  meleeKnockback: 2
+  meleeKnockback: 6
   meleeKnockbackDuration: 2
   parent: {fileID: 0}
+--- !u!58 &-9087603119218721114
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508479367888210593}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

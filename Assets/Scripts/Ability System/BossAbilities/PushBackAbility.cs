@@ -12,8 +12,8 @@ public class PushBackAbiliity : BossAbility
 
     public override void AbilityBehavior(GameObject parent)
     {
-        print("push back");
-        PushBackIndicator pb = Instantiate(pushBack, parent.transform.position, Quaternion.identity).GetComponent<PushBackIndicator>();
+        Vector3 displacement = new Vector3 (parent.transform.position.x, parent.transform.position.y - 0.5f, parent.transform.position.z);
+        PushBackIndicator pb = Instantiate(pushBack, displacement, Quaternion.identity).GetComponent<PushBackIndicator>();
         pb.parent = parent;
         Destroy(this.gameObject);
     }
