@@ -21,7 +21,7 @@ public class FireCone : MonoBehaviour
     protected void Start()
     {
         startTime = Time.time;
-        lastTick = Time.time - tick;
+        lastTick = Time.time - (tick/2);
     }
     protected void Update()
     {

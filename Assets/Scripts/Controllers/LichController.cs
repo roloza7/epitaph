@@ -11,6 +11,7 @@ public class LichController : Controller
 
     public List<BossAbility> abilities;
     public List<BossAbility> defensiveAbilities;
+    public GameObject shield;
 
     [SerializeField]
     int activeCrystals;
@@ -74,23 +75,23 @@ public class LichController : Controller
         hasShield = false;
         Enemy enemyComp = GetComponent<Enemy>();
         enemyComp.enabled = true;
+        castDelay = castDelay / 1.5f;
+        Destroy(shield);
     }
 
-    public bool HasShield()
-    {
+    public bool HasShield(){
         return hasShield;
     }
-
     public void ChooseAttack()
     {
         if (activeCrystals > 0)
         {
             // Phase 1 stuff
             int i = Random.Range(0, 100);
-            if (i <= 8)
+            if (i <= 15)
             {
                 i = 2;
-             } else if (i <= 60)
+             } else if (i <= 75)
             {
                 i = 0;
             } else
@@ -119,11 +120,11 @@ public class LichController : Controller
     public void ChooseDefensive()
     {
         int i = Random.Range(0, 100);
-        if (i <= 50)
+        if (i <= 35)
         {
             i = 0;
         }
-        else if (i <= 85)
+        else if (i <= 75)
         {
             i = 1;
         }

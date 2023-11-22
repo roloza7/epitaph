@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1, y: -5.4, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a359f22bdc25204a99e6792cc0e573c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeTime: 1
+  activeTime: 1.5
   damage: 5
-  meleeKnockback: 6
-  meleeKnockbackDuration: 2
+  meleeKnockback: 30
+  meleeKnockbackDuration: 0.1
   parent: {fileID: 0}
 --- !u!58 &-9087603119218721114
 CircleCollider2D:

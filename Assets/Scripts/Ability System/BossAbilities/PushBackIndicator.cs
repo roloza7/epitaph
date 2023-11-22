@@ -40,7 +40,7 @@ public class PushBackIndicator : MonoBehaviour
             parent.GetComponent<Entity>().DealDamage(player, damage);
 
             var kb = other.GetComponent<Knockback>();
-            kb?.KnockbackCustomForce(parent.gameObject, meleeKnockback, 1);
+            kb?.KnockbackCustomForce(parent.gameObject, meleeKnockback, meleeKnockbackDuration);
         }
     }
 }

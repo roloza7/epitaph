@@ -18,8 +18,8 @@ public class FireAbility : BossAbility
         directionToPlayer.Normalize();
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, directionToPlayer);
 
-        Vector3 displacement = 1.30f * directionToPlayer;
-        displacement.y = displacement.y + 0.5f;
+        Vector3 displacement = 1.75f * directionToPlayer;
+        displacement.y = displacement.y + 0.75f;
 
         FireCone fire = Instantiate(damageCone, parent.transform.position - displacement, rotation).GetComponent<FireCone>();
         fire.parent = parent;

@@ -47,6 +47,7 @@ MonoBehaviour:
   aName: Pushback
   aSprite: {fileID: 0}
   aSound: {fileID: 0}
-  activeTime: 1
-  delay: 0
+  activeTime: 4
+  delay: 1
+  indicator: {fileID: 1123149393347629057, guid: b07f719f2d588b9448cc787d29bb84a9, type: 3}
   pushBack: {fileID: 6508479367888210593, guid: 0b07b3e319860754ab50dcd6118a3c20, type: 3}
