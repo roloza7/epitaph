@@ -17,6 +17,7 @@ public class Player : Entity
     public override void Die() {
         if (killable) {
             Destroy(gameObject);
+            Destroy(GameObject.Find("UI"));
             SceneManager.LoadScene("DeathScene");
         }
     }
@@ -24,7 +25,6 @@ public class Player : Entity
     void Update() {
         LayerMask mask = LayerMask.GetMask("Currency");
         Collider2D[] hits = Physics2D.OverlapCircleAll(gameObject.transform.position, pickupRadius, mask);
-        Debug.Log(hits.Length);
         foreach (Collider2D hit in hits) {
             var coin = hit.GetComponent<Coin>();
             coin?.PullTowards(gameObject.transform.position);

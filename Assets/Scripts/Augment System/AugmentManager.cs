@@ -179,6 +179,7 @@ public class AugmentManager : MonoBehaviour
         this.target = target;
         this.damageDealt = damage;
         dealAugmentedDamage(tags);
+
     }
 
     // this applies the augment AFTER we already took damage
