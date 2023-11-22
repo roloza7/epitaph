@@ -12,10 +12,10 @@ public class EnemyPlacement : MonoBehaviour
     private float rampingPercent;
     [SerializeField] private GameObject enemyManager;
     [SerializeField] private float rampFactor;
-    [SerializeField] private Tilemap baseMap;
+    [SerializeField] protected Tilemap baseMap;
     private Vector3Int origin;
     private int bufferSize;
-    public void PlaceEnemies(int[,] occupiedMap, int buffer) {
+    public virtual void PlaceEnemies(int[,] occupiedMap, int buffer) {
         bufferSize = buffer;
         map = occupiedMap.Clone() as int[,];
         mapWidth = occupiedMap.GetLength(0);
