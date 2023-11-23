@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum AugmentType { STAT, TICK, ONHIT }
+public enum AugmentType { STAT, TICK, ONHIT }
 
-class Augment : ScriptableObject {
+public class Augment : ScriptableObject {
 
     public string aName = "New Augment";
     public string aDescription = "New Description";

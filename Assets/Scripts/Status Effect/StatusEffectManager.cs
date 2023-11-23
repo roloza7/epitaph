@@ -98,7 +98,7 @@ public class StatusEffectManager : MonoBehaviour
         }
     }
 
-    private void AddModifiers(List<StatModifier> statModifiers)
+    public void AddModifiers(List<StatModifier> statModifiers)
     {
         foreach(StatModifier sm in statModifiers)
             AddModifier(sm);
@@ -130,7 +130,7 @@ public class StatusEffectManager : MonoBehaviour
         RemoveModifiers(se.exitStatusEffect);
     }
 
-    private void RemoveModifiers(List<StatModifier> statModifiers)
+    public void RemoveModifiers(List<StatModifier> statModifiers)
     {
         foreach(StatModifier sm in statModifiers)
             RemoveModifier(sm);

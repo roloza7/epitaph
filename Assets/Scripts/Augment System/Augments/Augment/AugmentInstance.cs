@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum AugmentState { INACTIVE, ACTIVE, EXPIRED }
+public enum AugmentState { INACTIVE, ACTIVE, EXPIRED }
 
-class AugmentInstance {
+public class AugmentInstance {
 
-    private readonly string VFX_PREFAB_PATH = "Assets/Prefabs/VFX/Augment Manager/AugmentVFX";
-    private Augment instance;
+    private readonly string VFX_PREFAB_PATH = "AugmentVFX";
+    public Augment instance;
     private AugmentType Type => instance.AugmentType;
     public AugmentState AugmentState { get; private set; } = AugmentState.INACTIVE;
 
@@ -93,6 +93,11 @@ class AugmentInstance {
         if (instance.expires && instance.expirationTime < timeElapsed) {
             Expire(parent);
         }
-    } 
+    }
+
+    public bool Equals(Augment obj)
+    {
+        return instance == obj;
+    }
 
 }
