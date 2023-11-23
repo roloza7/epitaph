@@ -560,10 +560,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4294009903739911843}
   - component: {fileID: 1506789051549587190}
-  - component: {fileID: 6925628325333005048}
   - component: {fileID: 9138133856871250613}
   - component: {fileID: 1583563727547399776}
-  - component: {fileID: 6670744200632636681}
   - component: {fileID: 6911229707087518466}
   - component: {fileID: 5635409062707600860}
   - component: {fileID: 2243207032401666168}
@@ -631,33 +629,17 @@ SpriteRenderer:
   m_SortingLayerID: -807406213
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3e00edf2d4114c146996ec3ade368598, type: 3}
+  m_Sprite: {fileID: 607601077, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6925628325333005048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497506435031409059}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d547b40f14f8fa44bdc31b5b7a578bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldCrystals:
-  - {fileID: 1430392327920590991}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!70 &9138133856871250613
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -716,51 +698,11 @@ MonoBehaviour:
   shield: {fileID: 4129739429272916330}
   activeCrystals: 3
   teleportationPoints: {fileID: 9197601027340465706}
---- !u!61 &6670744200632636681
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497506435031409059}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.05531025, y: -0.11632633}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 3}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.0095582, y: 4.290577}
-  m_EdgeRadius: 0
+  sprites:
+  - {fileID: 256546839, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
+  - {fileID: -194793229, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
+  - {fileID: 607601077, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
+  - {fileID: 714417678, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
 --- !u!114 &6911229707087518466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,17 +1605,12 @@ PrefabInstance:
       addedObject: {fileID: 1009944494700096983}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
---- !u!1 &1430392327920590991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
-  m_PrefabInstance: {fileID: 8171649215381755632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4639694545541773986 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 8171649215381755632}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430392327920590991}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}

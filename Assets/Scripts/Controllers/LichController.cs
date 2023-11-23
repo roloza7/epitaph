@@ -23,6 +23,7 @@ public class LichController : Controller
     int currentPoint = 0;
 
     bool first = false;
+    public Sprite[] sprites;
 
     void Start()
     {
@@ -42,6 +43,18 @@ public class LichController : Controller
 
     private void Update()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector2 vectordist = player.transform.position - this.transform.position;
+        //find angle and choose sprite
+        float angle = Mathf.Atan2(vectordist.y, vectordist.x) * Mathf.Rad2Deg;
+        if (angle < 0) {
+            angle = 360 + angle;
+        }
+        int math = (int)((angle + 45) / 90) - 1;
+        int spriteNo = ((math % 4) + 4) % 4;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = sprites[spriteNo];
+
        if (!first)
        {
            BossAbility choice = Instantiate(abilities[2]);
@@ -49,8 +62,7 @@ public class LichController : Controller
            first = true;
        } else if (Time.time - lastCastTime >= castDelay)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            float distance = (player.transform.position - this.transform.position).magnitude;
+            float distance = vectordist.magnitude;
             
             if (distance < 5 && !hasShield) {
                 ChooseDefensive();
