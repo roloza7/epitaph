@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1f5b3a4f2dc4a439997c9377f0b946, type: 3}
   m_Name: Life Steal Augment
   m_EditorClassIdentifier: 
-  aName: New Augment
-  aDescription: New Description
+  aName: Life Steal
+  aDescription: Steal Life
   aSprite: {fileID: 0}
   aSound: {fileID: 0}
   expires: 0
   expirationTime: 0
-  AugmentType: 0
+  AugmentType: 2
   statModifiers: []
   stealFactor: 0.5

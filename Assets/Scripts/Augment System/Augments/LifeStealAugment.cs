@@ -8,17 +8,12 @@ public class LifeStealAugment : Augment
     [SerializeField]
     private float stealFactor = 0.5f; // assuming that you gain health by a factor of the damage you deal
 
-    private float damageDealt;
-
     public override float _ApplyAugmentDamageDealt(float damageDealt, Entity current, Entity target, HashSet<AbilityTag> tags)
     {
-        this.damageDealt = damageDealt;
+        if (current.gameObject.TryGetComponent(out StatusEffectManager sem)) {
+            sem.AddModifiers(new List<StatModifier>{ new Heal(damageDealt * stealFactor)});
+        }
         return 0;
     }
 
-    // note that this is negative because we want to heal
-    public override float _ApplyAugmentDamageTaken(float damageTaken, Entity current, Entity target)
-    {
-        return -stealFactor * damageDealt;
-    }
 }
