@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrapperName: 
   activeAbility: {fileID: 11400000, guid: 8dc081512c0c83843b93da90a5503474, type: 2}
-  passiveAbility: {fileID: 11400000, guid: 839cceae59c8a4e939ff8d88a676bff1, type: 2}
+  passiveAbility: {fileID: 11400000, guid: 2a540799a473f014482b90369dac1569, type: 2}
   description: 
