@@ -20,7 +20,7 @@ MonoBehaviour:
   expirationTime: 0
   AugmentType: 1
   statModifiers: []
-  radius: 5
-  damage: 5
+  radius: 3
+  damage: 2
   interval: 1
-  vfxSprite: {fileID: 21300000, guid: c971afeb93c79954aa97717998cf3e3f, type: 3}
+  vfxSprite: {fileID: -7987652723942145253, guid: a214698f9d56ed8478bbed99fa17b461, type: 3}
