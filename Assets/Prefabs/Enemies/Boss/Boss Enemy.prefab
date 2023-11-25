@@ -414,8 +414,8 @@ GameObject:
   - component: {fileID: 9138133856871250613}
   - component: {fileID: 1583563727547399776}
   - component: {fileID: 6911229707087518466}
-  - component: {fileID: 5635409062707600860}
   - component: {fileID: 2243207032401666168}
+  - component: {fileID: 613777223219371099}
   m_Layer: 7
   m_Name: Lich
   m_TagString: Enemy
@@ -567,20 +567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
---- !u!114 &5635409062707600860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497506435031409059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DEBUG: 0
-  current: {fileID: 0}
 --- !u!114 &2243207032401666168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +606,20 @@ MonoBehaviour:
   _augmentManager: {fileID: 0}
   coin: {fileID: -8631970439499270126, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
   enemyCoinValue: 50
+--- !u!114 &613777223219371099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497506435031409059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DEBUG: 0
+  current: {fileID: 0}
 --- !u!1 &6133113321150052442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1034,10 @@ PrefabInstance:
       propertyPath: enemyCoinValue
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: _augmentManager
+      value: 
+      objectReference: {fileID: 6793725288341787339}
     - target: {fileID: 6483573570010530734, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
       value: Health Canvas
@@ -1042,7 +1046,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Crystal (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: current
+      value: 
+      objectReference: {fileID: 2044798304394190228}
+    m_RemovedComponents:
+    - {fileID: 4565701369142477152, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5108065379234076295, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
     m_AddedGameObjects: []
@@ -1053,6 +1062,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 3270900895034175942}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2044798304394190228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 3270900895034175942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6793725288341787339 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 3270900895034175942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8171649215381755632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1101,15 +1132,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: _augmentManager
+      value: 
+      objectReference: {fileID: 165293455165781501}
     - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
       value: Health Crystal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: current
+      value: 
+      objectReference: {fileID: 4639694545541773986}
+    m_RemovedComponents:
+    - {fileID: 4565701369142477152, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+--- !u!114 &165293455165781501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 8171649215381755632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4639694545541773986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 8171649215381755632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6226976276017666295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
@@ -1183,6 +1245,10 @@ PrefabInstance:
       propertyPath: enemyCoinValue
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: _augmentManager
+      value: 
+      objectReference: {fileID: 780123225568396811}
     - target: {fileID: 6483573570010530734, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
       value: Health Canvas
@@ -1191,13 +1257,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Crystal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: current
+      value: 
+      objectReference: {fileID: 5258851889608821076}
     m_RemovedComponents:
     - {fileID: 4547459086124935319, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+    - {fileID: 4565701369142477152, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5108065379234076295, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+--- !u!114 &780123225568396811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 8790806431591752966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5258851889608821076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 8790806431591752966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6841558939302259457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
