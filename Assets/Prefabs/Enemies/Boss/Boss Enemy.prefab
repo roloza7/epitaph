@@ -1054,7 +1054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: intialHealth
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: enemyCoinValue
@@ -1173,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: intialHealth
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: _augmentManager
@@ -1295,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: -8631970439499270126, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
     - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: intialHealth
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: enemyCoinValue
