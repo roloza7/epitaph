@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Crystal : Enemy
 {
+    public List<Sprite> damagedSprites;
     LichController lich;
     bool damaged = false;
     float lastDamaged;
@@ -43,6 +44,13 @@ public class Crystal : Enemy
     {
         damaged = true;
         base.TakeDamage(amount);
+
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        if (HealthVal <= intialHealth * 1 / 3) {
+            renderer.sprite = damagedSprites[1];
+        } else if (HealthVal <= intialHealth * 2 / 3) {
+            renderer.sprite = damagedSprites[0];
+        }
     }
 
     public bool WasDamaged()

@@ -262,10 +262,10 @@ GameObject:
   - component: {fileID: 2813956215447260679}
   - component: {fileID: 1825452796799296510}
   - component: {fileID: 6446944047238119916}
-  - component: {fileID: 4565701369142477152}
   - component: {fileID: 5098524728875619201}
   - component: {fileID: 3531954819092212818}
   - component: {fileID: 5392360216172922369}
+  - component: {fileID: 8299212924517851917}
   m_Layer: 7
   m_Name: Health Crystal
   m_TagString: Enemy
@@ -354,20 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
---- !u!114 &4565701369142477152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115196569041467007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DEBUG: 0
-  current: {fileID: 0}
 --- !u!61 &5098524728875619201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -452,6 +438,9 @@ MonoBehaviour:
   _augmentManager: {fileID: 0}
   coin: {fileID: -8631970439499270126, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
   enemyCoinValue: 10
+  damagedSprites:
+  - {fileID: 9084653177554927213, guid: 811ab311a8ada824084644c2e03dcb0a, type: 3}
+  - {fileID: 630871533063375645, guid: 811ab311a8ada824084644c2e03dcb0a, type: 3}
 --- !u!50 &5392360216172922369
 Rigidbody2D:
   serializedVersion: 4
@@ -479,3 +468,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8299212924517851917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115196569041467007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DEBUG: 0
+  current: {fileID: 0}

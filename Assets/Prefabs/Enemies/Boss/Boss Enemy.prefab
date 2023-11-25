@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3778372427979431284}
   - component: {fileID: 295492087817844693}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5186849549112829679}
   - component: {fileID: 1912034343868368095}
   - component: {fileID: 7231054768120802053}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,13 +243,13 @@ GameObject:
   m_Component:
   - component: {fileID: 307592263942806586}
   - component: {fileID: 878707310108753033}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &307592263942806586
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ Transform:
   m_GameObject: {fileID: 4129739429272916330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.16, z: 0}
+  m_LocalPosition: {x: -1.99, y: -1.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4825304515962786490}
   - component: {fileID: 2804269404399134469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 4497506435031409059}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.93, y: -1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -547,8 +547,12 @@ MonoBehaviour:
   - {fileID: 5101298926272060445, guid: d132d798605f1e640a8c9ec2ccff7d0b, type: 3}
   - {fileID: 8830085527557008798, guid: a427a42ed24d86c48af90ecbd6603e08, type: 3}
   shield: {fileID: 4129739429272916330}
-  activeCrystals: 3
+  crystals:
+  - {fileID: 1963980978363143033}
+  - {fileID: 1430392327920590991}
+  - {fileID: 5754143042933065657}
   teleportationPoints: {fileID: 9197601027340465706}
+  start: 0
   sprites:
   - {fileID: 256546839, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
   - {fileID: -194793229, guid: aeadb6dab781cc1418033f8d83ce72d2, type: 3}
@@ -630,7 +634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928384442723010041}
   - component: {fileID: 1322193667344824529}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2632842234635541511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,9 +840,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4294009903739911843}
+  - {fileID: 6841558939302259457}
   - {fileID: 6226976276017666295}
   - {fileID: 750338948713709505}
-  - {fileID: 6841558939302259457}
   - {fileID: 5221146283708033680}
   - {fileID: 307592263942806586}
   m_Father: {fileID: 0}
@@ -853,7 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7059631777681755908}
   - component: {fileID: 9143477341478398543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5221146283708033680}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TeleportationPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,11 +984,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.93
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.94
+      value: -10.97
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1038,13 +1042,21 @@ PrefabInstance:
       propertyPath: _augmentManager
       value: 
       objectReference: {fileID: 6793725288341787339}
+    - target: {fileID: 4563674726988532489, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6483573570010530734, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
       value: Health Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
-      value: Health Crystal (1)
+      value: Health Crystal 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: current
@@ -1067,18 +1079,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 3270900895034175942}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5754143042933065657}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5754143042933065657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 3270900895034175942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6793725288341787339 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 3270900895034175942}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5754143042933065657}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
@@ -1098,7 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.361804
+      value: 1.111804
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1136,9 +1153,17 @@ PrefabInstance:
       propertyPath: _augmentManager
       value: 
       objectReference: {fileID: 165293455165781501}
+    - target: {fileID: 4563674726988532489, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
-      value: Health Crystal
+      value: Health Crystal 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: current
@@ -1155,18 +1180,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 8171649215381755632}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1430392327920590991}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1430392327920590991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 8171649215381755632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4639694545541773986 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 8171649215381755632}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1430392327920590991}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}
@@ -1199,7 +1229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 1.0499998
       objectReference: {fileID: 0}
     - target: {fileID: 2813956215447260679, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1249,13 +1279,21 @@ PrefabInstance:
       propertyPath: _augmentManager
       value: 
       objectReference: {fileID: 780123225568396811}
+    - target: {fileID: 4563674726988532489, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6483573570010530734, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
       value: Health Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: m_Name
-      value: Health Crystal (2)
+      value: Health Crystal 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
       propertyPath: current
@@ -1274,18 +1312,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8299212924517851917, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 8790806431591752966}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1963980978363143033}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1963980978363143033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7115196569041467007, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
+  m_PrefabInstance: {fileID: 8790806431591752966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5258851889608821076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3531954819092212818, guid: ab383fbd5cb034d4dbaa7a02a0880ecc, type: 3}
   m_PrefabInstance: {fileID: 8790806431591752966}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1963980978363143033}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb509086ab66b4c4d8c960d7b96197eb, type: 3}

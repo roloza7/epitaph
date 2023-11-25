@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 1866140760894025706}
   - component: {fileID: 7846273954015342038}
   - component: {fileID: 6870733073187240334}
-  - component: {fileID: 85941256721382627}
   - component: {fileID: 8615839123305296803}
   - component: {fileID: 6497885136062840430}
+  - component: {fileID: 1365508412714162407}
   m_Layer: 7
   m_Name: Goon
   m_TagString: Enemy
@@ -153,9 +153,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.52317476}
   serializedVersion: 2
-  m_Radius: 0.34793782
+  m_Radius: 0.49411893
 --- !u!195 &3588630299456367025
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -256,20 +256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleeDist: 0
   damageInterval: 1
---- !u!114 &85941256721382627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7869210425373712410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13016b50a09b748d09ff70cf8453503b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DEBUG: 0
-  current: {fileID: 0}
 --- !u!114 &8615839123305296803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +291,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1365508412714162407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869210425373712410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097a59c54874e65438a5ffa30d28a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DEBUG: 0
+  current: {fileID: 0}
