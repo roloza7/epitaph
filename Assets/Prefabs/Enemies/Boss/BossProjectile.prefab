@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 4
-  damage: 6
+  damage: 5
   _statusEffects: []
   projectileTimer: 5
   parent: {fileID: 0}

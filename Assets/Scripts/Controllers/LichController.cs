@@ -30,7 +30,7 @@ public class LichController : Controller
     {
         base.Start();
         hasShield = true;
-        activeCrystals = crystals.Count;
+        activeCrystals = 3;
 
         tppoints.Add(this.transform.position);
         foreach (Transform child in teleportationPoints.transform)
@@ -78,7 +78,6 @@ public class LichController : Controller
 
     public void ActivateCrystals () {
         foreach(GameObject crystal in crystals) {
-            print("setting crystal active");
             crystal.SetActive(true);
         }
         shield.SetActive(true);
