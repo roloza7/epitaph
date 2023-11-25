@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrapperName: Fireball
   activeAbility: {fileID: 11400000, guid: c91185b03e4494457831d8ae62364bd0, type: 2}
-  passiveAbility: {fileID: 11400000, guid: 1ec54eb4ade3c4c94bd817e06a8ec2a5, type: 2}
+  passiveAbility: {fileID: 11400000, guid: 540be4dfef9f565459ac02aaecb15613, type: 2}
   description: Fireball
