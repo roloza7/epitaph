@@ -20,7 +20,7 @@ public class DeathKnightMelee : MonoBehaviour
         renderer.enabled = false;
         meleeHitbox.enabled = false;
         Vector2 parentCol = transform.parent.gameObject.GetComponent<BoxCollider2D>().size;
-        offset = new Vector2(parentCol.x/2 + meleeHitbox.size.x/2, parentCol.y/2 + meleeHitbox.size.y/3);
+        offset = new Vector2(parentCol.x/2 + meleeHitbox.size.x/2, parentCol.y + meleeHitbox.size.y/3);
     }
 
     public void Attack(Vector3 vecToPlayer) {

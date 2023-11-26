@@ -32,7 +32,7 @@ public class HealingGoonController : EnemyController
         animator.SetFloat("vel x", agent.velocity.x);
         animator.SetFloat("vel y", agent.velocity.y);
         if (agent.velocity.magnitude < 0.05) {
-            animator.SetBool("is stopped", false);
+            animator.SetBool("is stopped", true);
         } else {
             animator.SetBool("is stopped", false);
         }
