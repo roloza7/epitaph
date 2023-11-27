@@ -127,7 +127,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 218
+      y: 219
       width: 24
       height: 32
     spriteID: 74a36a3113cfb4542a58c52d32eda65f
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -24, y: 202}
+    uvTransform: {x: -24, y: 203}
   - name: dk_back_attack_Frame_1
     originalName: 
     pivot: {x: 0.631579, y: 0.43243244}
@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 54
+      y: 55
       width: 38
       height: 37
     spriteID: 8cf7adaa60204944f85bf0290cf4d648
@@ -158,10 +158,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 54}
+    uvTransform: {x: 4, y: 55}
   - name: dk_back_attack_Frame_2
     originalName: 
-    pivot: {x: 0.5652174, y: 0.3809524}
+    pivot: {x: 0.5652174, y: 0.37209302}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -169,7 +169,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 46
-      height: 42
+      height: 43
     spriteID: 1e00e42141e854446a1fa2a0f1ebe4b3
     spriteBone: []
     spriteOutline: []
@@ -187,7 +187,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 99
+      y: 100
       width: 33
       height: 38
     spriteID: 8e23d75e21ef163498652ef9f0bf1573
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 99}
+    uvTransform: {x: 4, y: 100}
   - name: dk_back_attack_Frame_4
     originalName: 
     pivot: {x: 0.7222222, y: 0.5925926}
@@ -207,7 +207,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 145
+      y: 146
       width: 36
       height: 27
     spriteID: 662ce52fbdcdf9c4ba94598f85ce5f75
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 145}
+    uvTransform: {x: 4, y: 146}
   - name: dk_back_attack_Frame_5
     originalName: 
     pivot: {x: 0.6153846, y: 0.53333336}
@@ -227,7 +227,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 180
+      y: 181
       width: 26
       height: 30
     spriteID: 547ee0105de501140b49837c9c4f82c3
@@ -238,7 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -20, y: 164}
+    uvTransform: {x: -20, y: 165}
   - name: dk_back_attack_Frame_6
     originalName: 
     pivot: {x: 0.5652174, y: 0.5}
@@ -310,7 +310,7 @@ ScriptedImporter:
         x: 14
         y: 16
         width: 46
-        height: 42
+        height: 43
       spriteId: 1e00e42141e854446a1fa2a0f1ebe4b3
     - name: dk_back_attack_Frame_3
       frameIndex: 3

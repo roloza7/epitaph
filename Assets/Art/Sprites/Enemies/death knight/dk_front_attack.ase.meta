@@ -141,14 +141,14 @@ ScriptedImporter:
     uvTransform: {x: -24, y: 165}
   - name: dk_front_attack_Frame_1
     originalName: 
-    pivot: {x: 0.5294118, y: 0.61904764}
+    pivot: {x: 0.51428574, y: 0.61904764}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 58
-      width: 34
+      width: 35
       height: 42
     spriteID: 3df9c9f515486674c9aa1cd6f049325f
     spriteBone: []
@@ -301,7 +301,7 @@ ScriptedImporter:
       cellRect:
         x: 22
         y: 6
-        width: 34
+        width: 35
         height: 42
       spriteId: 3df9c9f515486674c9aa1cd6f049325f
     - name: dk_front_attack_Frame_2
