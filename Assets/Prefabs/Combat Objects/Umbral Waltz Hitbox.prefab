@@ -101,8 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   damage: 0
-  _statusEffects:
-  - {fileID: 11400000, guid: e103b25181dffaa4bae65c307e06ca78, type: 2}
+  _statusEffects: []
   knockbackForce: 0
   knockbackDuration: 0
 --- !u!58 &8661895339691911024
