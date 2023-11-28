@@ -20,6 +20,10 @@ public class UmbralWaltz : Ability
         // Quaternion rotationToTarget = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorToTarget);
 
         // offset of hitbox from player is hardcorded
+        SpriteRenderer playerSprite = parent.GetComponent<SpriteRenderer>();
+        if (playerSprite != null) {
+            playerSprite.enabled = false;
+        }
         hitboxInstance = Instantiate(hitbox, parent.transform);// + (offset * 1.5f), rotationToTarget, parent.transform);
         hitboxInstance.parent = parent;
         hitboxInstance.damage = Waltz(parent);
@@ -30,7 +34,10 @@ public class UmbralWaltz : Ability
     }
 
     public override void Deactivate(GameObject parent) {
-        
+        SpriteRenderer playerSprite = parent.GetComponent<SpriteRenderer>();
+        if (playerSprite != null) {
+            playerSprite.enabled = true;
+        }
         Destroy(hitboxInstance.gameObject);
         // Debug.Log("Melee Slash Done");
     }
