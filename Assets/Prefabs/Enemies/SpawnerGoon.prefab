@@ -519,6 +519,7 @@ MonoBehaviour:
   animator: {fileID: 8899804498749992875}
   _augmentManager: {fileID: 0}
   coin: {fileID: -8631970439499270126, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
+  particles: {fileID: 3521183095686795207, guid: 18ba38a2721c3264fa84262fb81a5e80, type: 3}
   enemyCoinValue: 20
 --- !u!1001 &5148194787526549214
 PrefabInstance:
@@ -556,6 +557,10 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Sprite
       value: 
       objectReference: {fileID: 7055166722312489198, guid: 034cf0419333ae246b2281104a3e3edc, type: 3}
+    - target: {fileID: 2600972218856858204, guid: b045dd54d1eb41947b4f05b27d99364a, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3585522329108576915, guid: b045dd54d1eb41947b4f05b27d99364a, type: 3}
       propertyPath: ShapeModule.type
       value: 19

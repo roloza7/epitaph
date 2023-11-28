@@ -1006,6 +1006,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   _augmentManager: {fileID: 0}
   killable: 0
+  particles: {fileID: 3521183095686795207, guid: 5bf59772e7a8c3846b9ad1ff066256f0, type: 3}
   pickupRadius: 2
 --- !u!114 &4451322402477620099
 MonoBehaviour:

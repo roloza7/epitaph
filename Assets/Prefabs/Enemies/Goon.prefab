@@ -218,6 +218,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   _augmentManager: {fileID: 0}
   coin: {fileID: -8631970439499270126, guid: b713356956b7f5d4a96ebdbae100f727, type: 3}
+  particles: {fileID: 3521183095686795207, guid: 18ba38a2721c3264fa84262fb81a5e80, type: 3}
   enemyCoinValue: 5
 --- !u!114 &1866140760894025706
 MonoBehaviour:
