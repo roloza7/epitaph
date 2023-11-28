@@ -26,7 +26,7 @@ public class MeleeAttack : MonoBehaviour
         meleeHitbox.enabled = false;
 
 
-        Vector2 parentCol = transform.parent.gameObject.GetComponent<BoxCollider2D>().size;
+        Vector2 parentCol = transform.parent.gameObject.GetComponent<CapsuleCollider2D>().size;
         
         offset = new Vector2(parentCol.x/2 + meleeHitbox.size.x/2, parentCol.y/2 + meleeHitbox.size.y/2);
     }
