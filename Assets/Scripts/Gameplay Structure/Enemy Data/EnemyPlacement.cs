@@ -30,7 +30,7 @@ public class EnemyPlacement : MonoBehaviour
     void PlaceEnemy(EnemyPlacementType enemy) {
         Debug.Log("Enemy Placed");
         rampingPercent = enemy.spawnRate;
-        for (int i = 2; i < mapWidth - 1; i++) {
+        for (int i = 3; i < mapWidth - 2; i++) {
             for (int j = bufferSize; j < mapHeight-bufferSize; j++) {
                 if (CheckNeighborsClear(i, j-bufferSize, enemy.width, enemy.height)) { 
                     float rand = Random.Range(0.0f, 100.0f);
