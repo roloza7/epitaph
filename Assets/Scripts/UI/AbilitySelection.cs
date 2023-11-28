@@ -8,6 +8,7 @@ public class AbilitySelection : MonoBehaviour
 {
 
     [SerializeField] private GameObject root;
+    public static AbilitySelection Instance { get; private set; }
 
     private SlotHolder<AbilityWrapper> choiceSlots;
     public SlotHolder<AbilityWrapper> Slots { get { return choiceSlots; } } 
@@ -22,11 +23,22 @@ public class AbilitySelection : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1) {
+            if (root == null) {
+                root = GameObject.Find("NewAbilityUI").transform.GetChild(1).gameObject;
+                choiceSlots = new SlotHolder<AbilityWrapper>(root);
+                abilityChoices = new List<AbilityWrapper>(startingAbilityChoices);
+            }
+
+            // if (this == null) {
+            //     this = GameObject.Find("AbilitySelection").transform.gameObject.GetComponent<AbilitySelection>();
+            // }
+        }
+
         if (abilityChoices == null)
             // Copying because unity does NOT like serialized fields changing as much as this one does
             abilityChoices = new List<AbilityWrapper>(startingAbilityChoices);
 
-        ShowAbilityChoice();
 
         for (int i = 0; i < 3; i++) {
             if (abilityChoices.Count > 0) {
@@ -36,10 +48,19 @@ public class AbilitySelection : MonoBehaviour
                 abilityChoices.RemoveAt(randomIndex);
             }
         }
+
+        ShowAbilityChoice();
+
     }
     
     void Awake()
     {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
         choiceSlots = new SlotHolder<AbilityWrapper>(root);
     }
 
@@ -59,8 +80,9 @@ public class AbilitySelection : MonoBehaviour
             }
         }
     }
+
     public void ShowAbilityChoice() {
-        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        Instance.gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void setAbilityChoices(List<AbilityWrapper> abilityChoices) {
