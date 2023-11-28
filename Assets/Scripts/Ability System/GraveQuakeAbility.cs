@@ -21,6 +21,7 @@ public class GraveQuakeAbility : Ability
         hitboxInstance.damage = damage;
         hitboxInstance.GetComponent<CircleCollider2D>().enabled = false;
         animator = hitboxInstance.gameObject.transform.GetChild(0).GetComponent<Animator>();
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.quake, parent.transform.position);
     }
 
     // public void Deactivate(GameObject parent) {    
