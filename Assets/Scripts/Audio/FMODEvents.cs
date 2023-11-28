@@ -20,8 +20,11 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Knife Flurry")]
     [field: SerializeField] public EventReference knifeFlurry { get; private set; }
 
-    [field: Header("Quake")]
-    [field: SerializeField] public EventReference quake { get; private set; }
+    [field: Header("Quake First")]
+    [field: SerializeField] public EventReference quakeFirst { get; private set; }
+
+    [field: Header("Quake Finish")]
+    [field: SerializeField] public EventReference quakeFinish { get; private set; }
 
     [field: Header("Laser")]
     [field: SerializeField] public EventReference laser { get; private set; }
