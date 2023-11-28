@@ -79,13 +79,20 @@ MonoBehaviour:
       Data3: -412173920
       Data4: -2083742151
     Path: event:/Knife Flurry
-  <quake>k__BackingField:
+  <quakeFirst>k__BackingField:
     Guid:
       Data1: -1511110446
       Data2: 1096707298
       Data3: -1139796577
       Data4: 1599122789
-    Path: event:/Quake
+    Path: event:/Quake First
+  <quakeFinish>k__BackingField:
+    Guid:
+      Data1: 2011887041
+      Data2: 1267994436
+      Data3: -1964506949
+      Data4: -789319393
+    Path: event:/Quake Finish
   <laser>k__BackingField:
     Guid:
       Data1: -9569533

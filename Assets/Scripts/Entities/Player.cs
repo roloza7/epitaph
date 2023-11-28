@@ -16,6 +16,7 @@ public class Player : Entity
     }
     public override void Die() {
         if (killable) {
+            GetComponent<PlayerController>().UpdateSound(true);
             Destroy(gameObject);
             Destroy(GameObject.Find("UI"));
             SceneManager.LoadScene("DeathScene");

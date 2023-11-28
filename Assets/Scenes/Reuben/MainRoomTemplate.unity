@@ -136,12 +136,72 @@ PrefabInstance:
       value: event:/Quake First
       objectReference: {fileID: 0}
     - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <samsara>k__BackingField.Path
+      value: event:/Samsara
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <deadSpark>k__BackingField.Path
+      value: event:/Dead Spark
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <fireSword>k__BackingField.Path
+      value: event:/Fire Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
       propertyPath: <quakeFirst>k__BackingField.Path
       value: event:/Quake First
       objectReference: {fileID: 0}
     - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
       propertyPath: <quakeFinish>k__BackingField.Path
       value: event:/Quake Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <samsara>k__BackingField.Guid.Data1
+      value: -564245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <samsara>k__BackingField.Guid.Data2
+      value: 1177006704
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <samsara>k__BackingField.Guid.Data3
+      value: -460070272
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <samsara>k__BackingField.Guid.Data4
+      value: 359815963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <deadSpark>k__BackingField.Guid.Data1
+      value: 1859628259
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <deadSpark>k__BackingField.Guid.Data2
+      value: 1117683105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <deadSpark>k__BackingField.Guid.Data3
+      value: -172248185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <deadSpark>k__BackingField.Guid.Data4
+      value: -356085998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <fireSword>k__BackingField.Guid.Data1
+      value: -1852855778
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <fireSword>k__BackingField.Guid.Data2
+      value: 1211452820
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <fireSword>k__BackingField.Guid.Data3
+      value: 2088089773
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
+      propertyPath: <fireSword>k__BackingField.Guid.Data4
+      value: 1990428080
       objectReference: {fileID: 0}
     - target: {fileID: 4619622516112085643, guid: 502c329b209bf1e449f45ae08bc15bd5, type: 3}
       propertyPath: <quakeFirst>k__BackingField.Guid.Data1
@@ -382,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086381338991058192, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: killable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6086381338991058192, guid: 0c830a5c172407e4a8223753fb3fd619, type: 3}
       propertyPath: _augmentManager
