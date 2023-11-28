@@ -23,17 +23,18 @@ public class GraveQuakeAbility : Ability
         animator = hitboxInstance.gameObject.transform.GetChild(0).GetComponent<Animator>();
         GameObject.FindWithTag("CMCam").GetComponent<CameraShake>().Shake(1.0f, 3.0f);
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.quakeFirst, parent.transform.position);
     }
 
     // public void Deactivate(GameObject parent) {    
     //     Destroy(hitboxInstance.gameObject);
     // }
 
-    public void Explode() {
+    public void Explode(GameObject parent) {
         GameObject.FindWithTag("CMCam").GetComponent<CameraShake>().Shake(2.0f, 0.5f);
-
         if (animator != null) {
             animator.SetTrigger("Explode");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.quakeFinish, parent.transform.position);
         }
         if (hitboxInstance != null) {
             //hitboxInstance.GetComponent<CircleCollider2D>().enabled = true;
@@ -67,7 +68,7 @@ public class GraveQuakeAbility : Ability
                 }
             break;
             case AbilityState.active:
-                Explode();
+                Explode(parent);
                 currentCooldownTime = cooldownTime;
                 state = AbilityState.cooldown;
             break;

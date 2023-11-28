@@ -1,22 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 [CreateAssetMenu]
-public class QuietusAbility : Ability
+public class UmbralWaltz : Ability
 {
-    public float damage;
-    public float knockbackForce;
-    public float knockbackDuration;
-    private Camera mainCamera;
+    [SerializeField] private float radius;
+    [SerializeField] private float damageAmount;
     public CircleSlashHitbox hitbox;
     private CircleSlashHitbox hitboxInstance;
-    private Vector3 mousePos;
 
-    public override void Init() {
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        //animation = GameObject.FindGameObjectWithTag("Player").GetComponent<Animation>();
-    }
 
     public override void Activate(GameObject parent) {
         // mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -28,21 +20,28 @@ public class QuietusAbility : Ability
         // Quaternion rotationToTarget = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorToTarget);
 
         // offset of hitbox from player is hardcorded
+        SpriteRenderer playerSprite = parent.GetComponent<SpriteRenderer>();
+        if (playerSprite != null) {
+            playerSprite.enabled = false;
+        }
         hitboxInstance = Instantiate(hitbox, parent.transform);// + (offset * 1.5f), rotationToTarget, parent.transform);
         hitboxInstance.parent = parent;
-        hitboxInstance.damage = damage;
-        hitboxInstance.knockbackForce = knockbackForce;
-        hitboxInstance.knockbackDuration = knockbackDuration;
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.fireSword, parent.transform.position);
+        hitboxInstance.damage = Waltz(parent);
+        // hitboxInstance.knockbackForce = knockbackForce;
+        // hitboxInstance.knockbackDuration = knockbackDuration;
         // Debug.Log("Melee Slash");
         //_animator.Play();
     }
 
     public override void Deactivate(GameObject parent) {
-        
+        SpriteRenderer playerSprite = parent.GetComponent<SpriteRenderer>();
+        if (playerSprite != null) {
+            playerSprite.enabled = true;
+        }
         Destroy(hitboxInstance.gameObject);
         // Debug.Log("Melee Slash Done");
     }
+
 
     public override void AbilityCooldownHandler(GameObject parent) {
         switch (state) 
@@ -75,4 +74,18 @@ public class QuietusAbility : Ability
             break;
         }
     }
+
+    private float Waltz(GameObject parent) {
+        Collider2D[] hit = Physics2D.OverlapCircleAll(parent.transform.position, radius, LayerMask.GetMask("Enemy"));
+        // foreach (Collider2D collider in hit) {
+        //     Enemy enemy = collider.GetComponent<Enemy>();
+        //     var entity = other.GetComponent<Entity>();
+        //     parent.GetComponent<Entity>().DealDamage(enemy, damageAmount / hit.Length);
+        // }
+        return damageAmount / hit.Length;
+
+    }
+
+
+
 }

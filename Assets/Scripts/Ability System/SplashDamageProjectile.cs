@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class SplashDamageProjectile : PlayerProjectile
 {
     [SerializeField] private float radius;
     [SerializeField] private float splashDamage;
+
+    [SerializeField] private EventReference audioEffect;
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         _animator.SetTrigger("Collide");  
@@ -24,5 +27,10 @@ public class SplashDamageProjectile : PlayerProjectile
         GameObject.FindWithTag("CMCam").GetComponent<CameraShake>().Shake(1.5f, 0.3f);
         StartCoroutine(CheckAnimationAndDestroy());
         //Destroy(this.gameObject);
+    }
+
+    public void PlaySound()
+    {
+        AudioManager.instance.PlayOneShot(audioEffect, parent.transform.position);
     }
 }
