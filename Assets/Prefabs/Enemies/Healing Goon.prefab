@@ -691,7 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1259068211134369520, guid: b045dd54d1eb41947b4f05b27d99364a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1968240701465554754, guid: b045dd54d1eb41947b4f05b27d99364a, type: 3}
       propertyPath: ShapeModule.angle
@@ -717,6 +717,10 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Sprite
       value: 
       objectReference: {fileID: 5061093154722741286, guid: 35f38cf2c55b7d64598b988f9d16d3f1, type: 3}
+    - target: {fileID: 2600972218856858204, guid: b045dd54d1eb41947b4f05b27d99364a, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3585522329108576915, guid: b045dd54d1eb41947b4f05b27d99364a, type: 3}
       propertyPath: ShapeModule.type
       value: 19
